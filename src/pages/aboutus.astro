@@ -1,0 +1,102 @@
+---
+import MainHead from "../components/MainHead.astro";
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
+---
+
+<html lang="en">
+    <head>
+        <MainHead
+            title="About | Encarnacion Service SRL"
+            description="About Encarnacion Service SRL"
+        />
+        <style>
+            .heroImg {
+                max-height: 24rem;
+                object-fit: cover;
+                overflow: hidden;
+            }
+
+            .heroImg img {
+                width: 100%;
+            }
+
+            .bio {
+                font-size: var(--f-u1);
+                line-height: 2;
+                margin-top: 4em;
+                text-align: justify;
+                text-justify: inter-word;
+            }
+
+            .wrapper.bio {
+                max-width: 50em;
+            }
+        </style>
+    </head>
+    <body>
+        <Nav />
+        <main class="wrapper">
+            <h1>Quiénes Somos</h1>
+            <div class="heroImg">
+                <img
+                    width="1400"
+                    height="350"
+                    src="https://images.unsplash.com/photo-1560264280-88b68371db39?auto=format&fit=crop&w=1400&h=350&q=80"
+                />
+            </div>
+            <div class="bio wrapper">
+                <p>
+                    Encarnación Service SRL nace en 1992 como una agencia de
+                    aduanas y empresa de servicios de telecomunicaciones, con el
+                    paso de los años consolidándose y permaneciendo con los
+                    servicios de comercio exterior.
+                </p>
+                <p>
+                    Nuestra agencia es una empresa familiar que cuenta con 37
+                    años de experiencia en el mercado, gracias a los
+                    conocimientos de nuestro presidente el licenciado Alejandro
+                    Encarnación.
+                </p>
+                <p>
+                    Convirtiéndonos en una de las primeras agencia aduanales del
+                    país en certificarse Operado económico autorizado en el año
+                    2017 y re certificándonos en el año 2022.
+                </p>
+                <p>
+                    Contamos con licencia para operar en todos los puertos del
+                    país.
+                </p>
+                <p>
+                    Trabajamos de mano con la Asociación Dominicana de Agentes
+                    de Aduanas y la Dirección General de Aduanas para brindar un
+                    servicio personalizado de calidad, eficacia dentro del marco
+                    del comercio seguro, actualizándonos en todos los campos de
+                    interés para lograrlo.
+                </p>
+            </div>
+            <div class='grid justify-items-end mt-10'>
+                <a
+                    href="/philosophy/"
+                    class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                    Filosofía Corporativa
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </main>
+        <Footer />
+    </body>
+</html>

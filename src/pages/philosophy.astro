@@ -1,0 +1,45 @@
+---
+import MainHead from "../components/MainHead.astro";
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
+---
+
+<html lang="en">
+    <head>
+        <MainHead
+            title="About | Encarnacion Service SRL"
+            description="About Encarnacion Service SRL"
+        />
+        <style>
+            .heroImg {
+                max-height: 24rem;
+                object-fit: cover;
+                overflow: hidden;
+            }
+
+            .heroImg img {
+                width: 100%;
+            }
+
+            .bio {
+                font-size: var(--f-u1);
+                line-height: 2;
+                margin-top: 4em;
+                text-align: justify;
+                text-justify: inter-word;
+            }
+
+            .wrapper.bio {
+                max-width: 50em;
+            }
+        </style>
+    </head>
+    <body>
+        <Nav />
+        <main class="wrapper">
+          
+            
+        </main>
+        <Footer />
+    </body>
+</html>
