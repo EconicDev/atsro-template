@@ -24,12 +24,12 @@ const Nav = ({ location, open }: NavProps) => {
                     
                   <img
                     className="block h-8 w-auto lg:hidden"
-                    src="/assets/encarnacion-services-logo.png"
+                    src="/astro-template/assets/encarnacion-services-logo.png"
                     alt="Encarnacion Service SRL"
                   />
                   <img
                     className="hidden h-8 w-auto lg:block"
-                    src="/assets/encarnacion-services-logo.png"
+                    src="/astro-template/assets/encarnacion-services-logo.png"
                     alt="Encarnacion Service SRL"
                   />
                 </div>
@@ -39,19 +39,19 @@ const Nav = ({ location, open }: NavProps) => {
                       Landing
                     </a>
                     <a
-                      href="/projects/"
+                      href="/astro-template/projects/"
                       className={location === "projects" ? navSelectedStyle : navDefaultStyle}
                     >
                       Portfolio
                     </a>
                     <a
-                      href="/aboutus/"
+                      href="/astro-template/aboutus/"
                       className={location === "aboutus" ? navSelectedStyle : navDefaultStyle}
                     >
                       Quiénes Somos
                     </a>
                     <a
-                      href="/philosophy/"
+                      href="/astro-template/philosophy/"
                       className={location === "philosophy" ? navSelectedStyle : navDefaultStyle}
                     >
                       Filosofía Corporativa
@@ -87,21 +87,21 @@ const Nav = ({ location, open }: NavProps) => {
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/projects/"
+                href="/astro-template/projects/"
                 className={location === 'projects' ? navMobileSelectedStyle : navMobileDefaultStyle}
               >
                 Portfolio
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/aboutus/"
+                href="/astro-template/aboutus/"
                 className={location === 'aboutus' ? navMobileSelectedStyle : navMobileDefaultStyle}
               >
                 Quiénes Somos
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/philosophy/"
+                href="/astro-template/philosophy/"
                 className={location === 'philosophy' ? navMobileSelectedStyle : navMobileDefaultStyle}
               >
                 Filosofía Corporativa
