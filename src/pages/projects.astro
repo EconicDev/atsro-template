@@ -31,7 +31,7 @@ const projects = (await Astro.glob<Project>('./project/**/*.md'))
 		</style>
 	</head>
 	<body>
-		<Nav />
+		<Nav location="projects" />
 		<div class="wrapper">
 			<h1 class="title">All Projects</h1>
 			<div class="grid">
