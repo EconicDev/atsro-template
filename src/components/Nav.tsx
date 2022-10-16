@@ -35,7 +35,7 @@ const Nav = ({ location, open }: NavProps) => {
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    <a href="/" className={location === "landing" ? navSelectedStyle : navDefaultStyle}>
+                    <a href="/astro-template/" className={location === "landing" ? navSelectedStyle : navDefaultStyle}>
                       Landing
                     </a>
                     <a
@@ -80,7 +80,7 @@ const Nav = ({ location, open }: NavProps) => {
             <div className="space-y-1 px-2 pt-2 pb-3">
               <Disclosure.Button
                 as="a"
-                href="/"
+                href="/astro-template/"
                 className={location === 'landing' ? navMobileSelectedStyle : navMobileDefaultStyle}
               >
                 Landing

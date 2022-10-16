@@ -1,7 +1,7 @@
 ---
 import MainHead from "../components/MainHead.astro";
 import Footer from "../components/Footer.astro";
-import Nav from "../components/Nav.astro";
+import Nav from "../components/Nav.jsx";
 ---
 
 <html lang="en">
@@ -35,7 +35,7 @@ import Nav from "../components/Nav.astro";
         </style>
     </head>
     <body>
-        <Nav />
+        <Nav location="philosophy" client:idle/>
         <main class="wrapper">
           
             
