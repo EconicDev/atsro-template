@@ -10,5 +10,5 @@ import react from "@astrojs/react";
 export default defineConfig({
   integrations: [tailwind(), react()],
   site: 'https://econicdev.github.io',
-  base:'/atsro-template'
+  base:'/'
 });
