@@ -45,8 +45,8 @@ const Nav = ({ location, open }: NavProps) => {
                       Portfolio
                     </a>
                     <a
-                      href="/aboutus/"
-                      className={location === "aboutus" ? navSelectedStyle : navDefaultStyle}
+                      href="/about/"
+                      className={location === "about" ? navSelectedStyle : navDefaultStyle}
                     >
                       Quiénes Somos
                     </a>
@@ -94,8 +94,8 @@ const Nav = ({ location, open }: NavProps) => {
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/aboutus/"
-                className={location === 'aboutus' ? navMobileSelectedStyle : navMobileDefaultStyle}
+                href="/about/"
+                className={location === 'about' ? navMobileSelectedStyle : navMobileDefaultStyle}
               >
                 Quiénes Somos
               </Disclosure.Button>
