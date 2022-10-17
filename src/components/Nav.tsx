@@ -24,12 +24,12 @@ const Nav = ({ location, open }: NavProps) => {
                     
                   <img
                     className="block h-8 w-auto lg:hidden"
-                    src="/assets/encarnacion-services-logo.png"
+                    src="/astro-template/assets/encarnacion-services-logo.png"
                     alt="Encarnación Service SRL"
                   />
                   <img
                     className="hidden h-8 w-auto lg:block"
-                    src="/assets/encarnacion-services-logo.png"
+                    src="/astro-template/assets/encarnacion-services-logo.png"
                     alt="Encarnación Service SRL"
                   />
                 </div>
@@ -80,29 +80,29 @@ const Nav = ({ location, open }: NavProps) => {
             <div className="space-y-1 px-2 pt-2 pb-3">
               <Disclosure.Button
                 as="a"
-                href="/"
+                href="/astro-template/"
                 className={location === 'landing' ? navMobileSelectedStyle : navMobileDefaultStyle}
               >
                 Landing
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/projects/"
+                href="/astro-template/projects/"
                 className={location === 'projects' ? navMobileSelectedStyle : navMobileDefaultStyle}
               >
                 Portfolio
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/about/"
+                href="/astro-template/about/"
                 className={location === 'about' ? navMobileSelectedStyle : navMobileDefaultStyle}
               >
                 Quiénes Somos
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/philosophy/"
-                className={location === 'philosophy' ? navMobileSelectedStyle : navMobileDefaultStyle}
+                href="/astro-template/services/"
+                className={location === 'services' ? navMobileSelectedStyle : navMobileDefaultStyle}
               >
                 Filosofía Corporativa
               </Disclosure.Button>
