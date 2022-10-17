@@ -35,23 +35,23 @@ const Nav = ({ location, open }: NavProps) => {
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    <a href="/" className={location === "landing" ? navSelectedStyle : navDefaultStyle}>
+                    <a href="/astro-template/" className={location === "landing" ? navSelectedStyle : navDefaultStyle}>
                       Landing
                     </a>
                     <a
-                      href="/projects/"
+                      href="/astro-template/projects/"
                       className={location === "projects" ? navSelectedStyle : navDefaultStyle}
                     >
                       Portfolio
                     </a>
                     <a
-                      href="/about/"
+                      href="/astro-template/about/"
                       className={location === "about" ? navSelectedStyle : navDefaultStyle}
                     >
                       Quiénes Somos
                     </a>
                     <a
-                      href="/services/"
+                      href="/astro-template/services/"
                       className={location === "services" ? navSelectedStyle : navDefaultStyle}
                     >
                       Servicios
