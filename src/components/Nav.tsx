@@ -25,12 +25,12 @@ const Nav = ({ location, open }: NavProps) => {
                   <img
                     className="block h-8 w-auto lg:hidden"
                     src="/assets/encarnacion-services-logo.png"
-                    alt="Encarnacion Service SRL"
+                    alt="Encarnación Service SRL"
                   />
                   <img
                     className="hidden h-8 w-auto lg:block"
                     src="/assets/encarnacion-services-logo.png"
-                    alt="Encarnacion Service SRL"
+                    alt="Encarnación Service SRL"
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
