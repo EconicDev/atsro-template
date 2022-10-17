@@ -51,10 +51,10 @@ const Nav = ({ location, open }: NavProps) => {
                       Quiénes Somos
                     </a>
                     <a
-                      href="/philosophy/"
-                      className={location === "philosophy" ? navSelectedStyle : navDefaultStyle}
+                      href="/services/"
+                      className={location === "services" ? navSelectedStyle : navDefaultStyle}
                     >
-                      Filosofía Corporativa
+                      Servicios
                     </a>
                   </div>
                 </div>
