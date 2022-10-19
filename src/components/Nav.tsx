@@ -24,34 +24,34 @@ const Nav = ({ location, open }: NavProps) => {
                     
                   <img
                     className="block h-8 w-auto lg:hidden"
-                    src="/astro-template/assets/encarnacion-services-logo.png"
+                    src="/assets/encarnacion-services-logo.png"
                     alt="Encarnación Service SRL"
                   />
                   <img
                     className="hidden h-8 w-auto lg:block"
-                    src="/astro-template/assets/encarnacion-services-logo.png"
+                    src="/assets/encarnacion-services-logo.png"
                     alt="Encarnación Service SRL"
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    <a href="/astro-template/" className={location === "landing" ? navSelectedStyle : navDefaultStyle}>
+                    <a href="/" className={location === "landing" ? navSelectedStyle : navDefaultStyle}>
                       Landing
                     </a>
                     <a
-                      href="/astro-template/projects/"
+                      href="/projects/"
                       className={location === "projects" ? navSelectedStyle : navDefaultStyle}
                     >
                       Portfolio
                     </a>
                     <a
-                      href="/astro-template/about/"
+                      href="/about/"
                       className={location === "about" ? navSelectedStyle : navDefaultStyle}
                     >
                       Quiénes Somos
                     </a>
                     <a
-                      href="/astro-template/services/"
+                      href="/services/"
                       className={location === "services" ? navSelectedStyle : navDefaultStyle}
                     >
                       Servicios
@@ -80,28 +80,28 @@ const Nav = ({ location, open }: NavProps) => {
             <div className="space-y-1 px-2 pt-2 pb-3">
               <Disclosure.Button
                 as="a"
-                href="/astro-template/"
+                href="/"
                 className={location === 'landing' ? navMobileSelectedStyle : navMobileDefaultStyle}
               >
                 Landing
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/astro-template/projects/"
+                href="/projects/"
                 className={location === 'projects' ? navMobileSelectedStyle : navMobileDefaultStyle}
               >
                 Portfolio
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/astro-template/about/"
+                href="/about/"
                 className={location === 'about' ? navMobileSelectedStyle : navMobileDefaultStyle}
               >
                 Quiénes Somos
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/astro-template/services/"
+                href="/services/"
                 className={location === 'services' ? navMobileSelectedStyle : navMobileDefaultStyle}
               >
                 Filosofía Corporativa
