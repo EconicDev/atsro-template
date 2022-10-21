@@ -1,3 +1,4 @@
+const colors = require('tailwindcss/colors');
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -38,5 +39,12 @@ module.exports = {
 		},
 		extend: {},
 	},
-	plugins: [],
+	screens: {
+		xs: '420px'
+	},
+	plugins: [
+		require('@tailwindcss/typography'),
+		// require('@tailwindcss/aspect-ratio'),
+        // require('@tailwindcss/line-clamp')
+	],
 }
