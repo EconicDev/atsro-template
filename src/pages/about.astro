@@ -41,12 +41,10 @@ import { Header2, MissionParagraph } from "../components/Stateless";
             <h1>Quiénes Somos</h1>
             <div class="heroImg">
                 <img
-                    width="1400"
-                    height="350"
-                    src="https://images.unsplash.com/photo-1560264280-88b68371db39?auto=format&fit=crop&w=1400&h=350&q=80"
+                    src="https://images.unsplash.com/photo-1560264280-88b68371db39"
                 />
             </div>
-            <div class="bio wrapper">
+            <div class="bio">
                 <MissionParagraph>
                     Encarnación Service SRL nace en 1992 como una agencia de
                     aduanas y empresa de servicios de telecomunicaciones, con el
@@ -77,17 +75,17 @@ import { Header2, MissionParagraph } from "../components/Stateless";
                 </MissionParagraph>
             </div>
             <article class="grid grid-cols-2 mt-20 h-screen">
-                <section class="col-span-1">
+                <section class="col-span-1 invisible sm:visible">
                     <div class="text-center text-2xl">images goes here</div>
                 </section>
-                <section class="col-span-1 h-1/2">
+                <section class="col-span-2 sm:col-span-1 h-1/2">
                     <Header2>Misión</Header2>
                     <MissionParagraph>
                         Contribuir a la satisfacción de las necesidades de
                         nuestros clientes con un servicio eficaz y de calidad.
                     </MissionParagraph>
                 </section>
-                <section>
+                <section class="col-span-2 sm:col-span-1 h-1/2">
                     <Header2>Visión</Header2>
                     <MissionParagraph>
                         Ser la empresa en servicio de comercio exterior y
@@ -97,13 +95,13 @@ import { Header2, MissionParagraph } from "../components/Stateless";
                         nuestra relación.
                     </MissionParagraph>
                 </section>
-                <section>
+                <section class="col-span-1 invisible sm:visible">
                     <div class="text-center text-2xl">images goes here</div>
                 </section>
-                <section>
+                <section class="col-span-1 invisible sm:visible">
                     <div class="text-center text-2xl">images goes here</div>
                 </section>
-                <section>
+                <section class="col-span-2 sm:col-span-1 h-1/2">
                     <Header2>Valores</Header2>
                     <ul class="list-disc list-inside p-6 text-center">
                         <li>Eficiencia</li>
