@@ -56,10 +56,9 @@ export default function Example() {
           <rect width={404} height={404} fill="url(#85737c0e-0916-41d7-917f-596dc7edfa27)" />
         </svg>
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact sales</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contáctenos</h2>
           <p className="mt-4 text-lg leading-6 text-gray-500">
-            Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus
-            arcu.
+          Trabajemos juntos
           </p>
         </div>
         <div className="mt-12">
@@ -202,7 +201,7 @@ export default function Example() {
             <div className="sm:col-span-2">
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                className="inline-flex w-full items-center justify-center rounded-md border border-transparent bg-fulvous-300 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-dodger-blue-700 focus:outline-none focus:ring-2 focus:ring-dodger-blue-500 focus:ring-offset-2"
               >
                 Let's talk
               </button>
