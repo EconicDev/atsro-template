@@ -4,446 +4,378 @@ import Nav from "../components/Nav.jsx";
 ---
 
 <html lang="en">
-    <head>
-        <MainHead
-            title="Services | Encarnación Service SRL"
-            description="Los diferentes servicios de sistemas disponibles por Encarnación Service SRL"
-        />
-        <style>
-            .wrapper.bio {
-                max-width: 50em;
-            }
-        </style>
-    </head>
-    <body>
-        <Nav location="contact" client:idle />
-        <main>
-            <div class="relative bg-white">
-                <div class="lg:absolute lg:inset-0">
-                    <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-                        <img
-                            class="h-56 w-full object-cover lg:absolute lg:h-full"
-                            src="https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80"
-                            alt=""
-                        />
-                    </div>
+  <head>
+    <MainHead
+      title="Services | Encarnación Service SRL"
+      description="Los diferentes servicios de sistemas disponibles por Encarnación Service SRL"
+    />
+    <style>
+      .wrapper.bio {
+        max-width: 50em;
+      }
+    </style>
+  </head>
+  <body>
+    <Nav location="contact" client:idle />
+    <main>
+      <div class="relative bg-white">
+        <div class="lg:absolute lg:inset-0">
+          <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+            <img
+              class="h-56 w-full object-cover lg:absolute lg:h-full"
+              src="https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80"
+              alt=""
+            />
+          </div>
+        </div>
+        <div
+          class="relative py-16 px-4 sm:py-24 sm:px-6 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:px-8 lg:py-32"
+        >
+          <div class="lg:pr-8">
+            <div class="mx-auto max-w-md sm:max-w-lg lg:mx-0">
+              <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+                Let's work together
+              </h2>
+              <p class="mt-4 text-lg text-gray-500 sm:mt-3">
+                We’d love to hear from you! Send us a message using the form
+                opposite, or email us. We’d love to hear from you! Send us a
+                message using the form opposite, or email us.
+              </p>
+              <form
+                action="#"
+                method="POST"
+                class="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
+              >
+                <div>
+                  <label
+                    for="first-name"
+                    class="block text-sm font-medium text-gray-700"
+                    >First name</label
+                  >
+                  <div class="mt-1">
+                    <input
+                      type="text"
+                      name="first-name"
+                      id="first-name"
+                      autocomplete="given-name"
+                      class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    />
+                  </div>
                 </div>
-                <div
-                    class="relative py-16 px-4 sm:py-24 sm:px-6 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:px-8 lg:py-32"
-                >
-                    <div class="lg:pr-8">
-                        <div class="mx-auto max-w-md sm:max-w-lg lg:mx-0">
-                            <h2
-                                class="text-3xl font-bold tracking-tight sm:text-4xl"
-                            >
-                                Let's work together
-                            </h2>
-                            <p class="mt-4 text-lg text-gray-500 sm:mt-3">
-                                We’d love to hear from you! Send us a message
-                                using the form opposite, or email us. We’d love
-                                to hear from you! Send us a message using the
-                                form opposite, or email us.
-                            </p>
-                            <form
-                                action="#"
-                                method="POST"
-                                class="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
-                            >
-                                <div>
-                                    <label
-                                        for="first-name"
-                                        class="block text-sm font-medium text-gray-700"
-                                        >First name</label
-                                    >
-                                    <div class="mt-1">
-                                        <input
-                                            type="text"
-                                            name="first-name"
-                                            id="first-name"
-                                            autocomplete="given-name"
-                                            class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                                        />
-                                    </div>
-                                </div>
-                                <div>
-                                    <label
-                                        for="last-name"
-                                        class="block text-sm font-medium text-gray-700"
-                                        >Last name</label
-                                    >
-                                    <div class="mt-1">
-                                        <input
-                                            type="text"
-                                            name="last-name"
-                                            id="last-name"
-                                            autocomplete="family-name"
-                                            class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <label
-                                        for="email"
-                                        class="block text-sm font-medium text-gray-700"
-                                        >Email</label
-                                    >
-                                    <div class="mt-1">
-                                        <input
-                                            id="email"
-                                            name="email"
-                                            type="email"
-                                            autocomplete="email"
-                                            class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <label
-                                        for="company"
-                                        class="block text-sm font-medium text-gray-700"
-                                        >Company</label
-                                    >
-                                    <div class="mt-1">
-                                        <input
-                                            type="text"
-                                            name="company"
-                                            id="company"
-                                            autocomplete="organization"
-                                            class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <div class="flex justify-between">
-                                        <label
-                                            for="phone"
-                                            class="block text-sm font-medium text-gray-700"
-                                            >Phone</label
-                                        >
-                                        <span
-                                            id="phone-description"
-                                            class="text-sm text-gray-500"
-                                            >Optional</span
-                                        >
-                                    </div>
-                                    <div class="mt-1">
-                                        <input
-                                            type="text"
-                                            name="phone"
-                                            id="phone"
-                                            autocomplete="tel"
-                                            aria-describedby="phone-description"
-                                            class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <div class="flex justify-between">
-                                        <label
-                                            for="how-can-we-help"
-                                            class="block text-sm font-medium text-gray-700"
-                                            >How can we help you?</label
-                                        >
-                                        <span
-                                            id="how-can-we-help-description"
-                                            class="text-sm text-gray-500"
-                                            >Max. 500 characters</span
-                                        >
-                                    </div>
-                                    <div class="mt-1">
-                                        <textarea
-                                            id="how-can-we-help"
-                                            name="how-can-we-help"
-                                            aria-describedby="how-can-we-help-description"
-                                            rows="4"
-                                            class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                                        ></textarea>
-                                    </div>
-                                </div>
-                                <fieldset class="sm:col-span-2">
-                                    <legend
-                                        class="block text-sm font-medium text-gray-700"
-                                        >Expected budget</legend
-                                    >
-                                    <div class="mt-4 grid grid-cols-1 gap-y-4">
-                                        <div class="flex items-center">
-                                            <input
-                                                id="budget-under-25k"
-                                                name="budget"
-                                                value="under_25k"
-                                                type="radio"
-                                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                            />
-                                            <label
-                                                for="budget-under-25k"
-                                                class="ml-3"
-                                            >
-                                                <span
-                                                    class="block text-sm text-gray-700"
-                                                    >Less than $25K</span
-                                                >
-                                            </label>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <input
-                                                id="budget-25k-50k"
-                                                name="budget"
-                                                value="25k-50k"
-                                                type="radio"
-                                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                            />
-                                            <label
-                                                for="budget-25k-50k"
-                                                class="ml-3"
-                                            >
-                                                <span
-                                                    class="block text-sm text-gray-700"
-                                                    >$25K – $50K</span
-                                                >
-                                            </label>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <input
-                                                id="budget-50k-100k"
-                                                name="budget"
-                                                value="50k-100k"
-                                                type="radio"
-                                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                            />
-                                            <label
-                                                for="budget-50k-100k"
-                                                class="ml-3"
-                                            >
-                                                <span
-                                                    class="block text-sm text-gray-700"
-                                                    >$50K – $100K</span
-                                                >
-                                            </label>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <input
-                                                id="budget-over-100k"
-                                                name="budget"
-                                                value="over_100k"
-                                                type="radio"
-                                                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                            />
-                                            <label
-                                                for="budget-over-100k"
-                                                class="ml-3"
-                                            >
-                                                <span
-                                                    class="block text-sm text-gray-700"
-                                                    >$100K+</span
-                                                >
-                                            </label>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                                <div class="sm:col-span-2">
-                                    <label
-                                        for="how-did-you-hear-about-us"
-                                        class="block text-sm font-medium text-gray-700"
-                                        >How did you hear about us?</label
-                                    >
-                                    <div class="mt-1">
-                                        <input
-                                            type="text"
-                                            name="how-did-you-hear-about-us"
-                                            id="how-did-you-hear-about-us"
-                                            class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="text-right sm:col-span-2">
-                                    <button
-                                        type="submit"
-                                        class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                                        >Submit</button
-                                    >
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                <div>
+                  <label
+                    for="last-name"
+                    class="block text-sm font-medium text-gray-700"
+                    >Last name</label
+                  >
+                  <div class="mt-1">
+                    <input
+                      type="text"
+                      name="last-name"
+                      id="last-name"
+                      autocomplete="family-name"
+                      class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    />
+                  </div>
                 </div>
-            </div>
-            <!-- Side-by-side grid -->
-            <div class="bg-white">
-                <div
-                    class="mx-auto max-w-md py-24 px-4 sm:max-w-3xl sm:py-32 sm:px-6 lg:max-w-7xl lg:px-8"
-                >
-                    <div class="divide-y divide-stone-200">
-                        <section
-                            class="lg:grid lg:grid-cols-3 lg:gap-8"
-                            aria-labelledby="contact-heading"
+                <div class="sm:col-span-2">
+                  <label
+                    for="email"
+                    class="block text-sm font-medium text-gray-700">Email</label
+                  >
+                  <div class="mt-1">
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      autocomplete="email"
+                      class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    />
+                  </div>
+                </div>
+                <div class="sm:col-span-2">
+                  <label
+                    for="company"
+                    class="block text-sm font-medium text-gray-700"
+                    >Company</label
+                  >
+                  <div class="mt-1">
+                    <input
+                      type="text"
+                      name="company"
+                      id="company"
+                      autocomplete="organization"
+                      class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    />
+                  </div>
+                </div>
+                <div class="sm:col-span-2">
+                  <div class="flex justify-between">
+                    <label
+                      for="phone"
+                      class="block text-sm font-medium text-gray-700"
+                      >Phone</label
+                    >
+                    <span id="phone-description" class="text-sm text-gray-500"
+                      >Optional</span
+                    >
+                  </div>
+                  <div class="mt-1">
+                    <input
+                      type="text"
+                      name="phone"
+                      id="phone"
+                      autocomplete="tel"
+                      aria-describedby="phone-description"
+                      class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    />
+                  </div>
+                </div>
+                <div class="sm:col-span-2">
+                  <div class="flex justify-between">
+                    <label
+                      for="how-can-we-help"
+                      class="block text-sm font-medium text-gray-700"
+                      >How can we help you?</label
+                    >
+                    <span
+                      id="how-can-we-help-description"
+                      class="text-sm text-gray-500">Max. 500 characters</span
+                    >
+                  </div>
+                  <div class="mt-1">
+                    <textarea
+                      id="how-can-we-help"
+                      name="how-can-we-help"
+                      aria-describedby="how-can-we-help-description"
+                      rows="4"
+                      class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    ></textarea>
+                  </div>
+                </div>
+                <fieldset class="sm:col-span-2">
+                  <legend class="block text-sm font-medium text-gray-700"
+                    >Expected budget</legend
+                  >
+                  <div class="mt-4 grid grid-cols-1 gap-y-4">
+                    <div class="flex items-center">
+                      <input
+                        id="budget-under-25k"
+                        name="budget"
+                        value="under_25k"
+                        type="radio"
+                        class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                      />
+                      <label for="budget-under-25k" class="ml-3">
+                        <span class="block text-sm text-gray-700"
+                          >Less than $25K</span
                         >
-                            <h2
-                                id="contact-heading"
-                                class="text-2xl font-bold text-stone-900 sm:text-3xl sm:tracking-tight"
-                            >
-                                Get in touch
-                            </h2>
-                            <div
-                                class="mt-8 grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 lg:col-span-2 lg:mt-0"
-                            >
-                                <div>
-                                    <h3
-                                        class="text-lg font-medium text-stone-900"
-                                    >
-                                        Collaborate
-                                    </h3>
-                                    <dl class="mt-2 text-base text-stone-500">
-                                        <div>
-                                            <dt class="sr-only">Email</dt>
-                                            <dd>support@example.com</dd>
-                                        </div>
-                                        <div class="mt-1">
-                                            <dt class="sr-only">
-                                                Phone number
-                                            </dt>
-                                            <dd>+1 (555) 123-4567</dd>
-                                        </div>
-                                    </dl>
-                                </div>
-
-                                <div>
-                                    <h3
-                                        class="text-lg font-medium text-stone-900"
-                                    >
-                                        Press
-                                    </h3>
-                                    <dl class="mt-2 text-base text-stone-500">
-                                        <div>
-                                            <dt class="sr-only">Email</dt>
-                                            <dd>support@example.com</dd>
-                                        </div>
-                                        <div class="mt-1">
-                                            <dt class="sr-only">
-                                                Phone number
-                                            </dt>
-                                            <dd>+1 (555) 123-4567</dd>
-                                        </div>
-                                    </dl>
-                                </div>
-
-                                <div>
-                                    <h3
-                                        class="text-lg font-medium text-stone-900"
-                                    >
-                                        Join our team
-                                    </h3>
-                                    <dl class="mt-2 text-base text-stone-500">
-                                        <div>
-                                            <dt class="sr-only">Email</dt>
-                                            <dd>support@example.com</dd>
-                                        </div>
-                                        <div class="mt-1">
-                                            <dt class="sr-only">
-                                                Phone number
-                                            </dt>
-                                            <dd>+1 (555) 123-4567</dd>
-                                        </div>
-                                    </dl>
-                                </div>
-
-                                <div>
-                                    <h3
-                                        class="text-lg font-medium text-stone-900"
-                                    >
-                                        Say hello
-                                    </h3>
-                                    <dl class="mt-2 text-base text-stone-500">
-                                        <div>
-                                            <dt class="sr-only">Email</dt>
-                                            <dd>support@example.com</dd>
-                                        </div>
-                                        <div class="mt-1">
-                                            <dt class="sr-only">
-                                                Phone number
-                                            </dt>
-                                            <dd>+1 (555) 123-4567</dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                            </div>
-                        </section>
-                        <section
-                            class="mt-16 pt-16 lg:grid lg:grid-cols-3 lg:gap-8"
-                            aria-labelledby="location-heading"
-                        >
-                            <h2
-                                id="location-heading"
-                                class="text-2xl font-bold text-stone-900 sm:text-3xl sm:tracking-tight"
-                            >
-                                Locations
-                            </h2>
-                            <div
-                                class="mt-8 grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 lg:col-span-2 lg:mt-0"
-                            >
-                                <div>
-                                    <h3
-                                        class="text-lg font-medium text-stone-900"
-                                    >
-                                        Los Angeles
-                                    </h3>
-                                    <div
-                                        class="mt-2 space-y-1 text-base text-stone-500"
-                                    >
-                                        <p>4556 Brendan Ferry</p>
-
-                                        <p>Los Angeles, CA 90210</p>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <h3
-                                        class="text-lg font-medium text-stone-900"
-                                    >
-                                        New York
-                                    </h3>
-                                    <div
-                                        class="mt-2 space-y-1 text-base text-stone-500"
-                                    >
-                                        <p>886 Walter Streets</p>
-
-                                        <p>New York, NY 12345</p>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <h3
-                                        class="text-lg font-medium text-stone-900"
-                                    >
-                                        Toronto
-                                    </h3>
-                                    <div
-                                        class="mt-2 space-y-1 text-base text-stone-500"
-                                    >
-                                        <p>7363 Cynthia Pass</p>
-
-                                        <p>Toronto, ON N3Y 4H8</p>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <h3
-                                        class="text-lg font-medium text-stone-900"
-                                    >
-                                        Chicago
-                                    </h3>
-                                    <div
-                                        class="mt-2 space-y-1 text-base text-stone-500"
-                                    >
-                                        <p>726 Mavis Island</p>
-
-                                        <p>Chicago, IL 60601</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
+                      </label>
                     </div>
+                    <div class="flex items-center">
+                      <input
+                        id="budget-25k-50k"
+                        name="budget"
+                        value="25k-50k"
+                        type="radio"
+                        class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                      />
+                      <label for="budget-25k-50k" class="ml-3">
+                        <span class="block text-sm text-gray-700"
+                          >$25K – $50K</span
+                        >
+                      </label>
+                    </div>
+                    <div class="flex items-center">
+                      <input
+                        id="budget-50k-100k"
+                        name="budget"
+                        value="50k-100k"
+                        type="radio"
+                        class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                      />
+                      <label for="budget-50k-100k" class="ml-3">
+                        <span class="block text-sm text-gray-700"
+                          >$50K – $100K</span
+                        >
+                      </label>
+                    </div>
+                    <div class="flex items-center">
+                      <input
+                        id="budget-over-100k"
+                        name="budget"
+                        value="over_100k"
+                        type="radio"
+                        class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                      />
+                      <label for="budget-over-100k" class="ml-3">
+                        <span class="block text-sm text-gray-700">$100K+</span>
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+                <div class="sm:col-span-2">
+                  <label
+                    for="how-did-you-hear-about-us"
+                    class="block text-sm font-medium text-gray-700"
+                    >How did you hear about us?</label
+                  >
+                  <div class="mt-1">
+                    <input
+                      type="text"
+                      name="how-did-you-hear-about-us"
+                      id="how-did-you-hear-about-us"
+                      class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    />
+                  </div>
                 </div>
+                <div class="text-right sm:col-span-2">
+                  <button
+                    type="submit"
+                    class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    >Submit</button
+                  >
+                </div>
+              </form>
             </div>
-        </main>
-    </body>
+          </div>
+        </div>
+      </div>
+      <!-- Side-by-side grid -->
+      <div class="bg-white">
+        <div
+          class="mx-auto max-w-md py-24 px-4 sm:max-w-3xl sm:py-32 sm:px-6 lg:max-w-7xl lg:px-8"
+        >
+          <div class="divide-y divide-stone-200">
+            <section
+              class="lg:grid lg:grid-cols-3 lg:gap-8"
+              aria-labelledby="contact-heading"
+            >
+              <h2
+                id="contact-heading"
+                class="text-2xl font-bold text-stone-900 sm:text-3xl sm:tracking-tight"
+              >
+                Get in touch
+              </h2>
+              <div
+                class="mt-8 grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 lg:col-span-2 lg:mt-0"
+              >
+                <div>
+                  <h3 class="text-lg font-medium text-stone-900">
+                    Collaborate
+                  </h3>
+                  <dl class="mt-2 text-base text-stone-500">
+                    <div>
+                      <dt class="sr-only">Email</dt>
+                      <dd>support@example.com</dd>
+                    </div>
+                    <div class="mt-1">
+                      <dt class="sr-only">Phone number</dt>
+                      <dd>+1 (555) 123-4567</dd>
+                    </div>
+                  </dl>
+                </div>
+
+                <div>
+                  <h3 class="text-lg font-medium text-stone-900">Press</h3>
+                  <dl class="mt-2 text-base text-stone-500">
+                    <div>
+                      <dt class="sr-only">Email</dt>
+                      <dd>support@example.com</dd>
+                    </div>
+                    <div class="mt-1">
+                      <dt class="sr-only">Phone number</dt>
+                      <dd>+1 (555) 123-4567</dd>
+                    </div>
+                  </dl>
+                </div>
+
+                <div>
+                  <h3 class="text-lg font-medium text-stone-900">
+                    Join our team
+                  </h3>
+                  <dl class="mt-2 text-base text-stone-500">
+                    <div>
+                      <dt class="sr-only">Email</dt>
+                      <dd>support@example.com</dd>
+                    </div>
+                    <div class="mt-1">
+                      <dt class="sr-only">Phone number</dt>
+                      <dd>+1 (555) 123-4567</dd>
+                    </div>
+                  </dl>
+                </div>
+
+                <div>
+                  <h3 class="text-lg font-medium text-stone-900">Say hello</h3>
+                  <dl class="mt-2 text-base text-stone-500">
+                    <div>
+                      <dt class="sr-only">Email</dt>
+                      <dd>support@example.com</dd>
+                    </div>
+                    <div class="mt-1">
+                      <dt class="sr-only">Phone number</dt>
+                      <dd>+1 (555) 123-4567</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </section>
+            <section
+              class="mt-16 pt-16 lg:grid lg:grid-cols-3 lg:gap-8"
+              aria-labelledby="location-heading"
+            >
+              <h2
+                id="location-heading"
+                class="text-2xl font-bold text-stone-900 sm:text-3xl sm:tracking-tight"
+              >
+                Locations
+              </h2>
+              <div
+                class="mt-8 grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 lg:col-span-2 lg:mt-0"
+              >
+                <div>
+                  <h3 class="text-lg font-medium text-stone-900">
+                    Los Angeles
+                  </h3>
+                  <div class="mt-2 space-y-1 text-base text-stone-500">
+                    <p>4556 Brendan Ferry</p>
+
+                    <p>Los Angeles, CA 90210</p>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="text-lg font-medium text-stone-900">New York</h3>
+                  <div class="mt-2 space-y-1 text-base text-stone-500">
+                    <p>886 Walter Streets</p>
+
+                    <p>New York, NY 12345</p>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="text-lg font-medium text-stone-900">Toronto</h3>
+                  <div class="mt-2 space-y-1 text-base text-stone-500">
+                    <p>7363 Cynthia Pass</p>
+
+                    <p>Toronto, ON N3Y 4H8</p>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="text-lg font-medium text-stone-900">Chicago</h3>
+                  <div class="mt-2 space-y-1 text-base text-stone-500">
+                    <p>726 Mavis Island</p>
+
+                    <p>Chicago, IL 60601</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
