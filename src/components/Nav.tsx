@@ -39,12 +39,6 @@ const Nav = ({ location, open }: NavProps) => {
                       Landing
                     </a>
                     <a
-                      href="/projects/"
-                      className={location === "projects" ? navSelectedStyle : navDefaultStyle}
-                    >
-                      Portfolio
-                    </a>
-                    <a
                       href="/about/"
                       className={location === "about" ? navSelectedStyle : navDefaultStyle}
                     >
@@ -55,6 +49,12 @@ const Nav = ({ location, open }: NavProps) => {
                       className={location === "services" ? navSelectedStyle : navDefaultStyle}
                     >
                       Servicios
+                    </a>
+                    <a
+                      href="/contact/"
+                      className={location === "contact" ? navSelectedStyle : navDefaultStyle}
+                    >
+                      Contacto
                     </a>
                   </div>
                 </div>
@@ -87,13 +87,6 @@ const Nav = ({ location, open }: NavProps) => {
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/projects/"
-                className={location === 'projects' ? navMobileSelectedStyle : navMobileDefaultStyle}
-              >
-                Portfolio
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
                 href="/about/"
                 className={location === 'about' ? navMobileSelectedStyle : navMobileDefaultStyle}
               >
@@ -104,7 +97,14 @@ const Nav = ({ location, open }: NavProps) => {
                 href="/services/"
                 className={location === 'services' ? navMobileSelectedStyle : navMobileDefaultStyle}
               >
-                Filosofía Corporativa
+                Servicios
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="/contact/"
+                className={location === 'contact' ? navMobileSelectedStyle : navMobileDefaultStyle}
+              >
+                Contacto
               </Disclosure.Button>
             </div>
           </Disclosure.Panel>
