@@ -12,7 +12,7 @@ export default function ContractForm({ showPatterns }): ContractFormProps {
   const [agreed, setAgreed] = useState(false);
   const patternClasses = showPatterns ? " visible" : " invisible";
   return (
-    <div className="overflow-hidden bg-white py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
+    <div className="overflow-hidden py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
       <div className="relative mx-auto max-w-xl">
         <svg
           className={

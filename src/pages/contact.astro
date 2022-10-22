@@ -20,7 +20,7 @@ import { ArticleTitle, SectionTitle } from "../components/Stateless.jsx";
   <body>
     <Nav location="contact" client:idle />
     <main>
-      <div class="grid grid-cols-12 bg-white">
+      <div class="grid grid-cols-12 bg-[url('/assets/world.svg')] bg-fixed">
         <div class="col-span-12 lg:col-span-6 lg:py-8">
           <ContactForm showPatterns={false} client:visible />
         </div>
@@ -36,9 +36,10 @@ import { ArticleTitle, SectionTitle } from "../components/Stateless.jsx";
           </div>
           <p class="text-right">Dirección:</p>
           <p class="text-right">
+            <span class="sr-only">Ubicación en el mapa de Google de Encarnación Service SRL</span>
             <a
               target="_blank"
-              href="https://goo.gl/maps/JRUAtZqQEa4AwMU2A"
+              href="https://www.google.com/maps/place/Encarnacion+Service+SRL/@18.481114,-69.9389918,18z/data=!4m5!3m4!1s0x8eaf89eea118f2d7:0x1a1c9640afcc52a0!8m2!3d18.4809722!4d-69.938383"
               role="link"
               >Av. Abraham Lincoln No. 1067, Edificio Los rios III, Apartamento
               202, Ensanche Piantini
@@ -80,121 +81,57 @@ import { ArticleTitle, SectionTitle } from "../components/Stateless.jsx";
                 id="contact-heading"
                 class="text-2xl font-bold text-stone-900 sm:text-3xl sm:tracking-tight"
               >
-                Get in touch
+                Póngase en contacto con nosotros
               </h2>
               <div
                 class="mt-8 grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 lg:col-span-2 lg:mt-0"
               >
                 <div>
                   <h3 class="text-lg font-medium text-stone-900">
-                    Collaborate
+                    Principal
                   </h3>
                   <dl class="mt-2 text-base text-stone-500">
                     <div>
                       <dt class="sr-only">Email</dt>
-                      <dd>support@example.com</dd>
+                      <dd>encarnacionservice@gmail.com</dd>
                     </div>
                     <div class="mt-1">
                       <dt class="sr-only">Phone number</dt>
-                      <dd>+1 (555) 123-4567</dd>
-                    </div>
-                  </dl>
-                </div>
-
-                <div>
-                  <h3 class="text-lg font-medium text-stone-900">Press</h3>
-                  <dl class="mt-2 text-base text-stone-500">
-                    <div>
-                      <dt class="sr-only">Email</dt>
-                      <dd>support@example.com</dd>
-                    </div>
-                    <div class="mt-1">
-                      <dt class="sr-only">Phone number</dt>
-                      <dd>+1 (555) 123-4567</dd>
+                      <dd>+1 (809) 686-5784</dd>
                     </div>
                   </dl>
                 </div>
 
                 <div>
                   <h3 class="text-lg font-medium text-stone-900">
-                    Join our team
-                  </h3>
+                    <!-- Press -->
+                </h3>
                   <dl class="mt-2 text-base text-stone-500">
-                    <div>
+                    <!-- <div>
                       <dt class="sr-only">Email</dt>
                       <dd>support@example.com</dd>
-                    </div>
+                    </div> -->
                     <div class="mt-1">
                       <dt class="sr-only">Phone number</dt>
-                      <dd>+1 (555) 123-4567</dd>
+                      <dd>+1 (809) 689-2413</dd>
                     </div>
                   </dl>
                 </div>
 
-                <div>
-                  <h3 class="text-lg font-medium text-stone-900">Say hello</h3>
-                  <dl class="mt-2 text-base text-stone-500">
-                    <div>
-                      <dt class="sr-only">Email</dt>
-                      <dd>support@example.com</dd>
-                    </div>
-                    <div class="mt-1">
-                      <dt class="sr-only">Phone number</dt>
-                      <dd>+1 (555) 123-4567</dd>
-                    </div>
-                  </dl>
-                </div>
-              </div>
-            </section>
-            <section
-              class="mt-16 pt-16 lg:grid lg:grid-cols-3 lg:gap-8"
-              aria-labelledby="location-heading"
-            >
-              <h2
-                id="location-heading"
-                class="text-2xl font-bold text-stone-900 sm:text-3xl sm:tracking-tight"
-              >
-                Locations
-              </h2>
-              <div
-                class="mt-8 grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 lg:col-span-2 lg:mt-0"
-              >
                 <div>
                   <h3 class="text-lg font-medium text-stone-900">
-                    Los Angeles
+                    <!-- Join our team -->
                   </h3>
-                  <div class="mt-2 space-y-1 text-base text-stone-500">
-                    <p>4556 Brendan Ferry</p>
-
-                    <p>Los Angeles, CA 90210</p>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 class="text-lg font-medium text-stone-900">New York</h3>
-                  <div class="mt-2 space-y-1 text-base text-stone-500">
-                    <p>886 Walter Streets</p>
-
-                    <p>New York, NY 12345</p>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 class="text-lg font-medium text-stone-900">Toronto</h3>
-                  <div class="mt-2 space-y-1 text-base text-stone-500">
-                    <p>7363 Cynthia Pass</p>
-
-                    <p>Toronto, ON N3Y 4H8</p>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 class="text-lg font-medium text-stone-900">Chicago</h3>
-                  <div class="mt-2 space-y-1 text-base text-stone-500">
-                    <p>726 Mavis Island</p>
-
-                    <p>Chicago, IL 60601</p>
-                  </div>
+                  <dl class="mt-2 text-base text-stone-500">
+                    <!-- <div>
+                      <dt class="sr-only">Email</dt>
+                      <dd>support@example.com</dd>
+                    </div> -->
+                    <div class="mt-1">
+                      <dt class="sr-only">Phone number</dt>
+                      <dd>+1 (809) 686-5784</dd>
+                    </div>
+                  </dl>
                 </div>
               </div>
             </section>
