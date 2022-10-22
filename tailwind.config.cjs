@@ -41,7 +41,14 @@ module.exports = {
       sky: colors.sky,
       cyan: colors.cyan,
     },
-    extend: {},
+    extend: {
+		backgroundPosition: {
+			'center-left-20': 'center left -20rem',
+		},
+		backgroundImage: {
+			'world-pattern': "url('/assets/world.svg')",
+		}	
+	},
   },
   screens: {
     xs: "420px",
