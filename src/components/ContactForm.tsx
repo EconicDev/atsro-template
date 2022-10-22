@@ -4,15 +4,20 @@ import { Switch } from "@headlessui/react";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
+type ContractFormProps = {
+  showPatterns: Boolean;
+};
 
-export default function Example() {
+export default function ContractForm({ showPatterns }): ContractFormProps {
   const [agreed, setAgreed] = useState(false);
-
+  const patternClasses = showPatterns ? " visible" : " invisible";
   return (
     <div className="overflow-hidden bg-white py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
       <div className="relative mx-auto max-w-xl">
         <svg
-          className="absolute left-full translate-x-1/2 transform"
+          className={
+            "absolute left-full translate-x-1/2 transform" + patternClasses
+          }
           width={404}
           height={404}
           fill="none"
@@ -45,7 +50,10 @@ export default function Example() {
           />
         </svg>
         <svg
-          className="absolute right-full bottom-0 -translate-x-1/2 transform"
+          className={
+            "absolute right-full bottom-0 -translate-x-1/2 transform" +
+            patternClasses
+          }
           width={404}
           height={404}
           fill="none"
@@ -89,9 +97,9 @@ export default function Example() {
           <form
             action="#"
             method="POST"
-            className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
+            className="grid grid-cols-12 gap-y-6 sm:gap-x-12 lg:grid-cols-12"
           >
-            <div>
+            <div class="col-span-11 lg:col-span-5">
               <label
                 htmlFor="first-name"
                 className="block text-sm font-medium text-gray-700"
@@ -108,7 +116,7 @@ export default function Example() {
                 />
               </div>
             </div>
-            <div>
+            <div class="col-span-11 lg:col-span-6">
               <label
                 htmlFor="last-name"
                 className="block text-sm font-medium text-gray-700"
@@ -125,7 +133,7 @@ export default function Example() {
                 />
               </div>
             </div>
-            <div className="sm:col-span-2">
+            <div className="col-span-11">
               <label
                 htmlFor="company"
                 className="block text-sm font-medium text-gray-700"
@@ -142,7 +150,7 @@ export default function Example() {
                 />
               </div>
             </div>
-            <div className="sm:col-span-2">
+            <div className="col-span-11">
               <label
                 htmlFor="email"
                 className="block text-sm font-medium text-gray-700"
@@ -159,7 +167,7 @@ export default function Example() {
                 />
               </div>
             </div>
-            <div className="sm:col-span-2">
+            <div className="col-span-8 sm:col-span-6 lg:col-span-5">
               <label
                 htmlFor="phone-number"
                 className="block text-sm font-medium text-gray-700"
@@ -176,6 +184,7 @@ export default function Example() {
                     name="country"
                     className="h-full rounded-md border-transparent bg-transparent py-0 pl-4 pr-8 text-gray-500 focus:border-indigo-500 focus:ring-indigo-500"
                   >
+                    <option>DO</option>
                     <option>US</option>
                     <option>CA</option>
                     <option>EU</option>
@@ -191,7 +200,7 @@ export default function Example() {
                 />
               </div>
             </div>
-            <div className="sm:col-span-2">
+            <div className="col-span-11">
               <label
                 htmlFor="message"
                 className="block text-sm font-medium text-gray-700"
@@ -208,7 +217,7 @@ export default function Example() {
                 />
               </div>
             </div>
-            <div className="sm:col-span-2">
+            <div className="col-span-10 lg:col-span-12">
               <div className="flex items-start">
                 <div className="flex-shrink-0">
                   <Switch
@@ -244,7 +253,7 @@ export default function Example() {
                 </div>
               </div>
             </div>
-            <div className="sm:col-span-2">
+            <div className="col-span-11 lg:col-span-11">
               <button
                 type="submit"
                 className="inline-flex w-full items-center justify-center rounded-md border border-transparent bg-fulvous-300 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-dodger-blue-700 focus:outline-none focus:ring-2 focus:ring-dodger-blue-500 focus:ring-offset-2"
