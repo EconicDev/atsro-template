@@ -26,19 +26,19 @@ const Nav = ({ location, open }: NavProps) => {
               <div className="flex-shrink-0">
                 <img
                   className="block h-8 w-auto lg:hidden"
-                  src="/assets/encarnacion-services-logo.png"
+                  src="/astro-template/assets/encarnacion-services-logo.png"
                   alt="Encarnación Service SRL"
                 />
                 <img
                   className="hidden h-8 w-auto lg:block"
-                  src="/assets/encarnacion-services-logo.png"
+                  src="/astro-template/assets/encarnacion-services-logo.png"
                   alt="Encarnación Service SRL"
                 />
               </div>
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   <a
-                    href="/"
+                    href="/astro-template/"
                     className={
                       location === "landing"
                         ? navSelectedStyle
@@ -48,7 +48,7 @@ const Nav = ({ location, open }: NavProps) => {
                     Landing
                   </a>
                   <a
-                    href="/about/"
+                    href="/astro-template/about/"
                     className={
                       location === "about" ? navSelectedStyle : navDefaultStyle
                     }
@@ -56,7 +56,7 @@ const Nav = ({ location, open }: NavProps) => {
                     Quiénes Somos
                   </a>
                   <a
-                    href="/services/"
+                    href="/astro-template/services/"
                     className={
                       location === "services"
                         ? navSelectedStyle
@@ -66,7 +66,7 @@ const Nav = ({ location, open }: NavProps) => {
                     Servicios
                   </a>
                   <a
-                    href="/contact/"
+                    href="/astro-template/contact/"
                     className={
                       location === "contact"
                         ? navSelectedStyle
@@ -100,7 +100,7 @@ const Nav = ({ location, open }: NavProps) => {
           <div className="space-y-1 px-2 pt-2 pb-3">
             <Disclosure.Button
               as="a"
-              href="/"
+              href="/astro-template/"
               className={
                 location === "landing"
                   ? navMobileSelectedStyle
@@ -111,7 +111,7 @@ const Nav = ({ location, open }: NavProps) => {
             </Disclosure.Button>
             <Disclosure.Button
               as="a"
-              href="/about/"
+              href="/astro-template/about/"
               className={
                 location === "about"
                   ? navMobileSelectedStyle
@@ -122,7 +122,7 @@ const Nav = ({ location, open }: NavProps) => {
             </Disclosure.Button>
             <Disclosure.Button
               as="a"
-              href="/services/"
+              href="/astro-template/services/"
               className={
                 location === "services"
                   ? navMobileSelectedStyle
@@ -133,7 +133,7 @@ const Nav = ({ location, open }: NavProps) => {
             </Disclosure.Button>
             <Disclosure.Button
               as="a"
-              href="/contact/"
+              href="/astro-template/contact/"
               className={
                 location === "contact"
                   ? navMobileSelectedStyle
