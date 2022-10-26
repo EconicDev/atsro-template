@@ -39,9 +39,12 @@ module.exports = {
 			/* neutral */
 			stone: colors.stone,
 			sky: colors.sky,
+			teal: colors.teal,
 			cyan: colors.cyan,
 			gray: colors.gray,
 			indigo: colors.indigo,
+			purple: colors.purple,
+
 		},
 		extend: {
 			backgroundPosition: {
