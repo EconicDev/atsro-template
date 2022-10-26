@@ -40,6 +40,8 @@ module.exports = {
 			stone: colors.stone,
 			sky: colors.sky,
 			cyan: colors.cyan,
+			gray: colors.gray,
+			indigo: colors.indigo,
 		},
 		extend: {
 			backgroundPosition: {
