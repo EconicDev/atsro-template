@@ -253,7 +253,7 @@ export default function ContractForm({ showPatterns }): ContractFormProps {
                 </div>
               </div>
             </div>
-            <div className="col-span-11 lg:col-span-11">
+            <div className="col-span-10 sm:col-span-11">
               <button
                 type="submit"
                 className="inline-flex w-full items-center justify-center rounded-md border border-transparent bg-fulvous-300 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-dodger-blue-700 focus:outline-none focus:ring-2 focus:ring-dodger-blue-500 focus:ring-offset-2"
