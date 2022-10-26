@@ -1,0 +1,61 @@
+---
+import lockSVG from "../../public/assets/lock.svg";
+import americasSVG from "../../public/assets/globe_americas.svg";
+import shieldCheckSVG from "../../public/assets/shield_check.svg";
+import trophySVG from "../../public/assets/trophy.svg";
+import FeatureCard from "./FeatureCard.astro";
+
+const features = [
+    {
+        title: "Confianza",
+        description:
+            "Miembros de la Asociación Dominicana de Agentes de Aduanas y la Dirección General de Aduanas.",
+        icon: shieldCheckSVG,
+    },
+    {
+        title: "Rápido y Seguro",
+        description:
+            "Ofrecemos un servicio eficiente en del marco del comercio seguro.",
+        href: "/services/",
+        linkText: "Conoce nuestros servicios y asesorías",
+        icon: lockSVG,
+    },
+    {
+        title: "Experimentado",
+        description:
+            "Una de las primeras agencias aduanales dominicanas en certificarse como Operador Económico Autorizado.",
+        icon: americasSVG,
+    },
+    {
+        title: "Calificado",
+        description:
+            "Contamos con licencia para operar en todos los puertos del país.",
+        icon: trophySVG,
+    },
+];
+---
+
+<div class="relative bg-white py-16 sm:py-24 lg:py-32">
+    <div
+        class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8"
+    >
+        <h2 class="text-lg font-semibold text-fulvous-600">
+            Muévete Más Rápido
+        </h2>
+        <p
+            class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+        >
+            Todo lo que necesitas bajo un mismo techo
+        </p>
+        <p class="mx-auto mt-5 max-w-prose text-xl text-gray-500">
+            Phasellus lorem quam molestie id quisque diam aenean nulla in.
+            Accumsan in quis quis nunc, ullamcorper malesuada. Eleifend
+            condimentum id viverra nulla.
+        </p>
+        <div class="mt-12">
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+                {features.map((feature) => <FeatureCard {...feature} />)}
+            </div>
+        </div>
+    </div>
+</div>

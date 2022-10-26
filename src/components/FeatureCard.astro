@@ -1,0 +1,33 @@
+---
+const { title, description, icon, href, linkText } = Astro.props;
+---
+
+<div class="pt-6">
+    <div class="flow-root rounded-lg bg-gray-50 px-6 pb-8">
+        <div class="-mt-6">
+            <div>
+                <span
+                    class="inline-flex items-center justify-center rounded-md bg-gradient-to-t from-dodger-blue-500 to-fulvous-600 p-3 shadow-lg"
+                >
+                    <img class="h-6 w-6 text-white" src={icon} />
+                </span>
+            </div>
+            <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-900">
+                {title}
+            </h3>
+            <p class="mt-5 text-base text-gray-500">
+                {description}
+            </p>
+            {
+                href && (
+                    <a
+                        href={href}
+                        class="text-dodger-blue-100 hover:text-dodger-blue-500"
+                    >
+                        {linkText}
+                    </a>
+                )
+            }
+        </div>
+    </div>
+</div>
