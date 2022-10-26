@@ -1,8 +1,4 @@
 ---
-import lockSVG from "../../public/assets/lock.svg";
-import americasSVG from "../../public/assets/globe_americas.svg";
-import shieldCheckSVG from "../../public/assets/shield_check.svg";
-import trophySVG from "../../public/assets/trophy.svg";
 import FeatureCard from "./FeatureCard.astro";
 
 const features = [
@@ -10,7 +6,7 @@ const features = [
         title: "Confianza",
         description:
             "Miembros de la Asociación Dominicana de Agentes de Aduanas y la Dirección General de Aduanas.",
-        icon: shieldCheckSVG,
+        icon: "/assets/shield_check.svg",
     },
     {
         title: "Rápido y Seguro",
@@ -18,19 +14,19 @@ const features = [
             "Ofrecemos un servicio eficiente en del marco del comercio seguro.",
         href: "/services/",
         linkText: "Conoce nuestros servicios y asesorías",
-        icon: lockSVG,
+        icon: "/assets/lock.svg",
     },
     {
         title: "Experimentado",
         description:
             "Una de las primeras agencias aduanales dominicanas en certificarse como Operador Económico Autorizado.",
-        icon: americasSVG,
+        icon: "/assets/globe_americas.svg",
     },
     {
         title: "Calificado",
         description:
             "Contamos con licencia para operar en todos los puertos del país.",
-        icon: trophySVG,
+        icon: "/assets/trophy.svg",
     },
 ];
 ---
