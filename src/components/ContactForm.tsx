@@ -99,7 +99,7 @@ export default function ContractForm({ showPatterns }): ContractFormProps {
             method="POST"
             className="grid grid-cols-12 gap-y-6 sm:gap-x-12 lg:grid-cols-12"
           >
-            <div class="col-span-11 lg:col-span-5">
+            <div className="col-span-11 lg:col-span-5">
               <label
                 htmlFor="first-name"
                 className="block text-sm font-medium text-gray-700"
@@ -116,7 +116,7 @@ export default function ContractForm({ showPatterns }): ContractFormProps {
                 />
               </div>
             </div>
-            <div class="col-span-11 lg:col-span-6">
+            <div className="col-span-11 lg:col-span-6">
               <label
                 htmlFor="last-name"
                 className="block text-sm font-medium text-gray-700"
