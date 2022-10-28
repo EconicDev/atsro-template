@@ -4,10 +4,9 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline/index.js";
 
 type NavProps = {
   location: string;
-  open: boolean;
 };
 
-const Nav = ({ location, open }: NavProps) => {
+const Nav = ({ location }: NavProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const navSelectedStyle =
     "rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white";
