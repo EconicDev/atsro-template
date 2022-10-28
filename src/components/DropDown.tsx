@@ -1,18 +1,31 @@
-import { Fragment } from 'react'
+import React, { Fragment, useId } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function DropDown({title, }) {
+interface DropDownProps {
+    title: string | JSX.Element;
+    selected: string;
+    options: string[];
+    change: (any) => any;
+}
+
+const DropDown: React.FC<DropDownProps> = (props) => {
+    const {
+        title,
+        selected,
+        options,
+        change,
+    } = props;
     return (
         <Menu as="div" className="relative inline-block text-left">
             <div>
                 <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
                     {title}
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="-mr-1 ml-2 h-5 w-5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" className="-mr-1 ml-2 h-5 w-5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                     </svg>
 
                 </Menu.Button>
@@ -27,65 +40,26 @@ export default function DropDown({title, }) {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
             >
-                <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <Menu.Items className="absolute right-0 z-10 mt-2 w-26 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div className="py-1">
-                        <Menu.Item>
-                            {({ active }) => (
-                                <a
-                                    href="#"
+                        {
+                            options.map((option: string) => (
+                                <Menu.Item
+                                    as="button"
+                                    key={useId()}
+                                    onClick={() => change(option)}
                                     className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                        'block px-4 py-2 text-sm'
-                                    )}
-                                >
-                                    Account settings
-                                </a>
-                            )}
-                        </Menu.Item>
-                        <Menu.Item>
-                            {({ active }) => (
-                                <a
-                                    href="#"
-                                    className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                        'block px-4 py-2 text-sm'
-                                    )}
-                                >
-                                    Support
-                                </a>
-                            )}
-                        </Menu.Item>
-                        <Menu.Item>
-                            {({ active }) => (
-                                <a
-                                    href="#"
-                                    className={classNames(
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                        'block px-4 py-2 text-sm'
-                                    )}
-                                >
-                                    License
-                                </a>
-                            )}
-                        </Menu.Item>
-                        <form method="POST" action="#">
-                            <Menu.Item>
-                                {({ active }) => (
-                                    <button
-                                        type="submit"
-                                        className={classNames(
-                                            active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                            'block w-full px-4 py-2 text-left text-sm'
-                                        )}
-                                    >
-                                        Sign out
-                                    </button>
-                                )}
-                            </Menu.Item>
-                        </form>
+                                        option === selected ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                        'block px-10 py-4 text-sm'
+                                    )}>
+                                    {option}
+                                </Menu.Item>
+                            ))
+                        }
                     </div>
                 </Menu.Items>
             </Transition>
         </Menu>
     )
 }
+export default DropDown;

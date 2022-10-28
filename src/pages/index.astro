@@ -1,5 +1,6 @@
 ---
-// Component Imports
+import i18next, { t, changeLanguage, setDefaultNamespace } from "i18next";
+import { LanguageSelector, HeadHrefLangs } from "astro-i18next/components";
 import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.jsx";
 import Footer from "../components/Footer.astro";
@@ -10,11 +11,10 @@ import type { Project } from "../types";
 const projects = await Astro.glob<Project>("./project/**/*.md");
 const featuredProject = projects[0]!;
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+changeLanguage("es");
 ---
 
-<html lang="en">
+<html lang={i18next.language}>
 	<head>
 		<MainHead
 			title="Encarnación Service SRL"
