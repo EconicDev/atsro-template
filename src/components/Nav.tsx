@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline/index.js";
+import DropDown from './DropDown.jsx';
 
 type NavProps = {
   location: string;
@@ -77,7 +78,7 @@ const Nav = ({ location }: NavProps) => {
                 </div>
               </div>
             </div>
-
+            <DropDown />
             <div className="-mr-2 flex sm:hidden">
               {/* Mobile menu button */}
               <Disclosure.Button
