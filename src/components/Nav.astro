@@ -1,186 +1,188 @@
 ---
 interface Props {
-  location: string;
+	location: string;
 }
 const { location } = await Astro.props;
 
 const navSelectedStyle =
-  "rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white";
+	"rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white";
 const navMobileSelectedStyle =
-  "block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white";
+	"block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white";
 const navDefaultStyle =
-  "rounded-md px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-700 hover:text-white";
+	"rounded-md px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-700 hover:text-white";
 const navMobileDefaultStyle =
-  "block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white";
+	"block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white";
 ---
 
 <script is:inline>
-  const toggleMenu = (function () {
-    let isOpen = false;
-    console.log("hello");
-    return () => {
-      console.log("omg");
-      if (isOpen) {
-        window.document
-          .getElementById("mobile-menu")
-          .classList.add("invisible");
-      } else {
-        window.document
-          .getElementById("mobile-menu")
-          .classList.remove("menu-open");
-      }
-    };
-  })();
+	const toggleMenu = (function () {
+		let isOpen = false;
+		console.log("hello");
+		return () => {
+			console.log("omg");
+			if (isOpen) {
+				window.document
+					.getElementById("mobile-menu")
+					.classList.add("invisible");
+			} else {
+				window.document
+					.getElementById("mobile-menu")
+					.classList.remove("menu-open");
+			}
+		};
+	})();
 </script>
 <nav class="bg-white-900">
-  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-    <div class="relative flex h-16 items-center justify-between">
-      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-        <!-- Mobile menu button-->
-        <button
-          type="button"
-          onclick="toggleMenu()"
-          class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-          aria-controls="mobile-menu"
-          aria-expanded="false"
-        >
-          <span class="sr-only">Open main menu</span>
-          <!--
+	<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+		<div class="relative flex h-16 items-center justify-between">
+			<div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+				<!-- Mobile menu button-->
+				<button
+					type="button"
+					onclick="toggleMenu()"
+					class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+					aria-controls="mobile-menu"
+					aria-expanded="false"
+				>
+					<span class="sr-only">Open main menu</span>
+					<!--
 			  Icon when menu is closed.
   
 			  Heroicon name: outline/bars-3
   
 			  Menu open: "hidden", Menu closed: "block"
 			-->
-          <svg
-            class="block h-6 w-6"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-          </svg>
-          <!--
+					<svg
+						class="block h-6 w-6"
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						aria-hidden="true"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+						></path>
+					</svg>
+					<!--
 			  Icon when menu is open.
   
 			  Heroicon name: outline/x-mark
   
 			  Menu open: "block", Menu closed: "hidden"
 			-->
-          <svg
-            class="hidden h-6 w-6"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-      </div>
-      <div
-        class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
-      >
-        <div class="flex flex-shrink-0 items-center">
-          <img
-            class="block h-8 w-auto lg:hidden"
-            src="/assets/encarnacion-services-logo.png"
-            alt="Encarnación Service SRL"
-          />
-          <img
-            class="hidden h-8 w-auto lg:block"
-            src="/assets/encarnacion-services-logo.png"
-            alt="Encarnación Service SRL"
-          />
-        </div>
-        <div class="hidden sm:ml-6 sm:block">
-          <div class="flex space-x-4">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a
-              href="/"
-              class={location === "landing"
-                ? navSelectedStyle
-                : navDefaultStyle}
-              aria-current="page">Landing</a
-            >
+					<svg
+						class="hidden h-6 w-6"
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						aria-hidden="true"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M6 18L18 6M6 6l12 12"></path>
+					</svg>
+				</button>
+			</div>
+			<div
+				class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+			>
+				<div class="flex flex-shrink-0 items-center">
+					<img
+						class="block h-8 w-auto lg:hidden"
+						src="/assets/encarnacion-services-logo.png"
+						alt="Encarnación Service SRL"
+					/>
+					<img
+						class="hidden h-8 w-auto lg:block"
+						src="/assets/encarnacion-services-logo.png"
+						alt="Encarnación Service SRL"
+					/>
+				</div>
+				<div class="hidden sm:ml-6 sm:block">
+					<div class="flex space-x-4">
+						<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+						<a
+							href="/"
+							class={location === "home"
+								? navSelectedStyle
+								: navDefaultStyle}
+							aria-current="page">Home</a
+						>
 
-            <a
-              href="/projects/"
-              class={location === "projects"
-                ? navSelectedStyle
-                : navDefaultStyle}>Portfolio</a
-            >
+						<a
+							href="/projects/"
+							class={location === "projects"
+								? navSelectedStyle
+								: navDefaultStyle}>Portfolio</a
+						>
 
-            <a
-              href="/about/"
-              class={location === "about" ? navSelectedStyle : navDefaultStyle}
-              >Quiénes Somos</a
-            >
+						<a
+							href="/about/"
+							class={location === "about"
+								? navSelectedStyle
+								: navDefaultStyle}>Quiénes Somos</a
+						>
 
-            <a
-              href="/philosophy/"
-              class={location === "philosophy"
-                ? navSelectedStyle
-                : navDefaultStyle}>Filosofía Corporativa</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+						<a
+							href="/philosophy/"
+							class={location === "philosophy"
+								? navSelectedStyle
+								: navDefaultStyle}>Filosofía Corporativa</a
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-  <!-- Mobile menu, show/hide based on menu state. -->
+	<!-- Mobile menu, show/hide based on menu state. -->
 
-  <div class="sm:hidden" id="mobile-menu">
-    <div class="space-y-1 px-2 pt-2 pb-3">
-      <a
-        href="/"
-        class={location === "landing"
-          ? navMobileSelectedStyle
-          : navMobileDefaultStyle}
-      >
-        Dashboard
-      </a>
+	<div class="sm:hidden" id="mobile-menu">
+		<div class="space-y-1 px-2 pt-2 pb-3">
+			<a
+				href="/"
+				class={location === "home"
+					? navMobileSelectedStyle
+					: navMobileDefaultStyle}
+			>
+				Dashboard
+			</a>
 
-      <a
-        href="/projects/"
-        class={location === "projects"
-          ? navMobileSelectedStyle
-          : navMobileDefaultStyle}
-      >
-        Team
-      </a>
+			<a
+				href="/projects/"
+				class={location === "projects"
+					? navMobileSelectedStyle
+					: navMobileDefaultStyle}
+			>
+				Team
+			</a>
 
-      <a
-        href="/about/"
-        class={location === "about"
-          ? navMobileSelectedStyle
-          : navMobileDefaultStyle}
-      >
-        Projects
-      </a>
+			<a
+				href="/about/"
+				class={location === "about"
+					? navMobileSelectedStyle
+					: navMobileDefaultStyle}
+			>
+				Projects
+			</a>
 
-      <a
-        href="/philosophy/"
-        class={location === "philosophy"
-          ? navMobileSelectedStyle
-          : navMobileDefaultStyle}
-      >
-        Calendar
-      </a>
-    </div>
-  </div>
+			<a
+				href="/philosophy/"
+				class={location === "philosophy"
+					? navMobileSelectedStyle
+					: navMobileDefaultStyle}
+			>
+				Calendar
+			</a>
+		</div>
+	</div>
 </nav>
 
 <!-- 

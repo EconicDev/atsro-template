@@ -39,12 +39,12 @@ const Nav = ({ location }: NavProps) => {
                   <a
                     href="/"
                     className={
-                      location === "landing"
+                      location === "home"
                         ? navSelectedStyle
                         : navDefaultStyle
                     }
                   >
-                    Landing
+                    Home
                   </a>
                   <a
                     href="/about/"
@@ -101,12 +101,12 @@ const Nav = ({ location }: NavProps) => {
               as="a"
               href="/"
               className={
-                location === "landing"
+                location === "home"
                   ? navMobileSelectedStyle
                   : navMobileDefaultStyle
               }
             >
-              Landing
+              Home
             </Disclosure.Button>
             <Disclosure.Button
               as="a"
