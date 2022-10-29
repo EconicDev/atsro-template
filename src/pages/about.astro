@@ -1,16 +1,22 @@
 ---
+import i18next, { t, changeLanguage, setDefaultNamespace } from "i18next";
+import { HeadHrefLangs } from "astro-i18next/components";
 import MainHead from "../components/MainHead.astro";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.jsx";
 import { Header2, MissionParagraph } from "../components/Stateless";
+import LanguageSelectorWrapper from "../components/LanguageSelectorWrapper.astro";
+changeLanguage("es");
+setDefaultNamespace("about");
 ---
 
-<html lang="en">
+<html lang={i18next.language}>
     <head>
         <MainHead
             title="About | Encarnación Service SRL"
             description="About Encarnación Service SRL"
         />
+        <HeadHrefLangs />
         <style>
             .heroImg {
                 max-height: 24rem;
@@ -36,7 +42,7 @@ import { Header2, MissionParagraph } from "../components/Stateless";
         </style>
     </head>
     <body>
-        <Nav location="about" client:load />
+        <Nav location="about" client:load><LanguageSelectorWrapper /></Nav>
         <main class="wrapper">
             <h1>Quiénes Somos</h1>
             <div class="heroImg">
