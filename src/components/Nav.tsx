@@ -1,12 +1,15 @@
 import { useState } from "react";
-import i18next, { t, setDefaultNamespace } from "i18next";
+import i18next, { t, changeLanguage, setDefaultNamespace } from "i18next";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline/index.js";
 import type { NavProps } from '../types';
 
+changeLanguage(i18next.language);
+
 const Nav = ({ location, children }: NavProps) => {
   const [isOpen, setIsOpen] = useState(false);
   setDefaultNamespace("common")
+  
   const navSelectedStyle =
     "rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white";
   const navMobileSelectedStyle =
@@ -16,6 +19,13 @@ const Nav = ({ location, children }: NavProps) => {
   const navMobileDefaultStyle =
     "block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white";
   const languagePrefix = i18next.language === 'es' ? '' : "/" + i18next.language;
+
+  const translations = {
+    home: t("nav.home"),
+    about: t("nav.about-us"),
+    services: t("nav.services"),
+    contact: t("nav.contact")
+  }
   return (
     <Disclosure as="nav" className="bg-white-900">
       <>
@@ -44,7 +54,7 @@ const Nav = ({ location, children }: NavProps) => {
                         : navDefaultStyle
                     }
                   >
-                    Home
+                    {translations.home}
                   </a>
                   <a
                     href={languagePrefix + "/about/"}
@@ -52,7 +62,7 @@ const Nav = ({ location, children }: NavProps) => {
                       location === "about" ? navSelectedStyle : navDefaultStyle
                     }
                   >
-                    Quiénes Somos
+                    {translations.about}
                   </a>
                   <a
                     href={languagePrefix + "/services/"}
@@ -62,7 +72,7 @@ const Nav = ({ location, children }: NavProps) => {
                         : navDefaultStyle
                     }
                   >
-                    Servicios
+                    {translations.services}
                   </a>
                   <a
                     href={languagePrefix + "/contact/"}
@@ -72,7 +82,7 @@ const Nav = ({ location, children }: NavProps) => {
                         : navDefaultStyle
                     }
                   >
-                    Contacto
+                    {translations.contact}
                   </a>
                 </div>
               </div>
