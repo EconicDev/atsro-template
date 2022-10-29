@@ -4,23 +4,20 @@ import ServiceListItem from "./ServiceListItem.astro";
 
 const services = [
     {
-        description:
-            "Miembros de la Asociación Dominicana de Agentes de Aduanas, la Asociación Internacional de operadores económicos autorizados, aduaneros y logísticos; y de la Dirección General de Aduanas.",
+        description: "services.one",
         icon: "/assets/shake-hands.svg",
     },
     {
-        description:
-            "Una de las primeras agencias aduanales dominicanas en certificarse como Operador Económico Autorizado.",
+        description: "services.two",
         icon: "/assets/quality.svg",
     },
     {
-        description:
-            "Contamos con licencia para operar en todos los puertos del país.",
+        description: "services.three",
         icon: "/assets/dominican_republic_filled.svg",
     },
 ];
 ///assets/trophy.svg
-setDefaultNamespace("common");
+setDefaultNamespace("home");
 changeLanguage(i18next.language);
 ---
 
@@ -39,7 +36,14 @@ changeLanguage(i18next.language);
                 />
             </div>
             <dl class="flex flex-col justify-end mt-10 space-y-10">
-                {services.map((service) => <ServiceListItem {...service} />)}
+                {
+                    services.map((service) => (
+                        <ServiceListItem
+                            {...service}
+                            description={t(service.description)}
+                        />
+                    ))
+                }
             </dl>
         </div>
     </div>

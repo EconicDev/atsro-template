@@ -4,19 +4,19 @@ import FeatureCard from "./FeatureCard.astro";
 
 const features = [
     {
-        title: "Asesoría",
+        title: "cta.features.one",
         icon: "/assets/check.svg",
     },
     {
-        title: "Gestiones",
+        title: "cta.features.two",
         icon: "/assets/check.svg",
     },
     {
-        title: "Trámites",
+        title: "cta.features.three",
         icon: "/assets/check.svg",
     },
 ];
-setDefaultNamespace("common");
+setDefaultNamespace("home");
 changeLanguage(i18next.language);
 ---
 
@@ -31,12 +31,16 @@ changeLanguage(i18next.language);
             class="text-3xl text-white font-semibold tracking-tight sm:text-4xl lg:px-32 lg:mx-32"
         >
             <!-- text-gray-900 -->
-            Ofrecemos un servicio eficiente en del marco del comercio seguro
+            {t("cta.title")}
         </p>
 
         <div class="mt-16 mb-20">
             <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3">
-                {features.map((feature) => <FeatureCard {...feature} />)}
+                {
+                    features.map((feature) => (
+                        <FeatureCard {...feature} title={t(feature.title)} />
+                    ))
+                }
             </div>
         </div>
         <!-- <p class="mx-auto max-w-prose text-2xl text-white"> -->
@@ -44,7 +48,7 @@ changeLanguage(i18next.language);
             class="inline-flex mt-8 items-center rounded shadow-lg text-white text-3xl font-medium"
         >
             <!-- class="inline-flex items-center rounded border shadow-lg border-fulvous-300 bg-fulvous-300 px-2.5 py-1.5 text-2xl font-medium text-white hover:bg-fulvous-900 focus:outline-dodger-blue-900 focus:ring-fulvous-900 focus:ring-2 focus:ring-offset-2" -->
-            Conoce nuestros servicios y asesorías
+            {t("cta.footer")}
         </span>
         <div class="mt-10">
             <a
@@ -52,7 +56,7 @@ changeLanguage(i18next.language);
                 class="bg-fulvous-300 px-8 py-2 rounded text-white text-lg font-medium hover:bg-fulvous-700 focus:outline-dodger-blue-900 focus:ring-fulvous-700 focus:ring-2 focus:ring-offset-2"
                 href="/services/"
             >
-                Ver Mas</a
+                {t("cta.link")}</a
             >
         </div>
     </div>

@@ -1,6 +1,24 @@
 {
     "banner": {
-        "subtitle": "More than 37 years accompanying our clients in customs procedures."
+        "title": "More than 37 years accompanying our clients in customs procedures.",
+        "experience": "Years of experience",
+        "procedures": "Procedures",
+        "customers": "Customers"
+    },
+    "cta": {
+        "title": "We offer an efficient service within the framework of secure trade",
+        "features": {
+            "one": "Advisory",
+            "two": "Procedures",
+            "three": "Formalities"
+        },
+        "footer": "Learn about our services and advice",
+        "link": "See More"
+    },
+    "services": {
+        "one": "Members of the Dominican Association of Customs Agents, the International Association of authorized economic, customs and logistics operators; and the General Directorate of Customs.",
+        "two": "One of the first Dominican customs agencies to be certified as an Authorized Economic Operator.",
+        "three": "We have a license to operate in all ports of the country."
     },
     "trusted-slogan": "Trusted by the best companies"
 }
