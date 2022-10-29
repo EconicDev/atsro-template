@@ -1,12 +1,12 @@
 ---
 import { changeLanguage } from "i18next";
-import MainHead from "../components/MainHead.astro";
-import Footer from "../components/Footer.astro";
-import Nav from "../components/Nav.jsx";
-import PortfolioPreview from "../components/PortfolioPreview.astro";
-import type { Project } from "../types";
+import MainHead from "../../components/MainHead.astro";
+import Footer from "../../components/Footer.astro";
+import Nav from "../../components/Nav.jsx";
+import PortfolioPreview from "../../components/PortfolioPreview.astro";
+import type { Project } from "../../types";
 
-changeLanguage("es");
+changeLanguage("en");
 
 const projects = (await Astro.glob<Project>("./project/**/*.md"))
     .filter(({ frontmatter }) => !!frontmatter.publishDate)
