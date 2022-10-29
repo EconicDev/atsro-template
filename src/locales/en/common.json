@@ -1,9 +1,9 @@
 {
-    "features": {
-        "slogan": "Move Faster"
-    },
     "nav": {
-        "home": "Home",
-        "about-us": "About Us"
+        "home": "Inicio",
+        "about-us": "About Us",
+        "services": "Services",
+        "contact": "Contact",
+        "press": "Press"
     }
 }

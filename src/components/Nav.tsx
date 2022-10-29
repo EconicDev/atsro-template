@@ -24,7 +24,8 @@ const Nav = ({ location, children }: NavProps) => {
     home: t("nav.home"),
     about: t("nav.about-us"),
     services: t("nav.services"),
-    contact: t("nav.contact")
+    contact: t("nav.contact"),
+    press: t("nav.press")
   }
   return (
     <Disclosure as="nav" className="bg-white-900">
