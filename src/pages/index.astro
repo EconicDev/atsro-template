@@ -12,6 +12,7 @@ const projects = await Astro.glob<Project>("./project/**/*.md");
 const featuredProject = projects[0]!;
 
 changeLanguage("es");
+setDefaultNamespace("home");
 ---
 
 <html lang={i18next.language}>
@@ -20,9 +21,12 @@ changeLanguage("es");
 			title="Encarnación Service SRL"
 			description="Encarnación Service SRL Santo Domingo, República Dominicana"
 		/>
+		<HeadHrefLangs />
 	</head>
 	<body>
-		<Nav location="home" client:idle />
+		<Nav location="home" client:idle>
+			<LanguageSelector class="rounded-lg" />
+		</Nav>
 		<div class="bg-white">
 			<main>
 				<div class="relative">
