@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { t, setDefaultNamespace } from "i18next";
+import i18next, { t, setDefaultNamespace } from "i18next";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline/index.js";
 import type { NavProps } from '../types';
@@ -15,6 +15,7 @@ const Nav = ({ location, children }: NavProps) => {
     "rounded-md px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-700 hover:text-white";
   const navMobileDefaultStyle =
     "block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white";
+  const languagePrefix = i18next.language === 'es' ? '' : "/" + i18next.language;
   return (
     <Disclosure as="nav" className="bg-white-900">
       <>
@@ -36,7 +37,7 @@ const Nav = ({ location, children }: NavProps) => {
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   <a
-                    href="/"
+                    href={languagePrefix + "/"}
                     className={
                       location === "home"
                         ? navSelectedStyle
@@ -46,7 +47,7 @@ const Nav = ({ location, children }: NavProps) => {
                     Home
                   </a>
                   <a
-                    href="/about/"
+                    href={languagePrefix + "/about/"}
                     className={
                       location === "about" ? navSelectedStyle : navDefaultStyle
                     }
@@ -54,7 +55,7 @@ const Nav = ({ location, children }: NavProps) => {
                     Quiénes Somos
                   </a>
                   <a
-                    href="/services/"
+                    href={languagePrefix + "/services/"}
                     className={
                       location === "services"
                         ? navSelectedStyle
@@ -64,7 +65,7 @@ const Nav = ({ location, children }: NavProps) => {
                     Servicios
                   </a>
                   <a
-                    href="/contact/"
+                    href={languagePrefix + "/contact/"}
                     className={
                       location === "contact"
                         ? navSelectedStyle
@@ -98,7 +99,7 @@ const Nav = ({ location, children }: NavProps) => {
           <div className="space-y-1 px-2 pt-2 pb-3">
             <Disclosure.Button
               as="a"
-              href="/"
+              href={languagePrefix + "/"}
               className={
                 location === "home"
                   ? navMobileSelectedStyle
@@ -109,7 +110,7 @@ const Nav = ({ location, children }: NavProps) => {
             </Disclosure.Button>
             <Disclosure.Button
               as="a"
-              href="/about/"
+              href={languagePrefix + "/about/"}
               className={
                 location === "about"
                   ? navMobileSelectedStyle
@@ -120,7 +121,7 @@ const Nav = ({ location, children }: NavProps) => {
             </Disclosure.Button>
             <Disclosure.Button
               as="a"
-              href="/services/"
+              href={languagePrefix + "/services/"}
               className={
                 location === "services"
                   ? navMobileSelectedStyle
@@ -131,7 +132,7 @@ const Nav = ({ location, children }: NavProps) => {
             </Disclosure.Button>
             <Disclosure.Button
               as="a"
-              href="/contact/"
+              href={languagePrefix + "/contact/"}
               className={
                 location === "contact"
                   ? navMobileSelectedStyle
