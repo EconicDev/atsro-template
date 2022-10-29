@@ -2,11 +2,7 @@ import { useState } from "react";
 import { t, setDefaultNamespace } from "i18next";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline/index.js";
-
-type NavProps = {
-  location: string
-  children: JSX.Element;
-};
+import type { NavProps } from '../types';
 
 const Nav = ({ location, children }: NavProps) => {
   const [isOpen, setIsOpen] = useState(false);
