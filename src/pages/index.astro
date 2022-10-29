@@ -5,11 +5,10 @@ import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.jsx";
 import Footer from "../components/Footer.astro";
 import Features from "../components/Features.astro";
-import type { Project } from "../types";
 
 // Data Fetching: List all Markdown posts in the repo.
-const projects = await Astro.glob<Project>("./project/**/*.md");
-const featuredProject = projects[0]!;
+// const projects = await Astro.glob<Project>("./project/**/*.md");
+// const featuredProject = projects[0]!;
 
 changeLanguage("es");
 setDefaultNamespace("home");

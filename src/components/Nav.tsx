@@ -2,10 +2,10 @@ import { useState } from "react";
 import { t, setDefaultNamespace } from "i18next";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline/index.js";
-import DropDown from './DropDown.jsx';
 
 type NavProps = {
-  location: string;
+  location: string
+  children: JSX.Element;
 };
 
 const Nav = ({ location, children }: NavProps) => {
