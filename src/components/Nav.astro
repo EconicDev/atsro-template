@@ -14,23 +14,23 @@ const navMobileDefaultStyle =
 	"block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white";
 ---
 
-<script is:inline>
-	const toggleMenu = (function () {
-		let isOpen = false;
-		console.log("hello");
-		return () => {
-			console.log("omg");
-			if (isOpen) {
-				window.document
-					.getElementById("mobile-menu")
-					.classList.add("invisible");
-			} else {
-				window.document
-					.getElementById("mobile-menu")
-					.classList.remove("menu-open");
-			}
-		};
-	})();
+<script>
+	let isOpen = false;
+	function handleClick() {
+		console.log("handleClick");
+		if (isOpen) {
+			window.document
+				.getElementById("mobile-menu")
+				.classList.add("invisible");
+		} else {
+			window.document
+				.getElementById("mobile-menu")
+				.classList.remove("invisible");
+		}
+	}
+	document
+		.getElementById("menu-button")
+		.addEventListener("click", handleClick);
 </script>
 <nav class="bg-white-900">
 	<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -38,8 +38,8 @@ const navMobileDefaultStyle =
 			<div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
 				<!-- Mobile menu button-->
 				<button
+					id="menu-button"
 					type="button"
-					onclick="toggleMenu()"
 					class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
 					aria-controls="mobile-menu"
 					aria-expanded="false"
