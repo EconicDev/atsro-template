@@ -1,0 +1,23 @@
+---
+const { title, description, icon, href, linkText } = Astro.props;
+---
+
+<div class="relative">
+    <dt>
+        <div
+            class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white"
+        >
+            <img class="h-6 w-6 text-white" src={icon} />
+        </div>
+        {
+            title && (
+                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">
+                    {title}
+                </p>
+            )
+        }
+    </dt>
+    <dd class="mt-2 ml-16 text-base text-gray-500">
+        {description}
+    </dd>
+</div>

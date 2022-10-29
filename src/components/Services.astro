@@ -4,19 +4,19 @@ import ServiceCards from "./ServiceCards.astro";
 
 const features = [
     {
-        title: "Confianza",
+        // title: "Confianza",
         description:
             "Miembros de la Asociación Dominicana de Agentes de Aduanas y la Dirección General de Aduanas.",
         icon: "/assets/shield_check.svg",
     },
     {
-        title: "Experimentado",
+        // title: "Experimentado",
         description:
             "Una de las primeras agencias aduanales dominicanas en certificarse como Operador Económico Autorizado.",
-        icon: "/assets/globe_americas.svg",
+        icon: "/assets/dominican_republic_filled.svg",
     },
     {
-        title: "Calificado",
+        // title: "Calificado",
         description:
             "Contamos con licencia para operar en todos los puertos del país.",
         icon: "/assets/trophy.svg",
@@ -30,15 +30,14 @@ changeLanguage(i18next.language);
     <div
         class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8"
     >
-        <p
+        <!-- <p
             class="mt-2 text-3xl text-dodger-blue-600 font-semibold tracking-tight sm:text-4xl lg:px-32 lg:mx-32"
         >
-            <!-- text-gray-900 -->
             Ofrecemos un servicio eficiente en del marco del comercio seguro
-        </p>
-        <p class="mx-auto mt-5 max-w-prose text-xl text-gray-500">
+        </p> -->
+        <!-- <p class="mx-auto mt-5 max-w-prose text-xl text-gray-500">
             Conoce nuestros servicios y asesorías
-        </p>
+        </p> -->
         <div class="mt-12">
             <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {features.map((feature) => <ServiceCards {...feature} />)}
