@@ -1,21 +1,26 @@
 ---
-import { changeLanguage } from "i18next";
+import i18next, { t, changeLanguage, setDefaultNamespace } from "i18next";
+import { HeadHrefLangs } from "astro-i18next/components";
 import MainHead from "../../components/MainHead.astro";
 import DesicriptionTerm from "../../components/DesicriptionTerm.astro";
 import ContactForm from "../../components/ContactForm.jsx";
 import Footer from "../../components/Footer.astro";
 import Nav from "../../components/Nav.jsx";
 import { ArticleTitle, SectionTitle } from "../../components/Stateless";
+import LanguageSelectorWrapper from "../../components/LanguageSelectorWrapper.astro";
 
 changeLanguage("en");
+
+setDefaultNamespace("services");
 ---
 
-<html lang="en">
+<html lang={i18next.language}>
   <head>
     <MainHead
       title="Services | Encarnación Service SRL"
       description="Los diferentes servicios de sistemas disponibles por Encarnación Service SRL"
     />
+    <HeadHrefLangs />
     <style>
       .wrapper.bio {
         /* max-width: 50em; */
@@ -25,7 +30,7 @@ changeLanguage("en");
   <body
     class="bg-world-pattern bg-fixed bg-center-left-20 sm:bg-world-pattern sm:bg-fixed sm:bg-repeat-x"
   >
-    <Nav location="services" client:idle />
+    <Nav location="services" client:idle><LanguageSelectorWrapper /></Nav>
     <main class="wrapper">
       <div class="overflow-hidden py-16 lg:py-24">
         <div

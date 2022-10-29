@@ -3,13 +3,13 @@ export default {
     defaultLanguage: "es",
     supportedLanguages: ["es", "en"],
     i18next: {
-        debug: false,
+        debug: true,
         initImmediate: false,
         ns: ["common", "home", "about", "services", "contact", "press"],
         defaultNS: "common",
         backend: {
             loadPath: "./src/locales/{{lng}}/{{ns}}.json",
         },
-        i18nextPlugins: { fsBackend: "i18next-fs-backend" },
     },
+    i18nextPlugins: { fsBackend: "i18next-fs-backend" },
 };
