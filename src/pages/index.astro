@@ -27,7 +27,7 @@ setDefaultNamespace("home");
 		<div class="bg-white">
 			<main>
 				<div class="relative">
-					<div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100">
+					<div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-50">
 					</div>
 					<div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
 						<div
@@ -36,13 +36,13 @@ setDefaultNamespace("home");
 							<div class="absolute inset-0">
 								<img
 									class="h-full w-full object-cover"
-									src="https://images.unsplash.com/photo-1606185540834-d6e7483ee1a4??ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
+									src="https://images.unsplash.com/photo-1606185540834-d6e7483ee1a4??ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80"
 									alt="People working on laptops"
 								/>
-								<div
+								<!-- <div
 									class="absolute inset-0 bg-gradient-to-r from-dodger-blue-200 to-fulvous-100 mix-blend-multiply"
 								>
-								</div>
+								</div> -->
 							</div>
 							<div
 								class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8"
@@ -57,13 +57,13 @@ setDefaultNamespace("home");
 								<p
 									class="mx-auto mt-6 max-w-lg text-center text-xl text-white sm:max-w-3xl"
 								>
-									{t("banner.subtitle")}
 								</p>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="bg-gray-100">
+
+				<!-- <div class="bg-gray-100">
 					<div class="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
 						<p
 							class="text-center text-base font-semibold text-gray-500"
@@ -120,9 +120,81 @@ setDefaultNamespace("home");
 							</div>
 						</div>
 					</div>
+				</div> -->
+
+				<div class="bg-gray-50 pt-12 sm:pt-16">
+					<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+						<div class="mx-auto max-w-4xl text-center">
+							<h2
+								class="text-2xl sm:text-3xl font-semibold tracking-tight text-dodger-blue-600 lg:text-4xl"
+							>
+								{t("banner.subtitle")}
+							</h2>
+						</div>
+					</div>
+					<div class="mt-10 bg-white pb-12 sm:pb-16">
+						<div class="relative">
+							<div class="absolute inset-0 h-1/2 bg-gray-50">
+							</div>
+							<div
+								class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+							>
+								<div class="mx-auto max-w-4xl">
+									<dl
+										class="rounded-lg bg-white shadow-lg sm:grid sm:grid-cols-3"
+									>
+										<div
+											class="flex flex-col border-b border-gray-100 p-6 text-center sm:border-0 sm:border-r"
+										>
+											<dt
+												class="order-2 mt-2 text-lg font-medium leading-6 text-gray-500"
+											>
+												Años de experiencia
+											</dt>
+											<dd
+												class="order-1 text-5xl font-bold tracking-tight text-fulvous-100"
+											>
+												+37
+											</dd>
+										</div>
+										<div
+											class="flex flex-col border-t border-b border-gray-100 p-6 text-center sm:border-0 sm:border-l sm:border-r"
+										>
+											<dt
+												class="order-2 mt-2 text-lg font-medium leading-6 text-gray-500"
+											>
+												Gestiones
+											</dt>
+											<dd
+												class="order-1 text-5xl font-bold tracking-tight text-fulvous-100"
+											>
+												+450
+											</dd>
+										</div>
+										<div
+											class="flex flex-col border-t border-gray-100 p-6 text-center sm:border-0 sm:border-l"
+										>
+											<dt
+												class="order-2 mt-2 text-lg font-medium leading-6 text-gray-500"
+											>
+												Clientes
+											</dt>
+											<dd
+												class="order-1 text-5xl font-bold tracking-tight text-fulvous-100"
+											>
+												+350
+											</dd>
+										</div>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
+
 				<Features />
-				<div class="relative bg-dodger-blue-500">
+
+				<!-- <div class="relative bg-dodger-blue-500">
 					<div
 						class="absolute inset-x-0 bottom-0 h-80 xl:top-0 xl:h-full"
 					>
@@ -141,6 +213,7 @@ setDefaultNamespace("home");
 							</div>
 						</div>
 					</div>
+
 					<div
 						class="mx-auto max-w-4xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 xl:grid xl:grid-flow-col-dense xl:grid-cols-2 xl:gap-x-8"
 					>
@@ -224,7 +297,7 @@ setDefaultNamespace("home");
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</main>
 		</div>
 		<Footer />

@@ -54,10 +54,18 @@
   --t-active: var(--c-blue);
 }
 
+@font-face {
+  font-family: "Nunito";
+  src: url("/fonts/Nunito.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   margin: 0;
   color: var(--t-fg);
-  font-family: "Inter", "system-ui", sans-serif;
+  font-family: "Nunito", "Inter", "system-ui", sans-serif;
 }
 
 * {
