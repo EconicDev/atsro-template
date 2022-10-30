@@ -1,4 +1,11 @@
 {
+    "nav": {
+        "home": "Home",
+        "about-us": "About Us",
+        "services": "Services",
+        "contact": "Contact",
+        "press": "Press"
+    },
     "banner": {
         "title": "More than 37 years accompanying our clients in customs procedures.",
         "experience": "Years of experience",

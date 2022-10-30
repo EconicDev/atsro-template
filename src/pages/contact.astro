@@ -11,6 +11,14 @@ import LanguageSelectorWrapper from "../components/LanguageSelectorWrapper.astro
 changeLanguage("es");
 
 setDefaultNamespace("contact");
+setDefaultNamespace("home");
+const navTranslations = {
+    home: t("nav.home"),
+    about: t("nav.about-us"),
+    services: t("nav.services"),
+    contact: t("nav.contact"),
+    press: t("nav.press"),
+};
 ---
 
 <html lang={i18next.language}>
@@ -27,7 +35,13 @@ setDefaultNamespace("contact");
         </style>
     </head>
     <body class="bg-world-pattern bg-fixed">
-        <Nav location="contact" client:idle><LanguageSelectorWrapper /></Nav>
+        <Nav
+            location="contact"
+            translations={navTranslations}
+            language={i18next.language}
+            client:idle
+            ><LanguageSelectorWrapper />
+        </Nav>
         <main>
             <div class="grid grid-cols-12">
                 <div class="col-span-12 lg:col-span-6 lg:py-8">

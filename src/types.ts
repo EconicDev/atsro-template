@@ -10,4 +10,12 @@ export interface Project {
 export type NavProps = {
   location: string
   children: JSX.Element;
+  translations: {
+    home: string;
+    about: string;
+    services: string;
+    contact: string;
+    press: string;
+  },
+  language: string;
 };

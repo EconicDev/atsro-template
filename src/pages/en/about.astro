@@ -10,6 +10,13 @@ import LanguageSelectorWrapper from "../../components/LanguageSelectorWrapper.as
 changeLanguage("en");
 
 setDefaultNamespace("about");
+const navTranslations = {
+    home: t("nav.home"),
+    about: t("nav.about-us"),
+    services: t("nav.services"),
+    contact: t("nav.contact"),
+    press: t("nav.press"),
+};
 ---
 
 <html lang={i18next.language}>
@@ -44,7 +51,13 @@ setDefaultNamespace("about");
         </style>
     </head>
     <body>
-        <Nav location="about" client:load><LanguageSelectorWrapper /></Nav>
+        <Nav
+            location="about"
+            translations={navTranslations}
+            language={i18next.language}
+            client:load
+            ><LanguageSelectorWrapper />
+        </Nav>
         <main class="wrapper">
             <h1>Quiénes Somos</h1>
             <div class="heroImg">

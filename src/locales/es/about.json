@@ -1,1 +1,9 @@
-{}
+{
+    "nav": {
+        "home": "Inicio",
+        "about-us": "Nosotros",
+        "services": "Servicios",
+        "contact": "Contacto",
+        "press": "Prensa"
+    }
+}

@@ -11,6 +11,13 @@ import LanguageSelectorWrapper from "../../components/LanguageSelectorWrapper.as
 changeLanguage("en");
 
 setDefaultNamespace("home");
+const navTranslations = {
+    home: t("nav.home"),
+    about: t("nav.about-us"),
+    services: t("nav.services"),
+    contact: t("nav.contact"),
+    press: t("nav.press"),
+};
 ---
 
 <html lang={i18next.language}>
@@ -22,7 +29,12 @@ setDefaultNamespace("home");
 		<HeadHrefLangs />
 	</head>
 	<body>
-		<Nav location="home" client:idle>
+		<Nav
+			location="home"
+			translations={navTranslations}
+			language={i18next.language}
+			client:idle
+		>
 			<LanguageSelectorWrapper />
 		</Nav>
 		<div class="bg-white">
