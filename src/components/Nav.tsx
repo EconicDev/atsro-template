@@ -48,7 +48,7 @@ const Nav = ({ location, children }: NavProps) => {
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   <a
-                    href={languagePrefix + "/astro-template/"}
+                    href={"/astro-template/" + languagePrefix + "/"}
                     className={
                       location === "home"
                         ? navSelectedStyle
@@ -58,7 +58,7 @@ const Nav = ({ location, children }: NavProps) => {
                     {translations.home}
                   </a>
                   <a
-                    href={languagePrefix + "/astro-template/about/"}
+                    href={"/astro-template/" + languagePrefix + "/about/"}
                     className={
                       location === "about" ? navSelectedStyle : navDefaultStyle
                     }
@@ -66,7 +66,7 @@ const Nav = ({ location, children }: NavProps) => {
                     {translations.about}
                   </a>
                   <a
-                    href={languagePrefix + "/astro-template/services/"}
+                    href={"/astro-template/" + languagePrefix + "/services/"}
                     className={
                       location === "services"
                         ? navSelectedStyle
@@ -76,7 +76,7 @@ const Nav = ({ location, children }: NavProps) => {
                     {translations.services}
                   </a>
                   <a
-                    href={languagePrefix + "/astro-template/contact/"}
+                    href={"/astro-template/" + languagePrefix + "/contact/"}
                     className={
                       location === "contact"
                         ? navSelectedStyle
@@ -110,7 +110,7 @@ const Nav = ({ location, children }: NavProps) => {
           <div className="space-y-1 px-2 pt-2 pb-3">
             <Disclosure.Button
               as="a"
-              href={languagePrefix + "/astro-template/"}
+              href={"/astro-template/" + languagePrefix + "/"}
               className={
                 location === "home"
                   ? navMobileSelectedStyle
@@ -121,7 +121,7 @@ const Nav = ({ location, children }: NavProps) => {
             </Disclosure.Button>
             <Disclosure.Button
               as="a"
-              href={languagePrefix + "/astro-template/about/"}
+              href={"/astro-template/" + languagePrefix + "/about/"}
               className={
                 location === "about"
                   ? navMobileSelectedStyle
@@ -132,7 +132,7 @@ const Nav = ({ location, children }: NavProps) => {
             </Disclosure.Button>
             <Disclosure.Button
               as="a"
-              href={languagePrefix + "/astro-template/services/"}
+              href={"/astro-template/" + languagePrefix + "/services/"}
               className={
                 location === "services"
                   ? navMobileSelectedStyle
@@ -143,7 +143,7 @@ const Nav = ({ location, children }: NavProps) => {
             </Disclosure.Button>
             <Disclosure.Button
               as="a"
-              href={languagePrefix + "/astro-template/contact/"}
+              href={"/astro-template/" + languagePrefix + "/contact/"}
               className={
                 location === "contact"
                   ? navMobileSelectedStyle
