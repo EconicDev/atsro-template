@@ -7,15 +7,17 @@ export interface Project {
   img: string;
 }
 
+export type NavTranslations = {
+  home: string;
+  about: string;
+  services: string;
+  contact: string;
+  press: string;
+}
+
 export type NavProps = {
   location: string
   children: JSX.Element;
-  translations: {
-    home: string;
-    about: string;
-    services: string;
-    contact: string;
-    press: string;
-  },
+  translations: NavTranslations,
   language: string;
 };

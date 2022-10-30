@@ -1,11 +1,12 @@
-import {  useState } from "react";
+import { useState } from "react";
 import { Disclosure } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline/index.js";
+import { Bars3Icon, LanguageIcon, XMarkIcon } from "@heroicons/react/24/outline/index.js";
 import type { NavProps } from '../types';
+
 
 const Nav = ({ location, translations, language, children }: NavProps) => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [languageToggle, setLanguageToggle] = useState(false);
   
   const navSelectedStyle =
     "rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white";
@@ -78,7 +79,16 @@ const Nav = ({ location, translations, language, children }: NavProps) => {
                 </div>
               </div>
             </div>
-            {children}
+            {languageToggle ? children 
+            : (
+              <button
+                onClick={() => setLanguageToggle(!languageToggle)}
+                className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              >
+                <span className="sr-only">language</span>
+                <LanguageIcon className="block h-6 w-6" aria-hidden="true" />
+              </button>
+            )}
             <div className="-mr-2 flex sm:hidden">
               {/* Mobile menu button */}
               <Disclosure.Button

@@ -7,17 +7,12 @@ import Footer from "../components/Footer.astro";
 import Features from "../components/Features.astro";
 import ServiceList from "../components/ServiceList.astro";
 import LanguageSelectorWrapper from "../components/LanguageSelectorWrapper.astro";
+import { getNavTranslations } from "../utils/index";
 
 changeLanguage("es");
 
 setDefaultNamespace("home");
-const navTranslations = {
-    home: t("nav.home"),
-    about: t("nav.about-us"),
-    services: t("nav.services"),
-    contact: t("nav.contact"),
-    press: t("nav.press"),
-};
+const navTranslations = getNavTranslations(t);
 ---
 
 <html lang={i18next.language}>
@@ -49,8 +44,8 @@ const navTranslations = {
 							<div class="absolute inset-0">
 								<img
 									class="h-full w-full object-cover"
-									src="https://images.unsplash.com/photo-1606185540834-d6e7483ee1a4??ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80"
-									alt="People working on laptops"
+									src="/assets/container_main.png"
+									alt="Fully loaded container being pushed by two tugboats to dock"
 								/>
 								<!-- <div
 									class="absolute inset-0 bg-gradient-to-r from-dodger-blue-200 to-fulvous-100 mix-blend-multiply"

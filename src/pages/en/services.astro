@@ -8,17 +8,12 @@ import Footer from "../../components/Footer.astro";
 import Nav from "../../components/Nav.jsx";
 import { ArticleTitle, SectionTitle } from "../../components/Stateless";
 import LanguageSelectorWrapper from "../../components/LanguageSelectorWrapper.astro";
+import { getNavTranslations } from "../../utils/index";
 
 changeLanguage("en");
 
 setDefaultNamespace("services");
-const navTranslations = {
-    home: t("nav.home"),
-    about: t("nav.about-us"),
-    services: t("nav.services"),
-    contact: t("nav.contact"),
-    press: t("nav.press"),
-};
+const navTranslations = getNavTranslations(t);
 ---
 
 <html lang={i18next.language}>
