@@ -1,4 +1,11 @@
 {
+    "nav": {
+        "home": "Inicio",
+        "about-us": "Nosotros",
+        "services": "Servicios",
+        "contact": "Contacto",
+        "press": "Prensa"
+    },
     "banner": {
         "title": "Desde 1992 acompañando a nuestros clientes en gestiones aduanales.",
         "experience": "Años de experiencia",

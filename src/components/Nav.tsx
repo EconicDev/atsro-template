@@ -1,14 +1,12 @@
 import { useState } from "react";
-import i18next, { t, changeLanguage, setDefaultNamespace } from "i18next";
 import { Disclosure } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline/index.js";
+import { Bars3Icon, LanguageIcon, XMarkIcon } from "@heroicons/react/24/outline/index.js";
 import type { NavProps } from '../types';
 
-changeLanguage(i18next.language);
 
-const Nav = ({ location, children }: NavProps) => {
+const Nav = ({ location, translations, language, children }: NavProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  setDefaultNamespace("common")
+  const [languageToggle, setLanguageToggle] = useState(false);
   
   const navSelectedStyle =
     "rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white";
@@ -18,15 +16,8 @@ const Nav = ({ location, children }: NavProps) => {
     "rounded-md px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-700 hover:text-white";
   const navMobileDefaultStyle =
     "block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white";
-  const languagePrefix = i18next.language === 'es' ? '' : "/" + i18next.language;
+  const languagePrefix = language === 'es' ? '' : "/" + language;
 
-  const translations = {
-    home: t("nav.home"),
-    about: t("nav.about-us"),
-    services: t("nav.services"),
-    contact: t("nav.contact"),
-    press: t("nav.press")
-  }
   return (
     <Disclosure as="nav" className="bg-white-900">
       <>
@@ -88,7 +79,16 @@ const Nav = ({ location, children }: NavProps) => {
                 </div>
               </div>
             </div>
-            {children}
+            {languageToggle ? children 
+            : (
+              <button
+                onClick={() => setLanguageToggle(!languageToggle)}
+                className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              >
+                <span className="sr-only">language</span>
+                <LanguageIcon className="block h-6 w-6" aria-hidden="true" />
+              </button>
+            )}
             <div className="-mr-2 flex sm:hidden">
               {/* Mobile menu button */}
               <Disclosure.Button
@@ -117,7 +117,7 @@ const Nav = ({ location, children }: NavProps) => {
                   : navMobileDefaultStyle
               }
             >
-              Home
+              {translations.home}
             </Disclosure.Button>
             <Disclosure.Button
               as="a"
@@ -128,7 +128,7 @@ const Nav = ({ location, children }: NavProps) => {
                   : navMobileDefaultStyle
               }
             >
-              Quiénes Somos
+              {translations.about}
             </Disclosure.Button>
             <Disclosure.Button
               as="a"
@@ -139,7 +139,7 @@ const Nav = ({ location, children }: NavProps) => {
                   : navMobileDefaultStyle
               }
             >
-              Servicios
+              {translations.services}
             </Disclosure.Button>
             <Disclosure.Button
               as="a"
@@ -150,7 +150,7 @@ const Nav = ({ location, children }: NavProps) => {
                   : navMobileDefaultStyle
               }
             >
-              Contacto
+              {translations.contact}
             </Disclosure.Button>
           </div>
         </Disclosure.Panel>

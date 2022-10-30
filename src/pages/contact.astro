@@ -7,10 +7,12 @@ import Footer from "../components/Footer.astro";
 import ContactForm from "../components/ContactForm.jsx";
 import Staff from "../components/Staff.astro";
 import LanguageSelectorWrapper from "../components/LanguageSelectorWrapper.astro";
+import { getNavTranslations } from "../utils/index";
 
 changeLanguage("es");
 
 setDefaultNamespace("contact");
+const navTranslations = getNavTranslations(t);
 ---
 
 <html lang={i18next.language}>
@@ -27,7 +29,13 @@ setDefaultNamespace("contact");
         </style>
     </head>
     <body class="bg-world-pattern bg-fixed">
-        <Nav location="contact" client:idle><LanguageSelectorWrapper /></Nav>
+        <Nav
+            location="contact"
+            translations={navTranslations}
+            language={i18next.language}
+            client:idle
+            ><LanguageSelectorWrapper />
+        </Nav>
         <main>
             <div class="grid grid-cols-12">
                 <div class="col-span-12 lg:col-span-6 lg:py-8">

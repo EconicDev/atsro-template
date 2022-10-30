@@ -8,10 +8,12 @@ import Footer from "../../components/Footer.astro";
 import Nav from "../../components/Nav.jsx";
 import { ArticleTitle, SectionTitle } from "../../components/Stateless";
 import LanguageSelectorWrapper from "../../components/LanguageSelectorWrapper.astro";
+import { getNavTranslations } from "../../utils/index";
 
 changeLanguage("en");
 
 setDefaultNamespace("services");
+const navTranslations = getNavTranslations(t);
 ---
 
 <html lang={i18next.language}>
@@ -30,7 +32,13 @@ setDefaultNamespace("services");
   <body
     class="bg-world-pattern bg-fixed bg-center-left-20 sm:bg-world-pattern sm:bg-fixed sm:bg-repeat-x"
   >
-    <Nav location="services" client:idle><LanguageSelectorWrapper /></Nav>
+    <Nav
+      location="services"
+      translations={navTranslations}
+      language={i18next.language}
+      client:idle
+      ><LanguageSelectorWrapper />
+    </Nav>
     <main class="wrapper">
       <div class="overflow-hidden py-16 lg:py-24">
         <div
