@@ -43,7 +43,7 @@ module.exports = {
 			cyan: colors.cyan,
 			gray: colors.gray,
 			indigo: colors.indigo,
-			purple: colors.purple,
+			purple: colors.purple
 
 		},
 		extend: {
@@ -54,6 +54,9 @@ module.exports = {
 				"world-pattern": "url('/assets/world.svg')",
 			},
 		},
+		frontFamily: {
+			sans: ['Nunito', 'Helvetica', 'Arial', 'sans-serif'],
+		}
 	},
 	screens: {
 		xs: "420px",

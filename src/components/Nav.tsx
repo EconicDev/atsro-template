@@ -1,14 +1,15 @@
 import { useState } from "react";
+import i18next, { t, changeLanguage, setDefaultNamespace } from "i18next";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline/index.js";
+import type { NavProps } from '../types';
 
-type NavProps = {
-  location: string;
-  open: boolean;
-};
+changeLanguage(i18next.language);
 
-const Nav = ({ location, open }: NavProps) => {
+const Nav = ({ location, children }: NavProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  setDefaultNamespace("common")
+  
   const navSelectedStyle =
     "rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white";
   const navMobileSelectedStyle =
@@ -17,6 +18,15 @@ const Nav = ({ location, open }: NavProps) => {
     "rounded-md px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-700 hover:text-white";
   const navMobileDefaultStyle =
     "block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white";
+  const languagePrefix = i18next.language === 'es' ? '' : "/" + i18next.language;
+
+  const translations = {
+    home: t("nav.home"),
+    about: t("nav.about-us"),
+    services: t("nav.services"),
+    contact: t("nav.contact"),
+    press: t("nav.press")
+  }
   return (
     <Disclosure as="nav" className="bg-white-900">
       <>
@@ -38,47 +48,47 @@ const Nav = ({ location, open }: NavProps) => {
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   <a
-                    href="/astro-template/"
+                    href={languagePrefix + "/astro-template/"}
                     className={
-                      location === "landing"
+                      location === "home"
                         ? navSelectedStyle
                         : navDefaultStyle
                     }
                   >
-                    Landing
+                    {translations.home}
                   </a>
                   <a
-                    href="/astro-template/about/"
+                    href={languagePrefix + "/astro-template/about/"}
                     className={
                       location === "about" ? navSelectedStyle : navDefaultStyle
                     }
                   >
-                    Quiénes Somos
+                    {translations.about}
                   </a>
                   <a
-                    href="/astro-template/services/"
+                    href={languagePrefix + "/astro-template/services/"}
                     className={
                       location === "services"
                         ? navSelectedStyle
                         : navDefaultStyle
                     }
                   >
-                    Servicios
+                    {translations.services}
                   </a>
                   <a
-                    href="/astro-template/contact/"
+                    href={languagePrefix + "/astro-template/contact/"}
                     className={
                       location === "contact"
                         ? navSelectedStyle
                         : navDefaultStyle
                     }
                   >
-                    Contacto
+                    {translations.contact}
                   </a>
                 </div>
               </div>
             </div>
-
+            {children}
             <div className="-mr-2 flex sm:hidden">
               {/* Mobile menu button */}
               <Disclosure.Button
@@ -100,18 +110,18 @@ const Nav = ({ location, open }: NavProps) => {
           <div className="space-y-1 px-2 pt-2 pb-3">
             <Disclosure.Button
               as="a"
-              href="/astro-template/"
+              href={languagePrefix + "/astro-template/"}
               className={
-                location === "landing"
+                location === "home"
                   ? navMobileSelectedStyle
                   : navMobileDefaultStyle
               }
             >
-              Landing
+              Home
             </Disclosure.Button>
             <Disclosure.Button
               as="a"
-              href="/astro-template/about/"
+              href={languagePrefix + "/astro-template/about/"}
               className={
                 location === "about"
                   ? navMobileSelectedStyle
@@ -122,7 +132,7 @@ const Nav = ({ location, open }: NavProps) => {
             </Disclosure.Button>
             <Disclosure.Button
               as="a"
-              href="/astro-template/services/"
+              href={languagePrefix + "/astro-template/services/"}
               className={
                 location === "services"
                   ? navMobileSelectedStyle
@@ -133,7 +143,7 @@ const Nav = ({ location, open }: NavProps) => {
             </Disclosure.Button>
             <Disclosure.Button
               as="a"
-              href="/astro-template/contact/"
+              href={languagePrefix + "/astro-template/contact/"}
               className={
                 location === "contact"
                   ? navMobileSelectedStyle

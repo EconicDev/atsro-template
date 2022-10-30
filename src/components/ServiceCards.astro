@@ -2,26 +2,25 @@
 const { title, description, icon, href, linkText } = Astro.props;
 ---
 
-<div class="pt-8 px-12 drop-shadow-2xl">
-    <div class="flow-root rounded-lg bg-white bg-opacity-90 min-h-full">
-        <div class="-mt-6">
+<div class="pt-6">
+    <div
+        class="flex rounded-lg justify-between bg-gray-50 px-6 pb-8 min-h-full"
+    >
+        <div class="mt-6">
+            <!-- -mt-6 ^^ -->
             <div>
                 <span
-                    class="inline-flex items-center justify-center rounded-md bg-fulvous-100 p-3 shadow-lg"
+                    class="inline-flex items-center justify-center rounded-md bg-dodger-blue-500 p-3 shadow-lg"
                 >
                     <img class="h-6 w-6 text-white" src={icon} />
                 </span>
             </div>
-            <h3
-                class="text-center mt-2 mb-4 text-3xl font-medium tracking-tight text-gray-600"
-            >
+            <!-- <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-900">
                 {title}
-            </h3>
-            {
-                description && (
-                    <p class="mt-5 text-base text-gray-700">{description}</p>
-                )
-            }
+            </h3> -->
+            <p class="mt-5 text-lg text-gray-500 hover:align-text-bottom">
+                {description}
+            </p>
             {
                 href && (
                     <a

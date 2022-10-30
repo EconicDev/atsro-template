@@ -9,7 +9,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "generate:lang": "npx astro-i18next generate"
   },
   "dependencies": {
     "@astrojs/react": "^1.2.0",
@@ -19,7 +20,11 @@
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.7",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
     "astro": "^1.5.2",
+    "astro-i18next": "^1.0.0-beta.12",
+    "i18next-fs-backend": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "save-dev": "^0.0.1-security",

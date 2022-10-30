@@ -6,3 +6,8 @@ export interface Project {
   tags: string[];
   img: string;
 }
+
+export type NavProps = {
+  location: string
+  children: JSX.Element;
+};
