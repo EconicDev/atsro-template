@@ -1,0 +1,44 @@
+---
+interface Props {
+    alt: string;
+    title: string;
+    image: string;
+    titleClasses: string;
+}
+
+const { alt, title, titleClasses, image } = Astro.props;
+const defaultTitleClasses = "block text-white";
+const displayTitleClasses = titleClasses || defaultTitleClasses;
+const defaultBannerImage = "/assets/container_main.png";
+const displayImage = image || defaultBannerImage;
+---
+
+<div class="relative">
+    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-50"></div>
+    <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
+            <div class="absolute inset-0">
+                <img
+                    class="h-full w-full object-cover"
+                    src={displayImage}
+                    alt={alt}
+                />
+                <!-- <div
+                    class="absolute inset-0 bg-gradient-to-r from-dodger-blue-200 to-fulvous-100 mix-blend-multiply"
+                >
+                </div> -->
+            </div>
+            <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
+                <h1
+                    class="text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
+                >
+                    <span class={displayTitleClasses}>{title}</span>
+                </h1>
+                <p
+                    class="mx-auto mt-6 max-w-lg text-center text-xl text-white sm:max-w-3xl"
+                >
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

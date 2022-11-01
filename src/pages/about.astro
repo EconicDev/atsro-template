@@ -4,6 +4,7 @@ import { HeadHrefLangs } from "astro-i18next/components";
 import MainHead from "../components/MainHead.astro";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.jsx";
+import PageBanner from "../components/PageBanner.astro";
 import { Header2, MissionParagraph } from "../components/Stateless";
 import LanguageSelectorWrapper from "../components/LanguageSelectorWrapper.astro";
 import { getNavTranslations } from "../utils/index";
@@ -54,12 +55,18 @@ const navTranslations = getNavTranslations(t);
             ><LanguageSelectorWrapper />
         </Nav>
         <main class="wrapper">
-            <h1>Quiénes Somos</h1>
+            <!-- <h1>Quiénes Somos</h1>
             <div class="heroImg">
                 <img
                     src="https://images.unsplash.com/photo-1560264280-88b68371db39"
                 />
-            </div>
+            </div> -->
+            <PageBanner
+                alt=""
+                title="Nosotros"
+                image="https://images.unsplash.com/photo-1560264280-88b68371db39"
+                titleClasses="block text-black"
+            />
             <div class="bio">
                 <MissionParagraph>
                     Encarnación Service SRL nace en 1992 como una agencia de
