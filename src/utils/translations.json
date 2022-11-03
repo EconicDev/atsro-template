@@ -1,0 +1,176 @@
+{
+  "InicioHome": {
+    "en": {
+      "nav": {
+        "home": "Home"
+      },
+      "banner": {
+        "experience": "Years of experience",
+        "procedures": "Procedures",
+        "customers": "Customers"
+      },
+      "cta": {
+        "title": "We offer an efficient service within the framework of secure trade",
+        "features": "Formalities",
+        "footer": "Learn about our services and advice",
+        "link": "See more"
+      },
+      "services": {
+        "one": "Members of the Dominican Association of Customs Agents, the International Association of authorized economic, customs and logistics operators; and the General Directorate of Customs.",
+        "two": "One of the first Dominican customs agencies to be certified as an Authorized Economic Operator.",
+        "three": "We have a license to operate in all ports of the country."
+      }
+    },
+    "es": {
+      "nav": {
+        "home": "Inicio"
+      },
+      "banner": {
+        "title": "Desde 1992 acompañando a nuestros clientes en gestiones aduanales.",
+        "experience": "Años de experiencia",
+        "procedures": "Gestiones",
+        "customers": "Clientes"
+      },
+      "cta": {
+        "title": "Ofrecemos un servicio eficiente en del marco del comercio seguro",
+        "features": "Trámites",
+        "footer": "Conoce nuestros servicios y asesorías",
+        "link": "Ver Más"
+      },
+      "services": {
+        "one": "Miembros de la Asociación Dominicana de Agentes de Aduanas, la Asociación Internacional de operadores económicos autorizados, aduaneros y logísticos; y de la Dirección General de Aduanas.",
+        "two": "Una de las primeras agencias aduanales dominicanas en certificarse como Operador Económico Autorizado.",
+        "three": "Contamos con licencia para operar en todos los puertos del país."
+      }
+    }
+  },
+  "NosotrosAboutus": {
+    "en": {
+      "nav": {
+        "aboutus": "About Us"
+      },
+      "intro": {
+        "p1": "Encarnación Service SRL was born in 1992 as a customs agency and telecommunications services company, consolidating over the years and remaining with foreign trade services. It is a family business with 37 years of experience in the market, chaired by Mr. Alejandro Encarnación.",
+        "p2": "Since our inception, we have maintained continuous development to provide customs services with the best standards, becoming one of the first customs agencies in the Dominican Republic to be certified as an Authorized Economic Operator in 2017 and recertifying ourselves in 2022.",
+        "p3": "Seeking to provide efficient coverage to the demand of our clients, we obtained the license to operate in all the ports of the Dominican Republic.",
+        "p4": "Our objective is to provide a personalized service of quality and efficiency within the framework of safe trade. We work hand in hand with the Dominican Association of Customs Agents, the International Association of Authorized Economic Operators (AEO) Customs and Logistics, and the Dominican General Directorate of Customs to maintain up-to-date in all fields of interest."
+      },
+      "mission": {
+        "description": "To contribute to the satisfaction of the needs of our customers with efficient and quality service."
+      },
+      "vision": {
+        "title": "Vision",
+        "description": "To be the most reliable and prestigious foreign trade and customs service company, helping our clients in the shortest possible time in achieving their objectives, allowing the strengthening of our relationship."
+      },
+      "values": {
+        "title": "Values",
+        "efficiency": "Efficiency",
+        "punctuality": "Puntuality",
+        "loyalty": "Loyalty",
+        "confidence": "Confidence",
+        "quality": "Quality",
+        "security": "Security"
+      }
+    },
+    "es": {
+      "nav": {
+        "aboutus": "Nosotros"
+      },
+      "intro": {
+        "p1": "Encarnación Service SRL nace en 1992 como una agencia de aduanas y empresa de servicios de telecomunicaciones, con el paso de los años consolidándose y permaneciendo con los servicios de comercio exterior. Es una empresa familiar que cuenta con 37 años de experiencia en el mercado, presidida por el licenciado Alejandro Encarnación.",
+        "p2": "Desde nuestros inicios, nos hemos mantenido en el continuo desarrollo para brindar servicios aduanales con los mejores estándares, convirtiéndonos en una de las primeras agencias aduanales del país en certificarse como Operador Económico Autorizado en el año 2017 y re certificándonos en el año 2022.",
+        "p3": "Buscando dar una cobertura eficiente a la demanda de nuestros clientes, obtuvimos la licencia para operar en todos los puertos del país.",
+        "p4": "Con el objetivo de brindar un servicio personalizado de calidad y eficacia dentro del marco del comercio seguro, trabajamos de mano con la Asociación Dominicana de Agentes de Aduanas, la Asociación Internacional de operadores económicos autorizados, aduaneros y logísticos y de la Dirección General de Aduanas, actualizándonos en todos los campos de interés."
+      },
+      "mission": {
+        "title": "Misión",
+        "description": "Contribuir a la satisfacción de las necesidades de nuestros clientes con un servicio eficaz y de calidad."
+      },
+      "vision": {
+        "title": "Visión",
+        "description": "Ser la empresa en servicio de comercio exterior y aduanas de mayor confiabilidad y prestigio, ayudando a nuestros clientes en el menor tiempo posible en el logro de sus objetivos, permitiendo el fortalecimiento de nuestra relación."
+      },
+      "values": {
+        "title": "Valores",
+        "efficiency": "Eficiencia",
+        "punctuality": "Puntualidad",
+        "loyalty": "Fidelidad",
+        "confidence": "Confianza",
+        "quality": "Calidad",
+        "security": "Seguridad"
+      }
+    }
+  },
+  "ServiciosServices": {
+    "en": {},
+    "es": {
+      "undefined": "Servicios de gestión y tramite de cesión de derecho de una persona física/ jurídica a otra."
+    }
+  },
+  "ContactoContact": {
+    "en": {},
+    "es": {
+      "undefined": "Redes sociales"
+    }
+  },
+  "PrensaPress": {
+    "en": {},
+    "es": {}
+  },
+  "ComúnCommon": {
+    "en": {
+      "nav": {
+        "home": "Home",
+        "about-us": "About Us",
+        "services": "Services",
+        "contact": "Contact",
+        "press": "Press"
+      }
+    },
+    "es": {
+      "nav": {
+        "home": "Inicio",
+        "about-us": "Nosotros",
+        "services": "Servicios",
+        "contact": "Contacto",
+        "press": "Prensa"
+      }
+    }
+  },
+  "original": {
+    "en": {
+      "nav": {
+        "home": "Home",
+        "aboutus": "About Us"
+      },
+      "banner": {},
+      "mission": {},
+      "vision": {},
+      "values": {}
+    },
+    "es": {
+      "nav": {
+        "home": "Inicio",
+        "aboutus": "Nosotros"
+      },
+      "banner": {
+        "title": "Desde 1992 acompañando a nuestros clientes en gestiones aduanales."
+      },
+      "undefined": "Servicio de declaración de mercancía que permite la entrada al país con el fin de ser sometida a un\nproceso de perfeccionamiento.",
+      "mission": {
+        "title": "Misión"
+      },
+      "vision": {
+        "title": "Visión"
+      },
+      "values": {
+        "title": "Valores",
+        "efficiency": "Eficiencia",
+        "punctuality": "Puntualidad",
+        "loyalty": "Fidelidad",
+        "quality": "Confianza",
+        "security": "Calidad"
+      }
+    }
+  }
+}
