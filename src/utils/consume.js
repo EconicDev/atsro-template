@@ -9,7 +9,7 @@
 import xlsx from 'xlsx';
 import fs from 'fs';
 
-const workbook = xlsx.readFile('./trans.xlsx');
+const workbook = xlsx.readFile('./Traducciones Encarnación Services SRL.xlsx');
 
 const sheets = workbook.SheetNames;
 
