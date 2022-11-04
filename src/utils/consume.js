@@ -20,7 +20,11 @@ sheets.forEach((sheet) => {
     const en = {};
     const es = {};
     sheetData.forEach((row) => {
-        if (row.key?.includes('_')) {
+        if (!row.key) {
+            const key = row.ES?.replace(/\./g, '');
+            en[key] = row.EN;
+            es[key] = row.ES;
+        } else if (row.key?.includes('_')) {
             const [parentKey, nestedKey] = row.key.split('_');
             if (!en[parentKey]) {
                 en[parentKey] = {};
