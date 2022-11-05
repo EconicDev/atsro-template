@@ -11,7 +11,11 @@
       },
       "cta": {
         "title": "We offer an efficient service within the framework of secure trade",
-        "features": "Formalities",
+        "features": {
+          "one": "Advisory",
+          "two": "Procedures",
+          "three": "Formalities"
+        },
         "footer": "Learn about our services and advice",
         "link": "See more"
       },
@@ -33,7 +37,11 @@
       },
       "cta": {
         "title": "Ofrecemos un servicio eficiente en del marco del comercio seguro",
-        "features": "Trámites",
+        "features": {
+          "one": "Asesoría",
+          "two": "Gestiones",
+          "three": "Trámites"
+        },
         "footer": "Conoce nuestros servicios y asesorías",
         "link": "Ver Más"
       },

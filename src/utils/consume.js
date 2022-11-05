@@ -15,6 +15,24 @@ const sheets = workbook.SheetNames;
 
 const translations = {};
 
+const setNestedValue = (row, lang, parent, listOfKeys) => {
+    if (listOfKeys.length === 2) {
+        const [parentKey, nestedKey] = listOfKeys;
+        if (!parent[parentKey]) {
+            parent[parentKey] = {};
+        }
+        parent[parentKey][nestedKey] = row[lang];
+        return parent;
+    } else {
+        const key = listOfKeys.shift();
+        if (!parent[key]) {
+            parent[key] = {};
+        }
+        parent[key] = setNestedValue(row, lang, parent[key], listOfKeys);
+        return parent;
+    }
+};
+
 sheets.forEach((sheet) => {
     const sheetData = xlsx.utils.sheet_to_json(workbook.Sheets[sheet]);
     const en = {};
@@ -25,15 +43,9 @@ sheets.forEach((sheet) => {
             en[key] = row.EN;
             es[key] = row.ES;
         } else if (row.key?.includes('_')) {
-            const [parentKey, nestedKey] = row.key.split('_');
-            if (!en[parentKey]) {
-                en[parentKey] = {};
-            }
-            if (!es[parentKey]) {
-                es[parentKey] = {};
-            }
-            en[parentKey][nestedKey] = row.EN;
-            es[parentKey][nestedKey] = row.ES;
+            const arrayOfKeys = row.key.split('_');
+            setNestedValue(row, 'EN', en, [...arrayOfKeys]);
+            setNestedValue(row, 'ES', es, [...arrayOfKeys]);
         } else {
             en[row.key] = row.EN;
             es[row.key] = row.ES;
