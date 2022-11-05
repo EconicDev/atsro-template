@@ -31,23 +31,8 @@ const staffTitle = t("staff.title");
             description="About Encarnación Service SRL"
         />
         <HeadHrefLangs />
-        <style>
-            .heroImg {
-                max-height: 24rem;
-                object-fit: cover;
-                overflow: hidden;
-            }
-
-            .heroImg img {
-                width: 100%;
-            }
-
-            .wrapper.bio {
-                max-width: 50em;
-            }
-        </style>
     </head>
-    <body>
+    <body class="bg-gradient-to-b from-white to-gray-100">
         <Nav
             location="about"
             translations={navTranslations}
@@ -55,13 +40,7 @@ const staffTitle = t("staff.title");
             client:load
             ><LanguageSelectorWrapper />
         </Nav>
-        <main class="wrapper">
-            <!-- <h1>Quiénes Somos</h1>
-            <div class="heroImg">
-                <img
-                    src="https://images.unsplash.com/photo-1560264280-88b68371db39"
-                />
-            </div> -->
+        <main class="mx-auto px-4 md:p-6 md:w-10/12 lg:w-10/12 xl:w-8/12">
             <PageBanner
                 alt=""
                 title=""
@@ -76,24 +55,32 @@ const staffTitle = t("staff.title");
                     {t("title")}
                 </h2>
                 <article class="grid gap-x-8 grid-cols-12 md:px-6">
-                    <div class="col-span-12 md:col-span-6">
-                        <p class="mb-3">{t("intro.p1")}</p>
-                        <p class="mb-3">{t("intro.p2")}</p>
+                    <div
+                        class="col-span-10 min-[350px]:col-span-12 md:col-span-6"
+                    >
+                        <p class="indent-8 mb-3">{t("intro.p1")}</p>
+                        <p class="indent-8 mb-3">{t("intro.p2")}</p>
                     </div>
-                    <div class="col-span-12 md:col-span-6">
-                        <p class="mb-3">{t("intro.p3")}</p>
-                        <p class="mb-3">{t("intro.p4")}</p>
+                    <div
+                        class="col-span-10 min-[350px]:col-span-12 md:col-span-6"
+                    >
+                        <p class="indent-8 mb-3">{t("intro.p3")}</p>
+                        <p class="indent-8 mb-3">{t("intro.p4")}</p>
                     </div>
                 </article>
                 <article class="grid gap-x-8 grid-cols-12 md:px-6">
-                    <div class="col-span-12 md:col-span-6">
+                    <div
+                        class="col-span-10 min-[350px]:col-span-12 md:col-span-6"
+                    >
                         <h3 class="text-2xl md:text-2xl font-semibold my-1">
                             {t("mission.title")}
                         </h3>
                         <p class="mb-3">{t("mission.description")}</p>
                     </div>
 
-                    <div class="col-span-12 md:col-span-6">
+                    <div
+                        class="col-span-10 min-[350px]:col-span-12 md:col-span-6"
+                    >
                         <h3 class="text-2xl md:text-2xl font-semibold my-1">
                             {t("vision.title")}
                         </h3>
@@ -106,7 +93,7 @@ const staffTitle = t("staff.title");
                     {t("values.title")}
                 </h3>
                 <dl
-                    class="mt-10 space-y-2 grid grid-cols-2 gap-x-12 sm:gap-x-6 sm:gap-y-8 sm:space-y-0 lg:grid-cols-4 lg:gap-x-8"
+                    class="mt-10 space-y-1 grid grid-cols-2 gap-x-6 sm:gap-y-8 sm:space-y-0 lg:grid-cols-4 lg:gap-x-8"
                 >
                     {
                         valueList.map((item) => (
