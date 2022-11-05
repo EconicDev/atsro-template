@@ -5,5 +5,28 @@
         "services": "Services",
         "contact": "Contact",
         "press": "Press"
+    },
+    "title": "About Us",
+    "intro": {
+        "p1": "Encarnación Service SRL was born in 1992 as a customs agency and telecommunications services company, consolidating over the years and remaining with foreign trade services. It is a family business with 37 years of experience in the market, chaired by Mr. Alejandro Encarnación.",
+        "p2": "Since our inception, we have maintained continuous development to provide customs services with the best standards, becoming one of the first customs agencies in the Dominican Republic to be certified as an Authorized Economic Operator in 2017 and recertifying ourselves in 2022.",
+        "p3": "Seeking to provide efficient coverage to the demand of our clients, we obtained the license to operate in all the ports of the Dominican Republic.",
+        "p4": "Our objective is to provide a personalized service of quality and efficiency within the framework of safe trade. We work hand in hand with the Dominican Association of Customs Agents, the International Association of Authorized Economic Operators (AEO) Customs and Logistics, and the Dominican General Directorate of Customs to maintain up-to-date in all fields of interest."
+    },
+    "mission": {
+        "description": "To contribute to the satisfaction of the needs of our customers with efficient and quality service."
+    },
+    "vision": {
+        "title": "Vision",
+        "description": "To be the most reliable and prestigious foreign trade and customs service company, helping our clients in the shortest possible time in achieving their objectives, and strengthening our relationship."
+    },
+    "values": {
+        "title": "Values",
+        "efficiency": "Efficiency",
+        "punctuality": "Puntuality",
+        "loyalty": "Loyalty",
+        "confidence": "Confidence",
+        "quality": "Quality",
+        "security": "Security"
     }
 }
