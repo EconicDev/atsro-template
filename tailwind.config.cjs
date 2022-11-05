@@ -38,6 +38,7 @@ module.exports = {
 			"black-coral-900": "#1C203A",
 			/* neutral */
 			stone: colors.stone,
+			green: colors.green,
 			sky: colors.sky,
 			teal: colors.teal,
 			cyan: colors.cyan,
