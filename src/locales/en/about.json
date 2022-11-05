@@ -29,5 +29,8 @@
         "confidence": "Confidence",
         "quality": "Quality",
         "security": "Security"
+    },
+    "staff": {
+        "title": "Meet Our Team"
     }
 }

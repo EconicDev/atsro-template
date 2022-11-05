@@ -21,6 +21,7 @@ const valueList = [
     "values.quality",
     "values.security",
 ];
+const staffTitle = t("staff.title");
 ---
 
 <html lang={i18next.language}>
@@ -135,7 +136,7 @@ const valueList = [
                     }
                 </dl>
             </div>
-            <Staff />
+            <Staff title={staffTitle} />
         </main>
         <Footer />
     </body>

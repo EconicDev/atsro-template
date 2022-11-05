@@ -29,5 +29,8 @@
         "confidence": "Confianza",
         "quality": "Calidad",
         "security": "Seguridad"
+    },
+    "staff": {
+        "title": "Conozca a Nuestro Equipo"
     }
 }
