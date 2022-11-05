@@ -39,9 +39,11 @@ sheets.forEach((sheet) => {
     const es = {};
     sheetData.forEach((row) => {
         if (!row.key) {
-            const key = row.ES?.replace(/\./g, '');
-            en[key] = row.EN;
-            es[key] = row.ES;
+            const key = row.ES?.replace(/\./g, '').replace(/\r\n/g, ' ').trim();
+            const esScrub = row.ES.replace(/\r\n/g, ' ').trim();
+            const enScrub = row.EN ? row.EN.replace(/\r\n/g, ' ').trim() : null;
+            en[key] = enScrub || esScrub;
+            es[key] = esScrub;
         } else if (row.key?.includes('_')) {
             const arrayOfKeys = row.key.split('_');
             setNestedValue(row, 'EN', en, [...arrayOfKeys]);
