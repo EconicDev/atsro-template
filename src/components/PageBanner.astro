@@ -1,12 +1,14 @@
 ---
+import { Image } from "@astrojs/image/components";
 interface Props {
     alt: string;
+    format: string;
     title: string;
     image: string;
     titleClasses: string;
 }
 
-const { alt, title, titleClasses, image } = Astro.props;
+const { alt, format, title, titleClasses, image } = Astro.props;
 const defaultTitleClasses = "block text-white";
 const displayTitleClasses = titleClasses || defaultTitleClasses;
 const defaultBannerImage = "/assets/container_main.png";
@@ -18,10 +20,14 @@ const displayImage = image || defaultBannerImage;
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
             <div class="absolute inset-0">
-                <img
+                <Image
                     class="h-full w-full object-cover"
+                    width={1920}
+                    height={1080}
                     src={displayImage}
                     alt={alt}
+                    format={format}
+                    aspectRatio={16 / 9}
                 />
                 <!-- <div
                     class="absolute inset-0 bg-gradient-to-r from-dodger-blue-200 to-fulvous-100 mix-blend-multiply"
