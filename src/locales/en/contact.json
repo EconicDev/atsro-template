@@ -5,5 +5,9 @@
         "services": "Services",
         "contact": "Contact",
         "press": "Press"
-    }
+    },
+    "Contacto": "Contact",
+    "Teléfonos": "Telephones",
+    "Correo": "Email",
+    "Redes sociales": "Social Media"
 }

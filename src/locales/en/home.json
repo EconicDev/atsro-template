@@ -7,7 +7,7 @@
         "press": "Press"
     },
     "banner": {
-        "title": "More than 37 years accompanying our clients in customs procedures.",
+        "title": "Since 1992 accompanying our clients in customs procedures",
         "experience": "Years of experience",
         "procedures": "Procedures",
         "customers": "Customers"
@@ -26,6 +26,5 @@
         "one": "Members of the Dominican Association of Customs Agents, the International Association of authorized economic, customs and logistics operators; and the General Directorate of Customs.",
         "two": "One of the first Dominican customs agencies to be certified as an Authorized Economic Operator.",
         "three": "We have a license to operate in all ports of the country."
-    },
-    "trusted-slogan": "Trusted by the best companies"
+    }
 }

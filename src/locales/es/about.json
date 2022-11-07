@@ -5,5 +5,32 @@
         "services": "Servicios",
         "contact": "Contacto",
         "press": "Prensa"
+    },
+    "title": "Quienes Somos",
+    "intro": {
+        "p1": "Encarnación Service SRL nace en 1992 como una agencia de aduanas y empresa de servicios de telecomunicaciones, con el paso de los años consolidándose y permaneciendo con los servicios de comercio exterior. Es una empresa familiar que cuenta con 37 años de experiencia en el mercado, presidida por el licenciado Alejandro Encarnación.",
+        "p2": "Desde nuestros inicios, nos hemos mantenido en el continuo desarrollo para brindar servicios aduanales con los mejores estándares, convirtiéndonos en una de las primeras agencias aduanales del país en certificarse como Operador Económico Autorizado en el año 2017 y re certificándonos en el año 2022.",
+        "p3": "Buscando dar una cobertura eficiente a la demanda de nuestros clientes, obtuvimos la licencia para operar en todos los puertos del país.",
+        "p4": "Con el objetivo de brindar un servicio personalizado de calidad y eficacia dentro del marco del comercio seguro, trabajamos de mano con la Asociación Dominicana de Agentes de Aduanas, la Asociación Internacional de operadores económicos autorizados, aduaneros y logísticos y de la Dirección General de Aduanas, actualizándonos en todos los campos de interés."
+    },
+    "mission": {
+        "title": "Misión",
+        "description": "Contribuir a la satisfacción de las necesidades de nuestros clientes con un servicio eficaz y de calidad."
+    },
+    "vision": {
+        "title": "Visión",
+        "description": "Ser la empresa en servicio de comercio exterior y aduanas de mayor confiabilidad y prestigio, ayudando a nuestros clientes en el menor tiempo posible en el logro de sus objetivos, permitiendo el fortalecimiento de nuestra relación."
+    },
+    "values": {
+        "title": "Valores",
+        "efficiency": "Eficiencia",
+        "punctuality": "Puntualidad",
+        "loyalty": "Fidelidad",
+        "confidence": "Confianza",
+        "quality": "Calidad",
+        "security": "Seguridad"
+    },
+    "staff": {
+        "title": "Conozca a Nuestro Equipo"
     }
 }

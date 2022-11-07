@@ -2,6 +2,7 @@
 import i18next, { t, changeLanguage, setDefaultNamespace } from "i18next";
 import { HeadHrefLangs } from "astro-i18next/components";
 import MainHead from "../components/MainHead.astro";
+import PageBanner from "../components/PageBanner.astro";
 import Nav from "../components/Nav.jsx";
 import Footer from "../components/Footer.astro";
 import Features from "../components/Features.astro";
@@ -33,44 +34,14 @@ const navTranslations = getNavTranslations(t);
 			<LanguageSelectorWrapper />
 		</Nav>
 		<div class="bg-white">
+			<PageBanner
+				title="Encarnación Service"
+				format="png"
+				image="/assets/container_main.png"
+				alt="Fully loaded container being pushed by two tugboats to dock"
+				titleClasses="block text-white"
+			/>
 			<main>
-				<div class="relative">
-					<div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-50">
-					</div>
-					<div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-						<div
-							class="relative shadow-xl sm:overflow-hidden sm:rounded-2xl"
-						>
-							<div class="absolute inset-0">
-								<img
-									class="h-full w-full object-cover"
-									src="/astro-template/assets/container_main.png"
-									alt="Fully loaded container being pushed by two tugboats to dock"
-								/>
-								<!-- <div
-									class="absolute inset-0 bg-gradient-to-r from-dodger-blue-200 to-fulvous-100 mix-blend-multiply"
-								>
-								</div> -->
-							</div>
-							<div
-								class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8"
-							>
-								<h1
-									class="text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
-								>
-									<span class="block text-white"
-										>Encarnación Service</span
-									>
-								</h1>
-								<p
-									class="mx-auto mt-6 max-w-lg text-center text-xl text-white sm:max-w-3xl"
-								>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
 				<div class="bg-gray-50 pt-12 sm:pt-16">
 					<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 						<div class="mx-auto max-w-4xl text-center">

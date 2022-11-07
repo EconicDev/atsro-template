@@ -1,7 +1,10 @@
 ---
 import i18next, { t, changeLanguage, setDefaultNamespace } from "i18next";
 import { HeadHrefLangs } from "astro-i18next/components";
+import { Image } from "@astrojs/image/components";
 import MainHead from "../components/MainHead.astro";
+import PageBanner from "../components/PageBanner.astro";
+import DetailedCard from "../components/DetailedCard.astro";
 import DesicriptionTerm from "../components/DesicriptionTerm.astro";
 import ContactForm from "../components/ContactForm.jsx";
 import Footer from "../components/Footer.astro";
@@ -14,503 +17,207 @@ changeLanguage("es");
 
 setDefaultNamespace("services");
 const navTranslations = getNavTranslations(t);
+const customsProcedures = [
+    {
+        title: t("R\u00E9gimen de declaraci\u00F3n a consumo/ Definitivo"),
+        descriptionList: [
+            t("Nacionalizaci\u00F3n"),
+            t("Servicio de declaraci\u00F3n de mercanc\u00EDa para importaci\u00F3n con el fin del pago de los derechos de importaci\u00F3n (impuestos y otros) y comercio local"),
+            t("Exportaci\u00F3n"),
+            t("Servicio de declaraci\u00F3n de mercanc\u00EDa y operaciones en puerto para exportaci\u00F3n"),
+        ],
+    },
+    {
+        title: t("Reg\u00EDmenes de suspensi\u00F3n de derechos de importaci\u00F3n"),
+        descriptionList: [
+            t("Internaci\u00F3n temporal o Admisi\u00F3n temporal sin transformaci\u00F3n"),
+            t("Servicio de declaraci\u00F3n de mercanc\u00EDa que permite la entrada al pa\u00EDs con el fin de cumplir un prop\u00F3sito, por un tiempo limitado"),
+            t(""),
+            t("Servicio de declaraci\u00F3n de mercanc\u00EDa que permite la entrada al pa\u00EDs con el fin de cumplir un prop\u00F3sito, por un tiempo limitado"),
+            t("Admisi\u00F3n temporal para perfeccionamiento activo"),
+            t("Servicio de declaraci\u00F3n de mercanc\u00EDa que permite la entrada al pa\u00EDs con el fin de ser sometida a un proceso de perfeccionamiento"),
+            t("Admisi\u00F3n temporal para perfeccionamiento activo:"),
+            t("Servicio de declaraci\u00F3n de mercanc\u00EDa que permite la entrada al pa\u00EDs con el fin de ser sometida a un proceso de perfeccionamiento Las actividades que entran en el rengl\u00F3n de perfeccionamiento son: transformaci\u00F3n, montaje, ensamblaje, adaptaci\u00F3n, reparaci\u00F3n, restauraci\u00F3n, acondicionamiento"),
+        ],
+    },
+    {
+        title: t("Leyes especiales"),
+        descriptionList: [
+            t("Exoneraci\u00F3n (Ley 4027)"),
+            t("Servicio de gesti\u00F3n y tr\u00E1mite de beneficio de descargo pago de derechos de importaci\u00F3n de mercanc\u00EDa mediante resoluci\u00F3n del ministerio de hacienda gaceta oficial, leyes que lo amparen"),
+            t("Zona Franca"),
+            t("Servicio de declaraci\u00F3n de mercanc\u00EDa en el r\u00E9gimen legal que tiene como beneficio el descargo de pago de derechos de importaci\u00F3n, impuesto sobre la renta y otras obligaciones tributarias"),
+            t("Mudanza"),
+            t("Servicio de declaraci\u00F3n de ajuares del hogar y efectos personales con la aplicaci\u00F3n de beneficios parciales a los ciudadanos dominicanos que vienen retirados del extranjero"),
+            t("Ley 168"),
+            t("Servicio de gesti\u00F3n y tr\u00E1mite de beneficio de pago parcial de derechos de importaci\u00F3n de veh\u00EDculos de ciudadanos que viven en el exterior"),
+        ],
+    },
+    {
+        title: t("Otros reg\u00EDmenes aduaneros"),
+        descriptionList: [
+            t("Reembarque"),
+            t("Servicio de declaraci\u00F3n de mercanc\u00EDa que no fueron nacionalizadas para ser remitida al exterior"),
+            t("Tr\u00E1nsito Internacional"),
+            t("Servicio de declaraci\u00F3n de mercanc\u00EDa que permite el paso de dicha mercanc\u00EDa por el pa\u00EDs para dirigirse a su destino final"),
+            t("Tr\u00E1nsito Local"),
+            t("Servicio de declaraci\u00F3n de mercanc\u00EDa que permite el traslado de dicha mercanc\u00EDa de una aduana local a otra, con el objetivo del pago de los derechos de importaci\u00F3n"),
+        ],
+    },
+];
+const otherServices = [
+    {
+        title: t("Cambio de r\u00E9gimen aduanero"),
+        description: t("Servicio de tramite y gesti\u00F3n de cambio de r\u00E9gimen aduanero"),
+    },
+    {
+        title: t("Fiscalizaci\u00F3n y conciliaci\u00F3n ante la DGA"),
+        description: t("Servicio de representaci\u00F3n de un importador ante un proceso de fiscalizaci\u00F3n y conciliaci\u00F3n"),
+    },
+    {
+        title: t("Tr\u00E1mite de permisos para importaci\u00F3n y exportaci\u00F3n"),
+        description: t("Servicios de gesti\u00F3n y tramite de consentimientos requeridos para la importaci\u00F3n/ exportaci\u00F3n de mercanc\u00EDa"),
+    },
+    {
+        title: t("Tr\u00E1mite de primera placa equipos y veh\u00EDculos"),
+        description: t("Servicio de gesti\u00F3n y tramite de placa de veh\u00EDculos y equipos nacionalizados"),
+    },
+    {
+        title: t("Traspaso de matr\u00EDcula y placa de equipos"),
+        description: t("Servicios de gesti\u00F3n y tramite de cesi\u00F3n de derecho de una persona f\u00EDsica/jur\u00EDdica a otra"),
+    },
+];
 ---
 
 <html lang={i18next.language}>
-  <head>
-    <MainHead
-      title="Services | Encarnación Service SRL"
-      description="Los diferentes servicios de sistemas disponibles por Encarnación Service SRL"
-    />
-    <HeadHrefLangs />
-    <style>
-      .wrapper.bio {
-        /* max-width: 50em; */
-      }
-    </style>
-  </head>
-  <body
-    class="bg-world-pattern bg-fixed bg-center-left-20 sm:bg-world-pattern sm:bg-fixed sm:bg-repeat-x"
-  >
-    <Nav
-      location="services"
-      translations={navTranslations}
-      language={i18next.language}
-      client:idle
-      ><LanguageSelectorWrapper />
-    </Nav>
-    <main class="wrapper">
-      <div class="overflow-hidden py-16 lg:py-24">
-        <div
-          class="relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-7xl lg:px-8"
-        >
-          <svg
-            class="absolute left-full hidden -translate-x-1/2 -translate-y-1/4 transform lg:block"
-            width="404"
-            height="784"
-            fill="none"
-            viewBox="0 0 404 784"
-            aria-hidden="true"
-          >
-            <defs>
-              <pattern
-                id="b1e6e422-73f8-40a6-b5d9-c8586e37e0e7"
-                x="0"
-                y="0"
-                width="20"
-                height="20"
-                patternUnits="userSpaceOnUse"
-              >
-                <rect
-                  x="0"
-                  y="0"
-                  width="4"
-                  height="4"
-                  class="text-gray-200"
-                  fill="currentColor"></rect>
-              </pattern>
-            </defs>
-            <rect
-              width="404"
-              height="784"
-              fill="url(#b1e6e422-73f8-40a6-b5d9-c8586e37e0e7)"></rect>
-          </svg>
-
-          <div class="relative">
-            <ArticleTitle>Nuestros Servicios</ArticleTitle>
-            <!-- <p class="mx-auto mt-4 max-w-3xl text-center text-xl text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in, accusamus quisquam.</p> -->
-          </div>
-
-          <div
-            class="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8"
-          >
-            <div class="relative">
-              <SectionTitle
-                >Asesoría en comercio internacional y gestiones aduanales.</SectionTitle
-              >
-              <p class="mt-3 text-lg text-gray-500">
-                Servicio de consulta e información de procesos relacionados a
-                los regímenes aduaneros para la importación/ exportación de
-                mercancía.
-              </p>
-            </div>
-
-            <div class="relative -mx-4 mt-10 lg:mt-0" aria-hidden="true">
-              <svg
-                class="absolute invisible sm:visible left-1/2 -translate-x-1/2 translate-y-16 transform lg:hidden"
-                width="784"
-                height="404"
-                fill="none"
-                viewBox="0 0 784 404"
-              >
-                <defs>
-                  <pattern
-                    id="ca9667ae-9f92-4be7-abcb-9e3d727f2941"
-                    x="0"
-                    y="0"
-                    width="20"
-                    height="20"
-                    patternUnits="userSpaceOnUse"
-                  >
-                    <rect
-                      x="0"
-                      y="0"
-                      width="4"
-                      height="4"
-                      class="text-gray-200"
-                      fill="currentColor"></rect>
-                  </pattern>
-                </defs>
-                <rect
-                  width="784"
-                  height="404"
-                  fill="url(#ca9667ae-9f92-4be7-abcb-9e3d727f2941)"></rect>
-              </svg>
-              <img
-                class="relative mx-auto drop-shadow-full rounded-full"
-                width="490"
-                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1200&q=75"
-                alt=""
-              />
-            </div>
-          </div>
-
-          <svg
-            class="absolute right-full hidden translate-x-1/2 translate-y-12 transform lg:block"
-            width="404"
-            height="784"
-            fill="none"
-            viewBox="0 0 404 784"
-            aria-hidden="true"
-          >
-            <defs>
-              <pattern
-                id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d"
-                x="0"
-                y="0"
-                width="20"
-                height="20"
-                patternUnits="userSpaceOnUse"
-              >
-                <rect
-                  x="0"
-                  y="0"
-                  width="4"
-                  height="4"
-                  class="text-gray-200"
-                  fill="currentColor"></rect>
-              </pattern>
-            </defs>
-            <rect
-              width="404"
-              height="784"
-              fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)"></rect>
-          </svg>
-
-          <div class="relative mt-12 sm:mt-48 lg:mt-24">
+    <head>
+        <MainHead title={t("page.title")} description={t("page.description")} />
+        <HeadHrefLangs />
+    </head>
+    <body class="bg-gradient-to-b from-white to-gray-100">
+        <Nav
+            location="services"
+            translations={navTranslations}
+            language={i18next.language}
+            client:load
+            ><LanguageSelectorWrapper />
+        </Nav>
+        <PageBanner
+            alt="A blue container being moved by an out of frame crane"
+            title=""
+            format="jpeg"
+            image="/images/moving_container.jpg"
+            titleClasses="block text-indigo-600"
+        />
+        <main>
             <div
-              class="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:items-center lg:gap-8"
+                class="relative bg-gray-50 px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
             >
-              <div class="lg:col-start-2">
-                <SectionTitle>Gestiones Aduanales</SectionTitle>
-                <p class="mt-3 text-lg text-gray-500">
-                  Son todos los servicios relacionados al proceso de regímenes
-                  aduaneros para la importación/ exportación de mercancía.
-                </p>
-                <dl class="mt-10 space-y-10">
-                  <div class="relative">
-                    <dt>
-                      <p
-                        class="ml-10 text-xl font-medium leading-6 text-gray-900"
-                      >
-                        Dentro de los regímenes aduaneros podemos encontrar:
-                      </p>
-                    </dt>
-                    <ul>
-                      <li class="list-disc mt-2 ml-16 text-base text-gray-500">
-                        Regímenes de declaración a consumo: nacionalización
-                      </li>
-                      <li class="list-disc mt-2 ml-16 text-base text-gray-500">
-                        Regímenes de suspensión de derechos de importación:
-                        Internación temporal o admisión temporal sin
-                        transformación, admisión temporal con perfeccionamiento
-                        activo, exoneración (ley 4027).
-                      </li>
-                      <li class="list-disc mt-2 ml-16 text-base text-gray-500">
-                        Leyes especiales: zona franca, mudanza y ley168.
-                      </li>
-                      <li class="list-disc mt-2 ml-16 text-base text-gray-500">
-                        Otros: reembarque, transito (internacional, local).
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="relative">
-                    <dt>
-                      <p
-                        class="ml-10 text-xl font-medium leading-6 text-gray-900"
-                      >
-                        Régimen de declaración a consumo
-                      </p>
-                    </dt>
-                    <ul>
-                      <li class="list-disc mt-2 ml-16 text-base text-gray-500">
-                        Nacionalización
-                      </li>
-                      <li class="ml-16 text-base text-gray-500">
-                        Servicio de declaración de mercancía para importación
-                        con el fin del pago de los derechos de importación
-                        (impuestos y otros) y comercio local.
-                      </li>
-                    </ul>
-                  </div>
-                </dl>
-              </div>
-
-              <div class="relative -mx-4 mt-10 lg:col-start-1 lg:mt-0">
-                <svg
-                  class="absolute left-1/2 -translate-x-1/2 translate-y-16 transform lg:hidden"
-                  width="784"
-                  height="404"
-                  fill="none"
-                  viewBox="0 0 784 404"
-                  aria-hidden="true"
-                >
-                  <defs>
-                    <pattern
-                      id="e80155a9-dfde-425a-b5ea-1f6fadd20131"
-                      x="0"
-                      y="0"
-                      width="20"
-                      height="20"
-                      patternUnits="userSpaceOnUse"
+                <div class="absolute inset-0"></div>
+                <div class="relative mx-auto max-w-7xl">
+                    <div class="">
+                        <h2
+                            class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                        >
+                            {t("Gestiones Aduanales")}
+                        </h2>
+                        <p class="mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
+                            {
+                                t(
+                                    "Son todos los servicios relacionados al proceso de regímenes aduaneros para la importación/exportación de mercancía"
+                                )
+                            }
+                        </p>
+                    </div>
+                    <div
+                        class="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-4"
                     >
-                      <rect
-                        x="0"
-                        y="0"
-                        width="4"
-                        height="4"
-                        class="text-gray-200"
-                        fill="currentColor"></rect>
-                    </pattern>
-                  </defs>
-                  <rect
-                    width="784"
-                    height="404"
-                    fill="url(#e80155a9-dfde-425a-b5ea-1f6fadd20131)"></rect>
-                </svg>
-                <img
-                  class="relative drop-shadow-lg mx-auto rounded-tl-lg rounded-br-lg"
-                  width="490"
-                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                  alt=""
-                />
-              </div>
+                        {
+                            customsProcedures.map((procedures) => (
+                                <DetailedCard {...procedures} />
+                            ))
+                        }
+                    </div>
+                    <aside class="block">
+                        <p class="p-5 text-gray-500 font-thin">
+                            {t("Nota")}:
+                            {
+                                t(
+                                    "Todas los servicios de declaraciones llevan a la par las operaciones en puerto a menos que no sean solicitadas por el cliente"
+                                )
+                            }
+                        </p>
+                    </aside>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="relative overflow-hidden py-16">
-        <div
-          class="hidden lg:absolute lg:inset-y-0 lg:block lg:h-full lg:w-full lg:[overflow-anchor:none]"
-        >
-          <div
-            class="relative mx-auto h-full max-w-prose text-lg"
-            aria-hidden="true"
-          >
-            <svg
-              class="absolute top-12 left-full translate-x-32 transform"
-              width="404"
-              height="384"
-              fill="none"
-              viewBox="0 0 404 384"
-            >
-              <defs>
-                <pattern
-                  id="74b3fd99-0a6f-4271-bef2-e80eeafdf357"
-                  x="0"
-                  y="0"
-                  width="20"
-                  height="20"
-                  patternUnits="userSpaceOnUse"
+            <div class="sm:max-w-xl mx-auto lg:max-w-7xl">
+                <div
+                    class="grid mx-auto mt-6 gap-y-2 md:gap-y-10 lg:max-w-none lg:grid-cols-6"
                 >
-                  <rect
-                    x="0"
-                    y="0"
-                    width="4"
-                    height="4"
-                    class="text-gray-200"
-                    fill="currentColor"></rect>
-                </pattern>
-              </defs>
-              <rect
-                width="404"
-                height="384"
-                fill="url(#74b3fd99-0a6f-4271-bef2-e80eeafdf357)"></rect>
-            </svg>
-            <svg
-              class="absolute top-1/2 right-full -translate-y-1/2 -translate-x-32 transform"
-              width="404"
-              height="384"
-              fill="none"
-              viewBox="0 0 404 384"
-            >
-              <defs>
-                <pattern
-                  id="f210dbf6-a58d-4871-961e-36d5016a0f49"
-                  x="0"
-                  y="0"
-                  width="20"
-                  height="20"
-                  patternUnits="userSpaceOnUse"
-                >
-                  <rect
-                    x="0"
-                    y="0"
-                    width="4"
-                    height="4"
-                    class="text-gray-200"
-                    fill="currentColor"></rect>
-                </pattern>
-              </defs>
-              <rect
-                width="404"
-                height="384"
-                fill="url(#f210dbf6-a58d-4871-961e-36d5016a0f49)"></rect>
-            </svg>
-            <svg
-              class="absolute bottom-12 left-full translate-x-32 transform"
-              width="404"
-              height="384"
-              fill="none"
-              viewBox="0 0 404 384"
-            >
-              <defs>
-                <pattern
-                  id="d3eb07ae-5182-43e6-857d-35c643af9034"
-                  x="0"
-                  y="0"
-                  width="20"
-                  height="20"
-                  patternUnits="userSpaceOnUse"
-                >
-                  <rect
-                    x="0"
-                    y="0"
-                    width="4"
-                    height="4"
-                    class="text-gray-200"
-                    fill="currentColor"></rect>
-                </pattern>
-              </defs>
-              <rect
-                width="404"
-                height="384"
-                fill="url(#d3eb07ae-5182-43e6-857d-35c643af9034)"></rect>
-            </svg>
-          </div>
-        </div>
-        <div class="relative px-4 sm:px-6 lg:px-8">
-          <div class="mx-auto max-w-prose text-lg">
-            <SectionTitle>
-              Regímenes de suspensión de derechos de importación
-            </SectionTitle>
-          </div>
-          <div class="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
-            <ul role="list">
-              <li>
-                Internación temporal o Admisión temporal sin transformación
-                Servicio de declaración de mercancía que permite la entrada al
-                país con el fin de cumplir un propósito, por un tiempo limitado.
-              </li>
-              <li>
-                Admisión temporal para perfeccionamiento activo Servicio de
-                declaración de mercancía que permite la entrada al país con el
-                fin de ser sometida a un proceso de perfeccionamiento.
-              </li>
-            </ul>
-            <p>
-              Las actividades que entran en el renglón de perfeccionamiento son:
-              transformación, montaje, ensamblaje, adaptación, reparación,
-              restauración, acondicionamiento.
-            </p>
-            <SectionTitle>Leyes especiales</SectionTitle>
-            <ul role="list">
-              <li>
-                <span class="font-semibold">Exoneración (Ley 4027)</span>
-                <p class="-mt-0">
-                  Servicio de gestión y tramite de beneficio de descargo pago de
-                  derechos de importación de mercancía mediante resolución del
-                  ministerio de hacienda gaceta oficial, leyes que lo amparen.
-                </p>
-              </li>
-              <li>
-                <span class="font-semibold">Zona Franca</span>
-                <p class="-mt-0">
-                  Servicio de declaración de mercancía en el régimen legal que
-                  tiene como beneficio el descargo de pago de derechos de
-                  importación, impuesto sobre la renta y otras obligaciones
-                  tributarias.
-                </p>
-              </li>
-              <li>
-                <span class="font-semibold">Mudanza</span>
-                <p class="-mt-0">
-                  Servicio de declaración de ajuares del hogar y efectos
-                  personales con la aplicación de beneficios parciales a los
-                  ciudadanos dominicanos que vienen retirados del extranjero.
-                </p>
-              </li>
-              <li>
-                <span class="font-semibold">Ley 168</span>
-                <p class="-mt-0">
-                  Servicio de gestión y tramite de beneficio de pago parcial de
-                  derechos de importación de vehículos de ciudadanos que viven
-                  en el exterior.
-                </p>
-              </li>
-            </ul>
-            <figure>
-              <img
-                class="w-full drop-shadow-lg rounded-lg"
-                src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                alt="Intermodal containers on dock"
-                width="1310"
-                height="873"
-              />
-            </figure>
-            <SectionTitle>Otro Servicios</SectionTitle>
-            <ul role="list">
-              <li>
-                <span class="font-semibold">Reembarque</span>
-                <p class="-mt-0">
-                  Servicio de declaración de mercancía que no fueron
-                  nacionalizadas para ser remitida al exterior.
-                </p>
-              </li>
-              <li>
-                <span class="font-semibold">Tránsito Internacional</span>
-                <p class="-mt-0">
-                  Servicio de declaración de mercancía que permite el paso de
-                  dicha mercancía por el país para dirigirse a su destino final.
-                </p>
-              </li>
-              <li>
-                <span class="font-semibold">Transito local</span>
-                <p class="-mt-0">
-                  Servicio de declaración de mercancía que permite el traslado
-                  de dicha mercancía de una aduana local a otra, con el objetivo
-                  del pago de los derechos de importación.
-                </p>
-              </li>
-              <li>
-                <span class="font-semibold">Cambio de régimen aduanero</span>
-                <p class="-mt-0">
-                  Servicio de tramite y gestión de cambio de régimen aduanero.
-                </p>
-              </li>
-              <li>
-                <span class="font-semibold"
-                  >Fiscalización y conciliación ante la DGA</span
-                >
-                <p class="-mt-0">
-                  Servicio de representación de un importador ante un proceso de
-                  fiscalización y conciliación.
-                </p>
-              </li>
-              <li>
-                <span class="font-semibold"
-                  >Trámite de permisos para importación y exportación</span
-                >
-                <p class="-mt-0">
-                  Servicios de gestión y tramite de consentimientos requeridos
-                  para la importación/ exportación de mercancía.
-                </p>
-              </li>
-              <li>
-                <span class="font-semibold"
-                  >Trámite de primera placa equipos y vehículos</span
-                >
-                <p class="-mt-0">
-                  Servicio de gestión y tramite de placa de vehículos y equipos
-                  nacionalizados.
-                </p>
-              </li>
-              <li>
-                <span class="font-semibold"
-                  >Traspaso de matrícula y placa de equipos</span
-                >
-                <p class="-mt-0">
-                  Servicios de gestión y tramite de cesión de derecho de una
-                  persona física/ jurídica a otra.
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <ContactForm showPatterns={true} client:visible />
-      </div>
-    </main>
-    <Footer />
-  </body>
+                    <!-- <div class="h-1/3 bg-gray-50 sm:h-2/3"></div> -->
+                    <article
+                        class="col-span-6 lg:col-span-4 mx-6 self-center row-start-4 lg:row-start-1 lg:col-start-1"
+                    >
+                        <h2
+                            class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                        >
+                            {
+                                t(
+                                    "Asesoría en comercio internacional y gestiones aduanales"
+                                )
+                            }
+                        </h2>
+                        <p class="mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
+                            {
+                                t(
+                                    "Servicio de consulta e información de procesos relacionados a los regímenes aduaneros para la importación/ exportación de mercancía"
+                                )
+                            }
+                        </p>
+                    </article>
+                    <div
+                        class="col-span-6 lg:col-span-3 lg:row-start-1 lg:col-start-5"
+                    >
+                        <Image
+                            class="saturate-50 w-full lg:rounded-tl-xl lg:rounded-bl-xl shadow-xl ring-1 ring-black ring-opacity-5"
+                            src="/images/overwhelming_containers.jpg"
+                            alt="Person standing infront of a stack of containers, stacked 7 high"
+                            format="jpeg"
+                            width={3448}
+                            height={4592}
+                            aspectRatio={9 / 16}
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="my-20 sm:max-w-lg mx-auto lg:max-w-7xl">
+                <div class="mx-4 sm:mx-0 lg:mx-6">
+                    <h2
+                        class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                    >
+                        {t("Otros trámites y gestiones")}
+                    </h2>
+                    <div class="my-10">
+                        <dl class="space-y-6">
+                            {
+                                otherServices.map(({ title, description }) => {
+                                    return (
+                                        <div>
+                                            <dt class="text-lg font-medium leading-6 text-gray-900">
+                                                {title}
+                                            </dt>
+                                            <dd class="mt-2 text-base text-gray-500">
+                                                {description}
+                                            </dd>
+                                        </div>
+                                    );
+                                })
+                            }
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <Footer />
+    </body>
 </html>

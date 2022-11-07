@@ -7,12 +7,13 @@
         "press": "Prensa"
     },
     "banner": {
-        "title": "Desde 1992 acompañando a nuestros clientes en gestiones aduanales.",
+        "title": "Desde 1992 acompañando a nuestros clientes en gestiones aduanales",
         "experience": "Años de experiencia",
         "procedures": "Gestiones",
         "customers": "Clientes"
     },
     "cta": {
+        "title:alt": "Conoce nuestros servicios y asesorías",
         "title": "Ofrecemos un servicio eficiente en del marco del comercio seguro",
         "features": {
             "one": "Asesoría",
@@ -23,9 +24,9 @@
         "link": "Ver Más"
     },
     "services": {
+        "title": "Ofrecemos un servicio eficiente en del marco del comercio seguro",
         "one": "Miembros de la Asociación Dominicana de Agentes de Aduanas, la Asociación Internacional de operadores económicos autorizados, aduaneros y logísticos; y de la Dirección General de Aduanas.",
         "two": "Una de las primeras agencias aduanales dominicanas en certificarse como Operador Económico Autorizado.",
         "three": "Contamos con licencia para operar en todos los puertos del país."
-    },
-    "trusted-slogan": "Con la confianza de las mejores empresas"
+    }
 }

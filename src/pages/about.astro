@@ -4,7 +4,8 @@ import { HeadHrefLangs } from "astro-i18next/components";
 import MainHead from "../components/MainHead.astro";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.jsx";
-import { Header2, MissionParagraph } from "../components/Stateless";
+import PageBanner from "../components/PageBanner.astro";
+import Staff from "../components/Staff.astro";
 import LanguageSelectorWrapper from "../components/LanguageSelectorWrapper.astro";
 import { getNavTranslations } from "../utils/index";
 
@@ -12,6 +13,15 @@ changeLanguage("es");
 
 setDefaultNamespace("about");
 const navTranslations = getNavTranslations(t);
+const valueList = [
+    "values.efficiency",
+    "values.punctuality",
+    "values.loyalty",
+    "values.confidence",
+    "values.quality",
+    "values.security",
+];
+const staffTitle = t("staff.title");
 ---
 
 <html lang={i18next.language}>
@@ -21,31 +31,8 @@ const navTranslations = getNavTranslations(t);
             description="About Encarnación Service SRL"
         />
         <HeadHrefLangs />
-        <style>
-            .heroImg {
-                max-height: 24rem;
-                object-fit: cover;
-                overflow: hidden;
-            }
-
-            .heroImg img {
-                width: 100%;
-            }
-
-            .bio {
-                font-size: var(--f-u1);
-                line-height: 2;
-                margin-top: 4em;
-                text-align: justify;
-                text-justify: inter-word;
-            }
-
-            .wrapper.bio {
-                max-width: 50em;
-            }
-        </style>
     </head>
-    <body>
+    <body class="bg-gradient-to-b from-white to-gray-100">
         <Nav
             location="about"
             translations={navTranslations}
@@ -53,103 +40,90 @@ const navTranslations = getNavTranslations(t);
             client:load
             ><LanguageSelectorWrapper />
         </Nav>
-        <main class="wrapper">
-            <h1>Quiénes Somos</h1>
-            <div class="heroImg">
-                <img
-                    src="https://images.unsplash.com/photo-1560264280-88b68371db39"
-                />
-            </div>
-            <div class="bio">
-                <MissionParagraph>
-                    Encarnación Service SRL nace en 1992 como una agencia de
-                    aduanas y empresa de servicios de telecomunicaciones, con el
-                    paso de los años consolidándose y permaneciendo con los
-                    servicios de comercio exterior. Es una empresa familiar que
-                    cuenta con 37 años de experiencia en el mercado, presidida
-                    por el licenciado Alejandro Encarnación.
-                </MissionParagraph>
-                <MissionParagraph>
-                    Desde nuestros inicios, nos hemos mantenido en el continuo
-                    desarrollo para brindar servicios aduanales con los mejores
-                    estándares, convirtiéndonos en una de las primeras agencias
-                    aduanales del país en certificarse como Operador Económico
-                    Autorizado en el año 2017 y re certificándonos en el año
-                    2022.
-                </MissionParagraph>
-                <MissionParagraph>
-                    Buscando dar una cobertura eficiente a la demanda de
-                    nuestros clientes, obtuvimos la licencia para operar en
-                    todos los puertos del país.
-                </MissionParagraph>
-                <MissionParagraph>
-                    Con el objetivo de brindar un servicio de calidad y eficacia
-                    dentro del marco del comercio seguro, trabajamos de mano con
-                    la Asociación Dominicana de Agentes de Aduanas y la
-                    Dirección General de Aduanas, actualizándonos en todos los
-                    campos de interés.
-                </MissionParagraph>
-            </div>
-            <article class="grid grid-cols-2 mt-20 h-screen">
-                <section class="col-span-1 invisible sm:visible">
-                    <div class="text-center text-2xl">images goes here</div>
-                </section>
-                <section class="col-span-2 sm:col-span-1 h-1/2">
-                    <Header2>Misión</Header2>
-                    <MissionParagraph>
-                        Contribuir a la satisfacción de las necesidades de
-                        nuestros clientes con un servicio eficaz y de calidad.
-                    </MissionParagraph>
-                </section>
-                <section class="col-span-2 sm:col-span-1 h-1/2">
-                    <Header2>Visión</Header2>
-                    <MissionParagraph>
-                        Ser la empresa en servicio de comercio exterior y
-                        aduanas de mayor confiabilidad y prestigio, ayudando a
-                        nuestros clientes en el menor tiempo posible en el logro
-                        de sus objetivos, permitiendo el fortalecimiento de
-                        nuestra relación.
-                    </MissionParagraph>
-                </section>
-                <section class="col-span-1 invisible sm:visible">
-                    <div class="text-center text-2xl">images goes here</div>
-                </section>
-                <section class="col-span-1 invisible sm:visible">
-                    <div class="text-center text-2xl">images goes here</div>
-                </section>
-                <section class="col-span-2 sm:col-span-1 h-1/2">
-                    <Header2>Valores</Header2>
-                    <ul class="list-disc list-inside p-6 text-center">
-                        <li>Eficiencia</li>
-                        <li>Puntualidad</li>
-                        <li>Fidelidad</li>
-                        <li>Confianza</li>
-                        <li>Calidad</li>
-                        <li>Seguridad</li>
-                    </ul>
-                </section>
-            </article>
-            <div class="grid justify-items-end mt-10">
-                <a
-                    href="/philosophy/"
-                    class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        <PageBanner
+            alt="Two men reviewing some documentation next to a warehouse shelf"
+            title=""
+            image="/images/warehouse_team_2.jpeg"
+            format="jpeg"
+            titleClasses="block text-black"
+        />
+        <main class="mx-auto px-4 md:p-6 md:w-10/12 lg:w-10/12 xl:w-8/12">
+            <div>
+                <h2
+                    class="text-4xl md:text-5xl font-semibold my-4 px-1 py-1 md:px-4"
                 >
-                    Filosofía Corporativa
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="w-6 h-6"
+                    {t("title")}
+                </h2>
+                <article class="grid gap-x-8 grid-cols-12 md:px-6">
+                    <div
+                        class="col-span-10 min-[350px]:col-span-12 md:col-span-6"
                     >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
-                    </svg>
-                </a>
+                        <p class="indent-8 mb-3">{t("intro.p1")}</p>
+                        <p class="indent-8 mb-3">{t("intro.p2")}</p>
+                    </div>
+                    <div
+                        class="col-span-10 min-[350px]:col-span-12 md:col-span-6"
+                    >
+                        <p class="indent-8 mb-3">{t("intro.p3")}</p>
+                        <p class="indent-8 mb-3">{t("intro.p4")}</p>
+                    </div>
+                </article>
+                <article class="grid gap-x-8 grid-cols-12 md:px-6">
+                    <div
+                        class="col-span-10 min-[350px]:col-span-12 md:col-span-6"
+                    >
+                        <h3 class="text-2xl md:text-2xl font-semibold my-1">
+                            {t("mission.title")}
+                        </h3>
+                        <p class="mb-3">{t("mission.description")}</p>
+                    </div>
+
+                    <div
+                        class="col-span-10 min-[350px]:col-span-12 md:col-span-6"
+                    >
+                        <h3 class="text-2xl md:text-2xl font-semibold my-1">
+                            {t("vision.title")}
+                        </h3>
+                        <p class="mb-3">{t("vision.description")}</p>
+                    </div>
+                </article>
             </div>
+            <div class="md:px-6">
+                <h3 class="text-2xl md:text-2xl font-semibold my-1">
+                    {t("values.title")}
+                </h3>
+                <dl
+                    class="mt-10 space-y-1 grid grid-cols-2 gap-x-6 sm:gap-y-8 sm:space-y-0 lg:grid-cols-4 lg:gap-x-8"
+                >
+                    {
+                        valueList.map((item) => (
+                            <div class="relative">
+                                <dt>
+                                    <svg
+                                        class="absolute h-6 w-6 text-green-500"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke-width="1.5"
+                                        stroke="currentColor"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5"
+                                        />
+                                    </svg>
+                                    <p class="ml-9 text-lg font-medium leading-6 text-gray-900">
+                                        {t(item)}
+                                    </p>
+                                </dt>
+                            </div>
+                        ))
+                    }
+                </dl>
+            </div>
+            <Staff title={staffTitle} />
         </main>
         <Footer />
     </body>
