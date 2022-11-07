@@ -3,6 +3,7 @@ import i18next, { t, changeLanguage, setDefaultNamespace } from "i18next";
 import { HeadHrefLangs } from "astro-i18next/components";
 import MainHead from "../../components/MainHead.astro";
 import PageBanner from "../../components/PageBanner.astro";
+import DetailedCard from "../../components/DetailedCard.astro";
 import DesicriptionTerm from "../../components/DesicriptionTerm.astro";
 import ContactForm from "../../components/ContactForm.jsx";
 import Footer from "../../components/Footer.astro";
@@ -15,6 +16,38 @@ changeLanguage("en");
 
 setDefaultNamespace("services");
 const navTranslations = getNavTranslations(t);
+const customsProcedures = [
+    {
+        title: t("R\u00E9gimen de declaraci\u00F3n a consumo/ Definitivo"),
+        descriptionList: [
+            t("Nacionalizaci\u00F3n"),
+            t("Servicio de declaraci\u00F3n de mercanc\u00EDa para importaci\u00F3n con el fin del pago de los derechos de importaci\u00F3n (impuestos y otros) y comercio local"),
+            t("Exportaci\u00F3n"),
+            t("Servicio de declaraci\u00F3n de mercanc\u00EDa y operaciones en puerto para exportaci\u00F3n"),
+        ],
+    },
+    {
+        title: t("Reg\u00EDmenes de suspensi\u00F3n de derechos de importaci\u00F3n"),
+        descriptionList: [
+            t("Internaci\u00F3n temporal o Admisi\u00F3n temporal sin transformaci\u00F3n"),
+            t("Servicio de declaraci\u00F3n de mercanc\u00EDa que permite la entrada al pa\u00EDs con el fin de cumplir un prop\u00F3sito, por un tiempo limitado"),
+            t("Servicio de declaraci\u00F3n de mercanc\u00EDa que permite la entrada al pa\u00EDs con el fin de cumplir un prop\u00F3sito, por un tiempo limitado"),
+            t("Admisi\u00F3n temporal para perfeccionamiento activo"),
+            t("Servicio de declaraci\u00F3n de mercanc\u00EDa que permite la entrada al pa\u00EDs con el fin de ser sometida a un proceso de perfeccionamiento"),
+            t("Admisi\u00F3n temporal para perfeccionamiento activo:"),
+            t("Servicio de declaraci\u00F3n de mercanc\u00EDa que permite la entrada al pa\u00EDs con el fin de ser sometida a un proceso de perfeccionamiento Las actividades que entran en el rengl\u00F3n de perfeccionamiento son: transformaci\u00F3n, montaje, ensamblaje, adaptaci\u00F3n, reparaci\u00F3n, restauraci\u00F3n, acondicionamiento"),
+        ],
+    },
+    {
+        title: t("Leyes especiales"),
+        descriptionList: [
+            t("Exoneraci\u00F3n (Ley 4027)"),
+            t("Servicio de gesti\u00F3n y tr\u00E1mite de beneficio de descargo pago de derechos de importaci\u00F3n de mercanc\u00EDa mediante resoluci\u00F3n del ministerio de hacienda gaceta oficial, leyes que lo amparen"),
+            t("Zona Franca"),
+            t("Servicio de declaraci\u00F3n de mercanc\u00EDa en el r\u00E9gimen legal que tiene como beneficio el descargo de pago de derechos de importaci\u00F3n, impuesto sobre la renta y otras obligaciones tributarias"),
+        ],
+    },
+];
 ---
 
 <html lang={i18next.language}>
@@ -31,12 +64,46 @@ const navTranslations = getNavTranslations(t);
             ><LanguageSelectorWrapper />
         </Nav>
         <PageBanner
-            alt=""
+            alt="A blue container being moved by an out of frame crane"
             title=""
-            image="https://images.unsplash.com/photo-1560264280-88b68371db39"
-            titleClasses="block text-black"
+            format="jpeg"
+            image="/images/moving_container.jpg"
+            titleClasses="block text-indigo-600"
         />
-        <main></main>
+        <main>
+            <div
+                class="relative bg-gray-50 px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
+            >
+                <div class="absolute inset-0">
+                    <div class="h-1/3 bg-white sm:h-2/3"></div>
+                </div>
+                <div class="relative mx-auto max-w-7xl">
+                    <div class="">
+                        <h2
+                            class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                        >
+                            {t("Gestiones Aduanales")}
+                        </h2>
+                        <p class="mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
+                            {
+                                t(
+                                    "Son todos los servicios relacionados al proceso de regímenes aduaneros para la importación/exportación de mercancía"
+                                )
+                            }
+                        </p>
+                    </div>
+                    <div
+                        class="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3"
+                    >
+                        {
+                            customsProcedures.map((procedures) => (
+                                <DetailedCard {...procedures} />
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+        </main>
         <Footer />
     </body>
 </html>
