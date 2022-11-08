@@ -1,0 +1,50 @@
+---
+interface Props {
+    height: string;
+    width: string;
+}
+
+const { height, width } = Astro.props;
+---
+
+<div>
+    <div class="">
+        <h2 class="text-right text-3xl font-bold tracking-tight sm:text-4xl">
+            Ubicación
+        </h2>
+    </div>
+    <p class="text-right">Dirección:</p>
+    <p class="text-right">
+        <span class="sr-only"
+            >Ubicación en el mapa de Google de Encarnación Service SRL</span
+        >
+        <a
+            target="_blank"
+            href="https://www.google.com/maps/place/Encarnacion+Service+SRL/@18.481114,-69.9389918,18z/data=!4m5!3m4!1s0x8eaf89eea118f2d7:0x1a1c9640afcc52a0!8m2!3d18.4809722!4d-69.938383"
+            role="link"
+            >Av. Abraham Lincoln No. 1067, Edificio Los rios III, Apartamento
+            202, Ensanche Piantini
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="inline w-4 h-4"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z"
+                    clip-rule="evenodd"></path>
+                <path
+                    fill-rule="evenodd"
+                    d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </a>
+    </p>
+    <iframe
+        width={width}
+        height={height}
+        class="w-full aspect-square"
+        src="https://maps.google.com/maps?q=Encarnacion%20Service%20SRL%20edif,%20Los%20Rios%20III,%20Av.%20Abraham%20Lincoln%201067,%20Santo%20Domingo,%20Dominican%20Republic&t=&z=15&ie=UTF8&iwloc=&output=embed#"
+    ></iframe>
+</div>
