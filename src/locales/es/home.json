@@ -13,8 +13,8 @@
         "customers": "Clientes"
     },
     "cta": {
-        "title:alt": "Conoce nuestros servicios y asesorías",
-        "title": "Ofrecemos un servicio eficiente en del marco del comercio seguro",
+        "title": "Conoce nuestros servicios",
+        "title:old": "Ofrecemos un servicio eficiente en del marco del comercio seguro",
         "features": {
             "one": "Asesoría",
             "two": "Gestiones",

@@ -13,7 +13,8 @@
         "customers": "Customers"
     },
     "cta": {
-        "title": "We offer an efficient service within the framework of secure trade",
+        "title:old": "We offer an efficient service within the framework of secure trade",
+        "title": "Learn about our services",
         "features": {
             "one": "Advisory",
             "two": "Procedures",
