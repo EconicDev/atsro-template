@@ -28,7 +28,7 @@ changeLanguage(i18next.language);
         class="relative text-center mx-auto max-w-xl px-4 sm:px-6 lg:max-w-7xl lg:px-8"
     >
         <h3
-            class="inline-flex mt-8 items-center rounded text-black-coral-500 text-3xl font-semibold"
+            class="inline-flex mt-8 items-center rounded text-dodger-blue-500 text-3xl font-medium"
         >
             {t("services.title")}
         </h3>
@@ -45,12 +45,18 @@ changeLanguage(i18next.language);
             </div>
             <dl class="flex flex-col justify-end mt-10 space-y-10">
                 {
-                    services.map((service) => (
-                        <ServiceListItem
-                            {...service}
-                            description={t(service.description)}
-                        />
-                    ))
+                    services.map((service, i) => {
+                        return (
+                            <ServiceListItem
+                                {...service}
+                                description={t(service.description)}
+                                alternative={i % 2 === -1}
+                                currently
+                                turned
+                                off
+                            />
+                        );
+                    })
                 }
             </dl>
         </div>
