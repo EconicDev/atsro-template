@@ -45,12 +45,18 @@ changeLanguage(i18next.language);
             </div>
             <dl class="flex flex-col justify-end mt-10 space-y-10">
                 {
-                    services.map((service) => (
-                        <ServiceListItem
-                            {...service}
-                            description={t(service.description)}
-                        />
-                    ))
+                    services.map((service, i) => {
+                        return (
+                            <ServiceListItem
+                                {...service}
+                                description={t(service.description)}
+                                alternative={i % 2 === -1}
+                                currently
+                                turned
+                                off
+                            />
+                        );
+                    })
                 }
             </dl>
         </div>
