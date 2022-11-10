@@ -93,8 +93,21 @@ const otherServices = [
     <head>
         <MainHead title={t("page.title")} description={t("page.description")} />
         <HeadHrefLangs />
+        <style>
+            .card-title {
+                /* -webkit-box-shadow: 0px 29px 23px -4px rgba(0, 0, 0, 0.13);
+                box-shadow: 0px 29px 23px -4px rgba(0, 0, 0, 0.13); */
+
+                /* -webkit-box-shadow: 0px 20px 17px -12px rgba(0, 0, 0, 0.13);
+                box-shadow: 0px 20px 17px -12px rgba(0, 0, 0, 0.13); */
+
+                -webkit-box-shadow: 0px 20px 17px -12px rgba(0, 0, 0, 0.31);
+                box-shadow: 0px 20px 17px -12px rgba(0, 0, 0, 0.31);
+            }
+        </style>
     </head>
-    <body class="bg-gradient-to-b from-white to-gray-100">
+    <!-- bg-gradient-to-b from-white to-gray-100 -->
+    <body class="">
         <Nav
             location="services"
             translations={navTranslations}
@@ -111,17 +124,20 @@ const otherServices = [
         />
         <main>
             <div
-                class="relative bg-gray-50 px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
+                class="relative bg-gray-50 px-4 pt-8 pb-4 sm:px-6 lg:px-8 lg:pt-8 lg:pb-8 card-title rounded-b-lg mx-4"
             >
                 <div class="absolute inset-0"></div>
                 <div class="relative mx-auto max-w-7xl">
-                    <div class="">
+                    <div>
+                        <!-- border-b-2 py-4 border-fulvous-100 -->
                         <h2
-                            class="text-3xl font-bold tracking-tight text-dodger-blue-500 sm:text-4xl border-b-4 py-4 border-fulvous-100 border-solid"
+                            class="text-center lg:text-left text-3xl font-semibold tracking-tight text-dodger-blue-500 sm:text-4xl bg-gray-50"
                         >
                             {t("Gestiones Aduanales")}
                         </h2>
-                        <p class="mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
+                        <p
+                            class="mt-3 lg:max-w-2xl text-center lg:text-left text-xl text-gray-500 sm:mt-4"
+                        >
                             {
                                 t(
                                     "Son todos los servicios relacionados al proceso de regímenes aduaneros para la importación/exportación de mercancía"
@@ -139,7 +155,7 @@ const otherServices = [
                         }
                     </div>
                     <aside class="block">
-                        <p class="p-5 text-gray-500 font-thin">
+                        <p class="p-5 font-thin text-fulvous-400">
                             {t("Nota")}:
                             {
                                 t(
@@ -150,15 +166,13 @@ const otherServices = [
                     </aside>
                 </div>
             </div>
-            <div class="sm:max-w-xl mx-auto lg:max-w-7xl">
-                <div
-                    class="grid mx-auto mt-6 gap-y-2 md:gap-y-10 lg:max-w-none lg:grid-cols-6"
-                >
-                    <!-- <div class="h-1/3 bg-gray-50 sm:h-2/3"></div> -->
+            <div
+                class="card-title rounded-b-lg mx-6 py-10 bg-gradient-to-t from-white via-gray-50 to-gray-100 mb-1"
+            >
+                <div class="grid mx-auto pt-6 lg:max-w-none lg:grid-cols-6">
                     <article class="col-span-6 mx-6 self-center">
-                        <!-- class="col-span-6 lg:col-span-4 mx-6 self-center row-start-4 lg:row-start-1 lg:col-start-1" -->
                         <h2
-                            class="text-3xl font-bold tracking-tight text-dodger-blue-500 sm:text-4xl border-b-4 py-4 border-fulvous-100 border-solid"
+                            class="text-3xl font-bold tracking-tight text-dodger-blue-500 sm:text-4xl"
                         >
                             {
                                 t(
@@ -189,23 +203,23 @@ const otherServices = [
                     <!-- </div> -->
                 </div>
             </div>
-            <div class="my-20 sm:max-w-lg mx-auto lg:max-w-7xl">
+            <div class="py-16 card-title rounded-b-lg mx-8 pb-10">
                 <div class="mx-4 sm:mx-0 lg:mx-6">
                     <h2
-                        class="text-3xl font-bold tracking-tight text-dodger-blue-500 sm:text-4xl border-b-4 py-4 border-fulvous-100 border-solid"
+                        class="text-3xl font-bold tracking-tight text-dodger-blue-500 sm:text-4xl"
                     >
                         {t("Otros trámites y gestiones")}
                     </h2>
-                    <div class="my-10">
+                    <div class="my-5">
                         <dl class="space-y-6">
                             {
                                 otherServices.map(({ title, description }) => {
                                     return (
                                         <div>
-                                            <dt class="text-lg font-medium leading-6 text-gray-900">
+                                            <dt class="text-xl font-semibold leading-6 text-gray-500 ">
                                                 {title}
                                             </dt>
-                                            <dd class="mt-2 text-base text-gray-500">
+                                            <dd class="mt-2 text-lg text-gray-500">
                                                 {description}
                                             </dd>
                                         </div>
