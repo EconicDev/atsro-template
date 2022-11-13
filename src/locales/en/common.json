@@ -5,5 +5,15 @@
         "services": "Services",
         "contact": "Contact",
         "press": "Press"
+    },
+    "contact": {
+        "title": "Contact",
+        "form": {
+            "name": "Full name",
+            "email": "Email",
+            "phone": "Phone",
+            "message": "Message",
+            "submit": "Submit"
+        }
     }
 }
