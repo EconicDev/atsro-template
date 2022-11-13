@@ -4,7 +4,7 @@ import { HeadHrefLangs } from "astro-i18next/components";
 import MainHead from "../../components/MainHead.astro";
 import Nav from "../../components/Nav.jsx";
 import Footer from "../../components/Footer.astro";
-import ContactForm from "../../components/ContactForm.jsx";
+import ContactForm from "../../components/ContactForm.astro";
 import CompanyMap from "../../components/CompanyMap.astro";
 import LanguageSelectorWrapper from "../../components/LanguageSelectorWrapper.astro";
 import { getNavTranslations } from "../../utils/index";
@@ -32,21 +32,16 @@ const navTranslations = getNavTranslations(t);
             client:idle
             ><LanguageSelectorWrapper />
         </Nav>
-        <main>
+        <main class="lg:mb-10">
             <section class="lg:h-screen">
-                <div class="h-1/2">Banner here</div>
+                <div class="h-96 lg:h-1/2">Banner here</div>
                 <div
-                    class="grid grid-cols-1 lg:grid-cols-12 lg:h-1/2 bg-gray-100 px-4 lg:px-0"
+                    class="grid grid-cols-1 lg:grid-cols-12 lg:h-1/2 bg-gray-100 md:px-4 lg:px-0"
                 >
                     <div
                         class="lg:col-start-1 lg:col-span-3 overflow-hidden self-end"
                     >
                         <div class="py-12 px-4 sm:py-32 sm:px-6 lg:px-8">
-                            <h2
-                                class="text-3xl font-bold tracking-tight text-gray-900"
-                            >
-                                Nuestro Contacto
-                            </h2>
                             <p class="mt-6 max-w-3xl text-lg text-gray-500">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -111,14 +106,12 @@ const navTranslations = getNavTranslations(t);
                         </div>
                     </div>
                     <div
-                        class="lg:col-start-10 lg:col-span-3 overflow-hidden self-end lg:h-auto;"
+                        class="border md:border-none lg:col-start-10 lg:col-span-3 overflow-hidden self-end lg:h-auto"
                     >
                         <CompanyMap height="350" width="600" />
                     </div>
-                    <div
-                        class="lg:row-start-1 lg:col-start-4 lg:col-span-6 overflow-hidden"
-                    >
-                        <ContactForm showPatterns={false} client:visible />
+                    <div class="lg:row-start-1 lg:col-start-4 lg:col-span-6">
+                        <ContactForm />
                     </div>
                 </div>
             </section>
