@@ -7,7 +7,8 @@
         "press": "Prensa"
     },
     "contact": {
-        "title": "Contacto",
+        "title": "Escríbenos",
+        "find": "Visitanos",
         "form": {
             "name": "Nombe Completo",
             "email": "Correo electrónico",

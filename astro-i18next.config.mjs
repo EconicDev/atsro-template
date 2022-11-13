@@ -3,7 +3,7 @@ export default {
     defaultLanguage: "es",
     supportedLanguages: ["es", "en"],
     i18next: {
-        debug: true,
+        debug: false,
         initImmediate: false,
         ns: ["common", "home", "about", "services", "contact", "press"],
         defaultNS: "common",
