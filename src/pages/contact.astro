@@ -7,6 +7,7 @@ import Footer from "../components/Footer.astro";
 import ContactForm from "../components/ContactForm.astro";
 import CompanyContact from "../components/CompanyContact.astro";
 import CompanyMap from "../components/CompanyMap.astro";
+import PageBanner from "../components/PageBanner.astro";
 import LanguageSelectorWrapper from "../components/LanguageSelectorWrapper.astro";
 import { getNavTranslations } from "../utils/index";
 
@@ -33,17 +34,24 @@ const navTranslations = getNavTranslations(t);
             client:idle
             ><LanguageSelectorWrapper />
         </Nav>
+        <PageBanner
+            alt="The head of the status of Fray Anton de Montesinos in the foreground appears to be calling a ship off in the background, south of port Santo Domingo during a sunset."
+            title={t("title")}
+            format="jpeg"
+            image="/images/ship_sunset.jpg"
+            titleClasses="block text-dodger-blue-600"
+        />
         <main class="min-h-min">
             <section class="lg:h-screen">
-                <div class="h-28">Banner here</div>
+                <!-- <div class="h-28">Banner here</div> -->
                 <div
-                    class="grid grid-cols-1 border items-center lg:grid-cols-12 md:px-4 lg:px-0 bg-gray-50"
+                    class="grid grid-cols-1 border-b items-center lg:grid-cols-12 md:px-4 lg:px-0 bg-gray-50"
                 >
-                    <div class="lg:col-start-1 lg:col-span-3 py-4 px-4">
+                    <div class="lg:col-start-1 lg:col-span-3 py-4 pr-4 sm:px-4">
                         <CompanyContact />
                     </div>
                     <div
-                        class="border md:border-none py-4 lg:col-start-10 lg:col-span-3 overflow-hidden lg:h-auto"
+                        class="border md:border-none py-4 px-4 lg:col-start-10 lg:col-span-3 overflow-hidden lg:h-auto"
                     >
                         <CompanyMap height="350" width="600" />
                     </div>
