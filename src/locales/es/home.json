@@ -17,8 +17,11 @@
         "title:old": "Ofrecemos un servicio eficiente en del marco del comercio seguro",
         "features": {
             "one": "Asesoría",
-            "two": "Gestiones",
-            "three": "Trámites"
+            "subone": "Consulta e información de procesos relacionados a los regímenes aduaneros.",
+            "two": "Gestiones aduanales",
+            "subtwo": "Todos los servicios relacionados al proceso de regímenes aduaneros para la importación/exportación de mercancía.",
+            "three": "Trámites",
+            "subthree": "Cambio de régimen aduanero, conciliación, permisos de importación y exportación, placa de vehículos y más."
         },
         "footer": "Conoce nuestros servicios y asesorías",
         "link": "Ver Más"

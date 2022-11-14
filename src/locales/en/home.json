@@ -17,8 +17,11 @@
         "title": "Learn about our services",
         "features": {
             "one": "Advisory",
-            "two": "Procedures",
-            "three": "Formalities"
+            "subone": "We provide consultation and information services on processes related to customs regimes.",
+            "two": "Customs Procedures",
+            "subtwo": "All services related to the process of customs regimes for the import/export of merchandise.",
+            "three": "Formalities",
+            "subthree": "Change of customs regime, conciliation, import and export permits, vehicle license plate and more."
         },
         "footer": "Learn about our services and advice",
         "link": "See More"

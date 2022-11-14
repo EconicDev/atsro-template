@@ -1,0 +1,80 @@
+---
+import i18next, { t, changeLanguage, setDefaultNamespace } from "i18next";
+
+changeLanguage(i18next.language);
+setDefaultNamespace("common");
+---
+
+<!-- mx-auto max-w-lg lg:max-w-none --><!-- <div class="bg-white lg:grid lg:grid-cols-5">
+    <div class="bg-white py-4 px-4 sm:px-6 lg:col-span-3 lg:px-8"> -->
+<div class="bg-white flex justify-center flex-col px-2">
+    <h2
+        class="pt-10 pb-0 md:pb-5 md:pt-16 text-3xl md:text-4xl text-center text-dodger-blue-500 font-semibold"
+    >
+        {t("contact.title")}
+    </h2>
+
+    <div class="h-full bg-white py-4 mr-10 lg:px-4 sm:px-6 lg:w-4/5 lg:mx-10">
+        <div class="bg-white mx-auto">
+            <form action="#" method="POST" class="grid grid-cols-1 gap-y-6">
+                <div>
+                    <label for="full-name" class="sr-only"
+                        >{t("contact.form.name")}</label
+                    >
+                    <input
+                        type="text"
+                        name="full-name"
+                        id="full-name"
+                        autocomplete="name"
+                        class="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-dodger-blue-500 focus:ring-dodger-blue-500"
+                        placeholder={t("contact.form.name")}
+                    />
+                </div>
+                <div>
+                    <label for="email" class="sr-only"
+                        >{t("contact.form.email")}</label
+                    >
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        class="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-dodger-blue-500 focus:ring-dodger-blue-500"
+                        placeholder={t("contact.form.email")}
+                    />
+                </div>
+                <div>
+                    <label for="phone" class="sr-only"
+                        >{t("contact.form.phone")}</label
+                    >
+                    <input
+                        type="text"
+                        name="phone"
+                        id="phone"
+                        autocomplete="tel"
+                        class="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-dodger-blue-500 focus:ring-dodger-blue-500"
+                        placeholder={t("contact.form.phone")}
+                    />
+                </div>
+                <div>
+                    <label for="message" class="sr-only"
+                        >{t("contact.form.message")}</label
+                    >
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="4"
+                        class="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-dodger-blue-500 focus:ring-dodger-blue-500"
+                        placeholder={t("contact.form.message")}></textarea>
+                </div>
+                <div class="flex justify-end -mr-10">
+                    <button
+                        type="submit"
+                        class="inline-flex rounded-md border border-transparent bg-dodger-blue-600 py-3 px-6 text-base font-medium text-white shadow-sm hover:bg-dodger-blue-700 focus:outline-none focus:ring-2 focus:ring-dodger-blue-500 focus:ring-offset-2"
+                        >{t("contact.form.submit")}</button
+                    >
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

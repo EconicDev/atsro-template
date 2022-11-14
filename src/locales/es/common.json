@@ -5,5 +5,17 @@
         "services": "Servicios",
         "contact": "Contacto",
         "press": "Prensa"
+    },
+    "contact": {
+        "title:alt": "Escríbenos",
+        "find": "Visitanos",
+        "title": "Contáctenos",
+        "form": {
+            "name": "Nombe Completo",
+            "email": "Correo electrónico",
+            "phone": "Teléfono",
+            "message": "Mensaje",
+            "submit": "Enviar"
+        }
     }
 }

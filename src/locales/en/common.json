@@ -5,5 +5,16 @@
         "services": "Services",
         "contact": "Contact",
         "press": "Press"
+    },
+    "contact": {
+        "title:alt": "Write to us",
+        "title": "Contact us",
+        "form": {
+            "name": "Full name",
+            "email": "Email",
+            "phone": "Phone",
+            "message": "Message",
+            "submit": "Submit"
+        }
     }
 }
