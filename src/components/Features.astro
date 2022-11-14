@@ -5,14 +5,17 @@ import FeatureCard from "./FeatureCard.astro";
 const features = [
     {
         title: "cta.features.one",
+        description: "cta.features.subone",
         icon: "/assets/check.svg",
     },
     {
         title: "cta.features.two",
+        description: "cta.features.subtwo",
         icon: "/assets/check.svg",
     },
     {
         title: "cta.features.three",
+        description: "cta.features.subthree",
         icon: "/assets/check.svg",
     },
 ];
@@ -36,10 +39,14 @@ changeLanguage(i18next.language);
         </h3>
 
         <div class="mt-16 mb-20">
-            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3">
+            <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3">
                 {
                     features.map((feature) => (
-                        <FeatureCard {...feature} title={t(feature.title)} />
+                        <FeatureCard
+                            {...feature}
+                            title={t(feature.title)}
+                            description={t(feature.description)}
+                        />
                     ))
                 }
             </div>
@@ -50,7 +57,7 @@ changeLanguage(i18next.language);
         >
             <!-- class="inline-flex items-center rounded border shadow-lg border-fulvous-300 bg-fulvous-300 px-2.5 py-1.5 text-2xl font-medium text-white hover:bg-fulvous-900 focus:outline-dodger-blue-900 focus:ring-fulvous-900 focus:ring-2 focus:ring-offset-2" -->
         </span>
-        <div class="mt-10">
+        <div class="md:mt-10">
             <a
                 type="a"
                 class="bg-fulvous-300 px-10 py-4 rounded text-white text-lg font-medium hover:bg-fulvous-700 focus:outline-dodger-blue-900 focus:ring-fulvous-700 focus:ring-2 focus:ring-offset-2"
