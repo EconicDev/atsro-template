@@ -27,12 +27,12 @@ const Nav = ({ location, translations, language, children }: NavProps) => {
               <div className="flex-shrink-0">
                 <img
                   className="block h-8 w-auto lg:hidden"
-                  src="/assets/encarnacion-services-logo.png"
+                  src="/logo/Encarnacion_Service_logo_svg_fc.svg"
                   alt="Encarnación Service SRL"
                 />
                 <img
                   className="hidden h-8 w-auto lg:block"
-                  src="/assets/encarnacion-services-logo.png"
+                  src="/logo/Encarnacion_Service_logo_svg_fc.svg"
                   alt="Encarnación Service SRL"
                 />
               </div>
