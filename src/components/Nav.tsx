@@ -9,13 +9,13 @@ const Nav = ({ location, translations, language, children }: NavProps) => {
   const [languageToggle, setLanguageToggle] = useState(false);
   
   const navSelectedStyle =
-    "rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white";
+    "rounded-sm bg-fulvous-600 px-3 py-2 text-sm font-medium text-white";
   const navMobileSelectedStyle =
-    "block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white";
+    "block rounded-sm bg-fulvous-600 px-3 py-2 text-base font-medium text-white";
   const navDefaultStyle =
-    "rounded-md px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-700 hover:text-white";
+    "rounded-sm px-3 py-2 text-sm font-medium text-gray-800 hover:bg-fulvous-200 hover:text-white";
   const navMobileDefaultStyle =
-    "block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-700 hover:text-white";
+    "block rounded-sm px-3 py-2 text-base font-medium text-gray-800 hover:fulvous-200 hover:text-white";
   const languagePrefix = language === 'es' ? '' : "/" + language;
 
   return (
@@ -93,7 +93,7 @@ const Nav = ({ location, translations, language, children }: NavProps) => {
               {/* Mobile menu button */}
               <Disclosure.Button
                 onClick={() => setIsOpen(!isOpen)}
-                className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-fulvous-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               >
                 <span className="sr-only">Open main menu</span>
                 {isOpen ? (
