@@ -19,7 +19,7 @@ const Nav = ({ location, translations, language, children }: NavProps) => {
   const languagePrefix = language === 'es' ? '' : "/" + language;
 
   return (
-    <Disclosure as="nav" className="bg-white-900">
+    <Disclosure as="nav" className="bg-white">
       <>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
