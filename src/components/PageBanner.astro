@@ -5,23 +5,36 @@ interface Props {
     format: string;
     title: string;
     image: string;
+    imageCoverClasses?: string;
     titleClasses: string;
+    subtext?: string;
+    logo?: string;
 }
 
-const { alt, format, title, titleClasses, image } = Astro.props;
+const {
+    alt,
+    format,
+    imageCoverClasses,
+    logo,
+    subtext,
+    title,
+    titleClasses,
+    image,
+} = Astro.props;
 const defaultTitleClasses = "block text-white";
 const displayTitleClasses = titleClasses || defaultTitleClasses;
 const defaultBannerImage = "/assets/container_main.png";
 const displayImage = image || defaultBannerImage;
+const showLogo = logo || false;
 ---
 
 <div class="relative">
     <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-50"></div>
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div class="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
+        <div class="relative shadow-xl sm:overflow-hidden sm:rounded-md">
             <div class="absolute inset-0">
                 <Image
-                    class="h-full w-full object-cover"
+                    class={"h-full w-full object-cover " + imageCoverClasses}
                     width={1920}
                     height={1080}
                     src={displayImage}
@@ -30,17 +43,36 @@ const displayImage = image || defaultBannerImage;
                     aspectRatio={16 / 9}
                 />
             </div>
+            <!-- class="h-20 lg:h-52 w-auto" -->
+            {
+                showLogo ? (
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <Image
+                            class="shadow-test h-28 md:h-40 lg:h-48 xl:56 w-auto"
+                            width={200}
+                            height={200}
+                            src={showLogo}
+                            alt={alt}
+                            format={"png"}
+                            aspectRatio={1}
+                        />
+                    </div>
+                ) : null
+            }
             <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
                 <h1
                     class="text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
                 >
                     <span class={displayTitleClasses}>{title}</span>
                 </h1>
-                <p
-                    class="mx-auto mt-6 max-w-lg text-center text-xl text-white sm:max-w-3xl"
-                >
-                </p>
             </div>
+            {
+                subtext ? (
+                    <p class="relative text-center text-xl bottom-5 xs:text-xl xs:bottom-4 sm:bottom-6 sm:text-2xl lg:text-3xl text-white lg:bottom-8 font-semibold drop-shadow-lg">
+                        <span>{subtext}</span>
+                    </p>
+                ) : null
+            }
         </div>
     </div>
 </div>
