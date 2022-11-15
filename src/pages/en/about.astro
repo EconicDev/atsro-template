@@ -42,10 +42,10 @@ const staffTitle = t("staff.title");
         </Nav>
         <PageBanner
             alt="Two men reviewing some documentation next to a warehouse shelf"
-            title=""
+            title={t("Nosotrós")}
             image="/images/warehouse_team_2.jpeg"
             format="jpeg"
-            titleClasses="block text-black"
+            titleClasses="block text-black invisible"
         />
         <main class="mx-auto px-4 md:p-6 md:w-10/12 lg:w-10/12 xl:w-8/12">
             <div>
@@ -99,7 +99,7 @@ const staffTitle = t("staff.title");
                     {t("values.title")}
                 </h3>
                 <dl
-                    class="mt-10 space-y-1 grid grid-cols-2 gap-x-6 sm:gap-y-8 sm:space-y-0 lg:grid-cols-4 lg:gap-x-8"
+                    class="mt-3 lg:mt-10 space-y-1 grid grid-cols-2 gap-x-6 sm:gap-y-8 sm:space-y-0 lg:grid-cols-4 lg:gap-x-8"
                 >
                     {
                         valueList.map((item) => (
