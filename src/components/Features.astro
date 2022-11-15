@@ -7,17 +7,17 @@ const features = [
     {
         title: "cta.features.one",
         description: "cta.features.subone",
-        icon: "/astro-template/assets/check.svg",
+        icon: "/astro-template/assets/knowledge.svg",
     },
     {
         title: "cta.features.two",
         description: "cta.features.subtwo",
-        icon: "/astro-template/assets/check.svg",
+        icon: "/astro-template/assets/truck.svg",
     },
     {
         title: "cta.features.three",
         description: "cta.features.subthree",
-        icon: "/astro-template/assets/check.svg",
+        icon: "/astro-template/assets/data-management.svg",
     },
 ];
 setDefaultNamespace("home");
@@ -26,7 +26,7 @@ changeLanguage(i18next.language);
 
 <!-- https://images.unsplash.com/photo-1613690399151-65ea69478674?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80 --><!-- &sat=-100 --><!-- w=2830 -->
 <div
-    class="relative bg-white py-16 sm:py-24 lg:py-16 bg-center bg-[url('/astro-template/assets/arial_container.png')] mx-auto max-w-7xl sm:px-6 lg:px-8 lg:rounded-xl"
+    class="relative bg-white py-16 sm:py-24 lg:py-16 bg-center bg-[url('/astro-template/assets/arial_container.png')] mx-auto max-w-7xl sm:px-6 lg:px-0 lg:rounded-t-md shadow-2xl"
     aria-label="Arial image of a fully loaded container"
 >
     <div
@@ -35,7 +35,6 @@ changeLanguage(i18next.language);
         <h3
             class="text-3xl text-white font-semibold tracking-tight sm:text-4xl lg:px-32 lg:mx-32"
         >
-            <!-- text-gray-900 -->
             {t("cta.title")}
         </h3>
 
@@ -62,7 +61,7 @@ changeLanguage(i18next.language);
             <a
                 type="a"
                 class="bg-fulvous-300 px-8 py-2 rounded text-white text-lg font-medium hover:bg-fulvous-700 focus:outline-dodger-blue-900 focus:ring-fulvous-700 focus:ring-2 focus:ring-offset-2"
-                href={localizePath("/astro-template/services/")}
+                href={localizePath("/astro-template/astro-template/services/")}
             >
                 {t("cta.link")}</a
             >
