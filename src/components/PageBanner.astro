@@ -9,6 +9,7 @@ interface Props {
     titleClasses: string;
     subtext?: string;
     logo?: string;
+    logoFormat?: string;
 }
 
 const {
@@ -16,6 +17,7 @@ const {
     format,
     imageCoverClasses,
     logo,
+    logoFormat,
     subtext,
     title,
     titleClasses,
@@ -49,11 +51,11 @@ const showLogo = logo || false;
                     <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                         <Image
                             class="shadow-test h-28 md:h-40 lg:h-48 xl:56 w-auto"
-                            width={200}
-                            height={200}
+                            width={600}
+                            height={600}
                             src={showLogo}
                             alt={alt}
-                            format={"png"}
+                            format={logoFormat}
                             aspectRatio={1}
                         />
                     </div>
