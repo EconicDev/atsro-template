@@ -1,3 +1,4 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require("tailwindcss/colors");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -56,7 +57,7 @@ module.exports = {
 			},
 		},
 		frontFamily: {
-			sans: ['Nunito', 'Helvetica', 'Arial', 'sans-serif'],
+			sans: ["'Nunito'", "'Helvetica'", ...defaultTheme.fontFamily.sans],
 		},
 		screens: {
 			xs: "400px",
