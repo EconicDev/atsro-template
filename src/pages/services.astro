@@ -198,22 +198,22 @@ const otherServices = [
                         {t("Otros trámites y gestiones")}
                     </h2>
                     <div class="my-5 md:mx-6">
-                        <dl class="space-y-6">
+                        <article class="space-y-6">
                             {
                                 otherServices.map(({ title, description }) => {
                                     return (
-                                        <div>
-                                            <dt class="text-xl font-semibold leading-6 text-gray-500 ">
+                                        <ul>
+                                            <li class="list-disc text-xl font-semibold leading-6 text-gray-500 ">
                                                 {title}
-                                            </dt>
-                                            <dd class="mt-2 text-lg text-gray-500">
+                                            </li>
+                                            <li class="mt-2 text-lg text-gray-500">
                                                 {description}
-                                            </dd>
-                                        </div>
+                                            </li>
+                                        </ul>
                                     );
                                 })
                             }
-                        </dl>
+                        </article>
                     </div>
                 </div>
             </div>
