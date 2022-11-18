@@ -55,9 +55,9 @@ module.exports = {
 			backgroundImage: {
 				"world-pattern": "url('/assets/world.svg')",
 			},
-		},
-		frontFamily: {
-			sans: ["'Nunito'", "'Helvetica'", ...defaultTheme.fontFamily.sans],
+			frontFamily: {
+				sans: ["'Nunito'", "'Helvetica'", ...defaultTheme.fontFamily.sans],
+			},
 		},
 		screens: {
 			xs: "400px",
