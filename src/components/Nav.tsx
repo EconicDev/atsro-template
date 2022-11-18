@@ -25,16 +25,18 @@ const Nav = ({ location, translations, language, children }: NavProps) => {
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center">
               <div className="flex-shrink-0">
+              <a href={"/astro-template" + languagePrefix + "/"}>
                 <img
-                  className="block h-8 w-auto lg:hidden"
+                  className="block h-10 w-auto lg:hidden"
                   src="/astro-template/logo/Encarnacion_Service_logo_svg_fc.svg"
                   alt="Encarnación Service SRL"
                 />
                 <img
-                  className="hidden h-8 w-auto lg:block"
+                  className="hidden h-12 w-auto lg:block"
                   src="/astro-template/logo/Encarnacion_Service_logo_svg_fc.svg"
                   alt="Encarnación Service SRL"
                 />
+                </a>
               </div>
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">

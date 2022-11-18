@@ -2,14 +2,15 @@
 const { alternative, title, description, icon, href, linkText } = Astro.props;
 ---
 
+<!-- dodger-blue-500 -->
 <div class="flex items-center">
     <dt>
         <div
             class={`flex h-12 w-12 items-center justify-center rounded-md ${
-                alternative ? "bg-fulvous-100" : "bg-dodger-blue-500"
+                alternative ? "bg-fulvous-100" : "bg-white"
             }`}
         >
-            <img class="h-6 w-6" src={icon} />
+            <img class="h-10 w-10" src={icon} />
         </div>
         {
             title && (

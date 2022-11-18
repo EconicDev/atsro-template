@@ -32,8 +32,8 @@ const customsProcedures = [
         descriptionList: [
             t("Internaci\u00F3n temporal o Admisi\u00F3n temporal sin transformaci\u00F3n"),
             t("Servicio de declaraci\u00F3n de mercanc\u00EDa que permite la entrada al pa\u00EDs con el fin de cumplir un prop\u00F3sito, por un tiempo limitado"),
-            t(""),
-            t("Servicio de declaraci\u00F3n de mercanc\u00EDa que permite la entrada al pa\u00EDs con el fin de cumplir un prop\u00F3sito, por un tiempo limitado"),
+            // t(""),
+            // t("Servicio de declaraci\u00F3n de mercanc\u00EDa que permite la entrada al pa\u00EDs con el fin de cumplir un prop\u00F3sito, por un tiempo limitado"),
             t("Admisi\u00F3n temporal para perfeccionamiento activo"),
             t("Servicio de declaraci\u00F3n de mercanc\u00EDa que permite la entrada al pa\u00EDs con el fin de ser sometida a un proceso de perfeccionamiento"),
             t("Admisi\u00F3n temporal para perfeccionamiento activo:"),
@@ -45,11 +45,11 @@ const customsProcedures = [
         descriptionList: [
             t("Exoneraci\u00F3n (Ley 4027)"),
             t("Servicio de gesti\u00F3n y tr\u00E1mite de beneficio de descargo pago de derechos de importaci\u00F3n de mercanc\u00EDa mediante resoluci\u00F3n del ministerio de hacienda gaceta oficial, leyes que lo amparen"),
-            t("Zona Franca"),
+            t("Zona Franca (Ley 8-90)"),
             t("Servicio de declaraci\u00F3n de mercanc\u00EDa en el r\u00E9gimen legal que tiene como beneficio el descargo de pago de derechos de importaci\u00F3n, impuesto sobre la renta y otras obligaciones tributarias"),
-            t("Mudanza"),
+            t("Mudanza (Ley 14-93)"),
             t("Servicio de declaraci\u00F3n de ajuares del hogar y efectos personales con la aplicaci\u00F3n de beneficios parciales a los ciudadanos dominicanos que vienen retirados del extranjero"),
-            t("Ley 168"),
+            t("Exoneraciones parciales de veh\u00EDculos (Ley 168)"),
             t("Servicio de gesti\u00F3n y tr\u00E1mite de beneficio de pago parcial de derechos de importaci\u00F3n de veh\u00EDculos de ciudadanos que viven en el exterior"),
         ],
     },
@@ -117,6 +117,7 @@ const otherServices = [
         </Nav>
         <PageBanner
             alt="A blue container being moved by an out of frame crane"
+            disableBannerBar={true}
             title={t("Servicios")}
             format="jpeg"
             image="/astro-template/images/moving_container.jpg"
@@ -124,14 +125,14 @@ const otherServices = [
         />
         <main>
             <div
-                class="relative bg-gray-50 px-4 pt-8 pb-4 sm:px-6 lg:px-8 lg:pt-8 lg:pb-8 card-title rounded-b-lg mx-4"
+                class="relative bg-gradient-to-b from-white to-gray-100 px-4 pt-8 pb-4 sm:px-6 lg:px-8 lg:pt-8 lg:pb-8 card-title rounded-b-lg mx-4"
             >
                 <div class="absolute inset-0"></div>
                 <div class="relative mx-auto max-w-7xl">
                     <div>
                         <!-- border-b-2 py-4 border-fulvous-100 -->
                         <h2
-                            class="text-center lg:text-left text-3xl font-semibold tracking-tight text-dodger-blue-500 sm:text-4xl bg-gray-50"
+                            class="text-center lg:text-left text-3xl font-semibold tracking-tight text-dodger-blue-500 sm:text-4xl"
                         >
                             {t("Gestiones Aduanales")}
                         </h2>
@@ -156,7 +157,6 @@ const otherServices = [
                     </div>
                     <aside class="block">
                         <p class="p-5 font-thin text-fulvous-400">
-                            {t("Nota")}:
                             {
                                 t(
                                     "Todas los servicios de declaraciones llevan a la par las operaciones en puerto a menos que no sean solicitadas por el cliente"
@@ -169,8 +169,8 @@ const otherServices = [
             <div
                 class="card-title rounded-b-lg mx-6 py-10 bg-gradient-to-t from-white via-gray-50 to-gray-100 mb-1"
             >
-                <div class="grid mx-auto pt-6 lg:max-w-none lg:grid-cols-6">
-                    <article class="col-span-6 mx-6 self-center">
+                <div class="mx-auto pt-6 max-w-7xl">
+                    <article class="mx-2 md:mx-6 self-center">
                         <h2
                             class="text-3xl font-bold tracking-tight text-dodger-blue-500 sm:text-4xl"
                         >
@@ -188,45 +188,32 @@ const otherServices = [
                             }
                         </p>
                     </article>
-                    <!-- <div
-                        class="col-span-6 lg:col-span-3 lg:row-start-1 lg:col-start-5"
-                    > -->
-                    <!-- <Image
-                            class="saturate-50 w-full lg:rounded-tl-xl lg:rounded-bl-xl shadow-xl ring-1 ring-black ring-opacity-5"
-                            src="/images/overwhelming_containers.jpg"
-                            alt="Person standing infront of a stack of containers, stacked 7 high"
-                            format="jpeg"
-                            width={3448}
-                            height={4592}
-                            aspectRatio={9 / 16}
-                        /> -->
-                    <!-- </div> -->
                 </div>
             </div>
-            <div class="py-16 card-title rounded-b-lg mx-8 pb-10">
-                <div class="mx-4 sm:mx-0 lg:mx-6">
+            <div class="card-title mx-6 py-10 rounded-b-lg pb-10">
+                <div class="mx-auto pt-6 max-w-7xl">
                     <h2
-                        class="text-3xl font-bold tracking-tight text-dodger-blue-500 sm:text-4xl"
+                        class="md:mx-6 text-3xl font-bold tracking-tight text-dodger-blue-500 sm:text-4xl"
                     >
                         {t("Otros trámites y gestiones")}
                     </h2>
-                    <div class="my-5">
-                        <dl class="space-y-6">
+                    <div class="my-5 md:mx-6">
+                        <article class="space-y-6">
                             {
                                 otherServices.map(({ title, description }) => {
                                     return (
-                                        <div>
-                                            <dt class="text-xl font-semibold leading-6 text-gray-500 ">
+                                        <ul>
+                                            <li class="list-disc text-xl font-semibold leading-6 text-gray-500 ">
                                                 {title}
-                                            </dt>
-                                            <dd class="mt-2 text-lg text-gray-500">
+                                            </li>
+                                            <li class="mt-2 text-lg text-gray-500">
                                                 {description}
-                                            </dd>
-                                        </div>
+                                            </li>
+                                        </ul>
                                     );
                                 })
                             }
-                        </dl>
+                        </article>
                     </div>
                 </div>
             </div>
