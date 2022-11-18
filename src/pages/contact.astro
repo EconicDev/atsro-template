@@ -42,24 +42,24 @@ const navTranslations = getNavTranslations(t);
             titleClasses="block text-gray-800 invisible"
         />
         <main class="">
-            <section class="h-full">
+            <section class="">
                 <div
                     class="grid grid-cols-1 border-b items-center lg:grid-cols-12 md:px-4 lg:px-0 bg-gray-50"
                 >
                     <div class="lg:col-start-1 lg:col-span-3 py-4 pr-4 sm:px-4">
                         <CompanyContact />
                     </div>
-                    <div
-                        class="border md:border-none py-4 px-4 col-span-3 col-end-auto xl:col-span-2 xl:col-end-12 overflow-hidden lg:h-auto"
-                    >
-                        <!-- lg:col-start-10 -->
-                        <CompanyMap height="350" width="600" />
-                    </div>
+
                     <div class="lg:row-start-1 lg:col-start-4 lg:col-span-6">
                         <ContactForm />
                     </div>
                 </div>
             </section>
+            <div
+                class="border md:border-none pt-4 px-4 overflow-hidden lg:h-auto max-w-7xl mx-auto"
+            >
+                <CompanyMap height="350" width="600" />
+            </div>
         </main>
         <Footer />
     </body>
