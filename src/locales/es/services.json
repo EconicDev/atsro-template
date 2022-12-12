@@ -61,9 +61,14 @@
     "Trámite de permisos para importación y exportación": "Trámite de permisos para importación y exportación",
     "Servicios de gestión y tramite de consentimientos requeridos para la importación/ exportación de mercancía": "Servicios de gestión y tramite de consentimientos requeridos para la importación/ exportación de mercancía.",
     "Trámite de primera placa equipos y vehículos": "Trámite de primera placa equipos y vehículos",
-    "Servicio de gestión y tramite de placa de vehículos y equipos nacionalizados": "Servicio de gestión y tramite de placa de vehículos y equipos nacionalizados.",
+    "Servicio de gestión y tramite de primera placa de vehículos y equipos, placas exoneradas y placas temporales": "Servicio de gestión y tramite de primera placa de vehículos y equipos, placas exoneradas y placas temporales.",
     "Traspaso de matrícula y placa de equipos": "Traspaso de matrícula y placa de equipos",
     "Servicios de gestión y tramite de cesión de derecho de una persona física/jurídica a otra": "Servicios de gestión y tramite de cesión de derecho de una persona física/jurídica a otra.",
     "Transporte Terrestre": "Transporte Terrestre",
-    "Coordinación de servicio de transporte para mercancía en puertos y depósitos": "Coordinación de servicio de transporte para mercancía en puertos y depósitos."
+    "Coordinación de servicio de transporte para mercancía en puertos y depósitos": "Coordinación de servicio de transporte para mercancía en puertos y depósitos.",
+    "Transporte Marítimo": "Transporte Marítimo",
+    "Servicio de transporte marítimo para contenedores y carga suelta": "Servicio de transporte marítimo para contenedores y carga suelta.",
+    "Consolidación": "Consolidación",
+    "Servicio de transporte de carga agrupadas": "Servicio de transporte de carga agrupadas.",
+    "Otro tipo de exoneraciones": "Otro tipo de exoneraciones"
 }
