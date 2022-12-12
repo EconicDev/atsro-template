@@ -53,7 +53,7 @@
     "Servicio de declaración de mercancía que permite el traslado de dicha mercancía de una aduana local a otra, con el objetivo del pago de los derechos de importación": "Merchandise declaration service that allows the transfer of said merchandise from one local customs office to another. The transfer process accounts for any import duties.",
     "Nota": "Note",
     "Todas los servicios de declaraciones llevan a la par las operaciones en puerto a menos que no sean solicitadas por el cliente": "All declaration services carry port operations at the same time unless the client does not request them.",
-    "Otros trámites y gestiones": "Other procedures and procedures",
+    "Otros trámites y gestiones": "Other arrangements and procedures",
     "Cambio de régimen aduanero": "Change of customs regime",
     "Servicio de tramite y gestión de cambio de régimen aduanero": "Processing service and management of the change of customs regime.",
     "Fiscalización y conciliación ante la DGA": "Control and conciliation before the DGA (General Directorate of Dominican Customs)",
@@ -61,9 +61,14 @@
     "Trámite de permisos para importación y exportación": "Processing of permits for import and export",
     "Servicios de gestión y tramite de consentimientos requeridos para la importación/ exportación de mercancía": "Management services and processing of consents required for the import / export of merchandise.",
     "Trámite de primera placa equipos y vehículos": "Processing of first license plate for equipment and vehicles",
-    "Servicio de gestión y tramite de placa de vehículos y equipos nacionalizados": "Management service and processing of nationalized vehicles and equipment license plates.",
+    "Servicio de gestión y tramite de primera placa de vehículos y equipos, placas exoneradas y placas temporales": "Service for management and processing the first license plate for vehicles and equipment, exempt plates, and temporary plates.",
     "Traspaso de matrícula y placa de equipos": "Transfer of license and equipment plate",
     "Servicios de gestión y tramite de cesión de derecho de una persona física/jurídica a otra": "Management services and rights transfer from one natural/legal person to another.",
     "Transporte Terrestre": "Ground Transportation",
-    "Coordinación de servicio de transporte para mercancía en puertos y depósitos": "Transport coordination service for merchandise in ports and warehouses."
+    "Coordinación de servicio de transporte para mercancía en puertos y depósitos": "Transport coordination service for merchandise in ports and warehouses.",
+    "Transporte Marítimo": "Marine Transport",
+    "Servicio de transporte marítimo para contenedores y carga suelta": "Maritime transport service for containers and loose cargo.",
+    "Consolidación": "Consolidation",
+    "Servicio de transporte de carga agrupadas": "Grouped cargo transportation service.",
+    "Otro tipo de exoneraciones": "Other types of exemptions"
 }
