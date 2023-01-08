@@ -1,4 +1,5 @@
 ---
+import { Image } from "@astrojs/image/components";
 const { prefix, name, title, other, image, twitter, linkedin } = Astro.props;
 const displayName = prefix ? prefix + " " + name : name;
 const socialMedia = twitter || linkedin;
@@ -6,12 +7,15 @@ const socialMedia = twitter || linkedin;
 
 <li>
     <div class="space-y-6">
-        <!-- <img
+        {image ? (<Image
             class="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56"
+            width={400}
+            height={400}
             src={image}
             alt={name}
-        /> -->
-        <div class="space-y-2">
+            format={"jpg"}
+        />) : (<div class="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56 bg-gray-100" />)}
+        <div class="pl-4 space-y-2">
             <div class="space-y-1">
                 <h3 class="text-lg font-semibold text-gray-900">
                     {displayName}
