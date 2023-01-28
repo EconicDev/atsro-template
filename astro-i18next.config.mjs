@@ -1,15 +1,7 @@
 /** @type {import('astro-i18next').AstroI18nextConfig} */
 export default {
-    defaultLanguage: "es",
-    supportedLanguages: ["es", "en"],
-    i18next: {
-        debug: false,
-        initImmediate: false,
-        ns: ["common", "home", "about", "services", "contact", "press"],
-        defaultNS: "common",
-        backend: {
-            loadPath: "./src/locales/{{lng}}/{{ns}}.json",
-        },
-    },
-    i18nextPlugins: { fsBackend: "i18next-fs-backend" },
+    defaultLocale: "es",
+    locales: ["es", "en"],
+    namespaces: ["about", "common", "contact", "home", "press", "services"],
+    defaultNamespace: "common",
 };
