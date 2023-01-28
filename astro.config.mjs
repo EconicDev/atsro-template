@@ -11,8 +11,6 @@ import react from "@astrojs/react";
 import image from "@astrojs/image";
 
 // https://astro.build/config
-
-// https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), astroI18next(), react(), image({
     serviceEntryPoint: '@astrojs/image/sharp'

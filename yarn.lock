@@ -25,19 +25,18 @@
   resolved "https://registry.npmjs.org/@astrojs/compiler/-/compiler-1.0.1.tgz"
   integrity sha512-77aacobLKcL98NmhK3OBS5EHIrX9gs1ckB/vGSIdkVZuB7u51V4jh05I6W0tSvG7/86tALv6QtHTRZ8rLhFTbQ==
 
-"@astrojs/image@^0.11.6":
-  version "0.11.6"
-  resolved "https://registry.npmjs.org/@astrojs/image/-/image-0.11.6.tgz"
-  integrity sha512-/awb4CWvOdoBv896XZcXw+oYEYLezWiaX5Oyk2g4PQ6rEHtZVROj56CFdUbS9ldmIqp3ni7rXNf1XK3dlP5d1A==
+"@astrojs/image@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.npmjs.org/@astrojs/image/-/image-0.13.0.tgz"
+  integrity sha512-18IlEsb/mau4ji9sR7+JVPFJHtgIk7Qh/Ol+Hh/JNcPn/oMrjP6FMU3VrNHPy5Ltvw1DyzkDV4wu+jYKU/V0Hw==
   dependencies:
     "@altano/tiny-async-pool" "^1.0.2"
     http-cache-semantics "^4.1.0"
     image-size "^1.0.2"
     kleur "^4.1.5"
-    magic-string "^0.25.9"
+    magic-string "^0.27.0"
     mime "^3.0.0"
     slash "^4.0.0"
-    web-streams-polyfill "^3.2.1"
 
 "@astrojs/language-server@^0.28.3":
   version "0.28.3"
@@ -2328,13 +2327,6 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-magic-string@^0.25.9:
-  version "0.25.9"
-  resolved "https://registry.npmjs.org/magic-string/-/magic-string-0.25.9.tgz"
-  integrity sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==
-  dependencies:
-    sourcemap-codec "^1.4.8"
-
 magic-string@^0.27.0:
   version "0.27.0"
   resolved "https://registry.npmjs.org/magic-string/-/magic-string-0.27.0.tgz"
@@ -3617,11 +3609,6 @@ source-map@^0.7.3:
   resolved "https://registry.npmjs.org/source-map/-/source-map-0.7.4.tgz"
   integrity sha512-l3BikUxvPOcn5E74dZiq5BGsTb5yEwhaTSzccU6t4sDOH8NWJCstKO5QT2CvtFoK6F0saL7p9xHAqHOlCPJygA==
 
-sourcemap-codec@^1.4.8:
-  version "1.4.8"
-  resolved "https://registry.npmjs.org/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz"
-  integrity sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==
-
 space-separated-tokens@^2.0.0:
   version "2.0.1"
   resolved "https://registry.npmjs.org/space-separated-tokens/-/space-separated-tokens-2.0.1.tgz"
@@ -4164,11 +4151,6 @@ web-namespaces@^2.0.0:
   version "2.0.1"
   resolved "https://registry.npmjs.org/web-namespaces/-/web-namespaces-2.0.1.tgz"
   integrity sha512-bKr1DkiNa2krS7qxNtdrtHAmzuYGFQLiQ13TsorsdT6ULTkPLKuu5+GsFpDlg6JFjUTwX2DyhMPG2be8uPrqsQ==
-
-web-streams-polyfill@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.npmjs.org/web-streams-polyfill/-/web-streams-polyfill-3.2.1.tgz"
-  integrity sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q==
 
 webidl-conversions@^3.0.0:
   version "3.0.1"
