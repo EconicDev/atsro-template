@@ -15,6 +15,6 @@ export default defineConfig({
   integrations: [tailwind(), astroI18next(), react(), image({
     serviceEntryPoint: '@astrojs/image/sharp'
   })],
-  site: "https://econicdev.github.io",
+  site: "https://econicdev.github.io/",
   base: "/"
 });
