@@ -25,10 +25,10 @@
   resolved "https://registry.npmjs.org/@astrojs/compiler/-/compiler-1.0.1.tgz"
   integrity sha512-77aacobLKcL98NmhK3OBS5EHIrX9gs1ckB/vGSIdkVZuB7u51V4jh05I6W0tSvG7/86tALv6QtHTRZ8rLhFTbQ==
 
-"@astrojs/image@^0.11.1":
-  version "0.11.1"
-  resolved "https://registry.npmjs.org/@astrojs/image/-/image-0.11.1.tgz"
-  integrity sha512-LgmATS/LfDlHyUzhgPfIIJNC7XGZ9sr01ur1Q+IMDgkCCoplUbN1zBt2DY4M0XZ13QaVF1Ok/tCaMjIbh1pSVA==
+"@astrojs/image@^0.11.6":
+  version "0.11.6"
+  resolved "https://registry.npmjs.org/@astrojs/image/-/image-0.11.6.tgz"
+  integrity sha512-/awb4CWvOdoBv896XZcXw+oYEYLezWiaX5Oyk2g4PQ6rEHtZVROj56CFdUbS9ldmIqp3ni7rXNf1XK3dlP5d1A==
   dependencies:
     "@altano/tiny-async-pool" "^1.0.2"
     http-cache-semantics "^4.1.0"

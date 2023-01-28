@@ -13,7 +13,7 @@
     "lang": "npx astro-i18next generate"
   },
   "dependencies": {
-    "@astrojs/image": "^0.11.1",
+    "@astrojs/image": "^0.11.6",
     "@astrojs/react": "^2.0.1",
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^3.0.0",
