@@ -11,7 +11,7 @@
     "astro": "astro",
     "prettier": "prettier --write .",
     "lang": "npx astro-i18next generate",
-    "publish": "aws s3 cp build s3://econic.media --recursive"
+    "publish": "aws s3 cp dist s3://encarnacionservice.com.do --recursive"
   },
   "dependencies": {
     "@astrojs/image": "^0.13.0",
