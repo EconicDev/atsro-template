@@ -1,4 +1,5 @@
 ---
+import { Image } from "@astrojs/image/components";
 import i18next, { t, changeLanguage, setDefaultNamespace } from "i18next";
 import ServiceListItem from "./ServiceListItem.astro";
 
@@ -36,11 +37,13 @@ changeLanguage(i18next.language);
             class="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8"
         >
             <div class="relative -mx-4 mt-10 lg:mt-0" aria-hidden="true">
-                <img
+                <Image
                     class="relative sm:rounded-b-md mx-auto shadow-xl"
-                    width="590"
-                    src="/images/container_cranes.jpg"
+                    width={590}
+                    height={393}
+                    src="/images/container_cranes_sm.jpg"
                     alt="two ships with cargo docked at port with several container cranes above"
+                    format={'jpg'}
                 />
             </div>
             <dl class="flex flex-col justify-end mt-10 space-y-10">
