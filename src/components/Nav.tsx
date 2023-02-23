@@ -13,7 +13,7 @@ const Nav = ({ location, translations, language, children }: NavProps) => {
   const navMobileSelectedStyle =
     "block rounded-sm bg-fulvous-600 px-3 py-2 text-base font-medium text-white";
   const navDefaultStyle =
-    "rounded-sm px-3 py-2 text-sm font-medium text-gray-800 hover:bg-fulvous-200 hover:text-white";
+    "rounded-sm px-3 py-2 text-sm font-medium text-gray-800 hover:bg-fulvous-200 hover:text-white transition duration-300 ease-in-out";
   const navMobileDefaultStyle =
     "block rounded-sm px-3 py-2 text-base font-medium text-gray-800 hover:fulvous-200 hover:text-white";
   const languagePrefix = language === 'es' ? '' : "/" + language;
