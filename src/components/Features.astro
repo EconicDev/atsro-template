@@ -1,5 +1,6 @@
 ---
 import i18next, { t, changeLanguage, setDefaultNamespace } from "i18next";
+import { localizePath } from "astro-i18next";
 import FeatureCard from "./FeatureCard.astro";
 
 const features = [
@@ -60,7 +61,7 @@ changeLanguage(i18next.language);
             <a
                 type="a"
                 class="bg-fulvous-300 px-10 py-4 rounded text-white text-lg font-medium hover:bg-fulvous-700 focus:outline-dodger-blue-900 focus:ring-fulvous-700 focus:ring-2 focus:ring-offset-2"
-                href="/services/"
+                href={localizePath("/services/")}
             >
                 {t("cta.link")}</a
             >
