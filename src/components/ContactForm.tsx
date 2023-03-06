@@ -1,265 +1,192 @@
-import { useState } from "react";
-import { Switch } from "@headlessui/react";
+import { useEffect, useRef, useState } from "react";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
+type translations = {
+  formAlert: string,
+  formTitle: string,
+  formName: string,
+  formEmail: string,
+  formPhone: string,
+  formMessage: string,
+  formSubmit: string,
 }
+
 type ContractFormProps = {
-  showPatterns: Boolean;
+  translations: translations
 };
 
-export default function ContractForm({ showPatterns }): ContractFormProps {
-  const [agreed, setAgreed] = useState(false);
-  const patternClasses = showPatterns ? " visible" : " invisible";
+function validateEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+export default function ContractForm({ translations }: ContractFormProps) {
+  const [formState, setFormState] = useState('');
+  const fullNameRef = useRef(null);
+  const emailRef = useRef(null);
+  const phoneRef = useRef(null);
+  const messageRef = useRef(null);
+  const [firstRender, setFirstRender] = useState(true);
+
+  useEffect(() => {
+    setFirstRender(false);
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setFormState('loading');
+    const fullName = fullNameRef.current.value;
+    const email = emailRef.current.value;
+    const phone = phoneRef.current.value;
+    const message = messageRef.current.value;
+    const invalidName = !fullName || fullName.length < 3;
+    const invalideMessage = !message || message.length < 10;
+    const invalidEmail = !validateEmail(email);
+    const invalidForm = invalidName || invalideMessage || invalidEmail;
+    if (invalidForm) {
+      alert(translations.formAlert);
+      setFormState('');
+      return;
+    }
+    const body = {
+      name: fullName,
+      email,
+      phone,
+      message,
+    };
+    const response = await fetch(
+      "https://m14nct3tw1.execute-api.us-east-1.amazonaws.com/contact-us",
+      {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      }
+    );
+
+    setFormState('done');
+    setTimeout(() => {
+      fullNameRef.current.value = "";
+      emailRef.current.value = "";
+      phoneRef.current.value = "";
+      messageRef.current.value = "";
+      setFormState('');
+    }, 1800);
+  };
+
+  const buttonDefault =
+    "bg-dodger-blue-600 inline-flex rounded-md border border-transparent py-3 px-6 text-base font-medium text-white shadow-sm hover:bg-dodger-blue-700 focus:outline-none focus:ring-2 focus:ring-dodger-blue-500 focus:ring-offset-2";
+  const buttonSuccess =
+    "bg-green-600 inline-flex rounded-md border border-transparent py-3 px-8 text-base font-medium text-white shadow-sm";
+  const buttonLoading =
+    "bg-gray-600 inline-flex rounded-md border border-transparent py-3 px-8 text-base font-medium text-white shadow-sm";
+  const buttonStyle = formState === 'loading' ? buttonLoading : formState === 'done' ? buttonSuccess : buttonDefault;
+  if (firstRender) return <div />;
   return (
-    <div className="overflow-hidden py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
-      <div className="relative mx-auto max-w-xl">
-        <svg
-          className={
-            "absolute left-full translate-x-1/2 transform" + patternClasses
-          }
-          width={404}
-          height={404}
-          fill="none"
-          viewBox="0 0 404 404"
-          aria-hidden="true"
-        >
-          <defs>
-            <pattern
-              id="85737c0e-0916-41d7-917f-596dc7edfa27"
-              x={0}
-              y={0}
-              width={20}
-              height={20}
-              patternUnits="userSpaceOnUse"
-            >
-              <rect
-                x={0}
-                y={0}
-                width={4}
-                height={4}
-                className="text-gray-200"
-                fill="currentColor"
+    <div className="bg-white flex justify-center flex-col px-2">
+      <h2
+        className="pt-10 pb-0 md:pb-5 md:pt-16 text-3xl md:text-4xl text-center text-dodger-blue-500 font-semibold"
+      >
+        {translations.formTitle}
+      </h2>
+
+      <div className="h-full bg-white py-4 mr-10 lg:px-4 sm:px-6 lg:w-4/5 lg:mx-10">
+        <div className="bg-white mx-auto">
+          <form id="contact-form" className="grid grid-cols-1 gap-y-6">
+            <div>
+              <label htmlFor="full-name" className="sr-only"
+              >{translations.formName}</label>
+              <input
+                ref={fullNameRef}
+                type="text"
+                name="full-name"
+                id="full-name"
+                className="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-dodger-blue-500 focus:ring-dodger-blue-500"
+                placeholder={translations.formName}
               />
-            </pattern>
-          </defs>
-          <rect
-            width={404}
-            height={404}
-            fill="url(#85737c0e-0916-41d7-917f-596dc7edfa27)"
-          />
-        </svg>
-        <svg
-          className={
-            "absolute right-full bottom-0 -translate-x-1/2 transform" +
-            patternClasses
-          }
-          width={404}
-          height={404}
-          fill="none"
-          viewBox="0 0 404 404"
-          aria-hidden="true"
-        >
-          <defs>
-            <pattern
-              id="85737c0e-0916-41d7-917f-596dc7edfa27"
-              x={0}
-              y={0}
-              width={20}
-              height={20}
-              patternUnits="userSpaceOnUse"
-            >
-              <rect
-                x={0}
-                y={0}
-                width={4}
-                height={4}
-                className="text-gray-200"
-                fill="currentColor"
+            </div>
+            <div>
+              <label htmlFor="email" className="sr-only"
+              >{translations.formEmail}</label>
+              <input
+                ref={emailRef}
+                id="email"
+                name="email"
+                type="email"
+                className="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-dodger-blue-500 focus:ring-dodger-blue-500"
+                placeholder={translations.formEmail}
               />
-            </pattern>
-          </defs>
-          <rect
-            width={404}
-            height={404}
-            fill="url(#85737c0e-0916-41d7-917f-596dc7edfa27)"
-          />
-        </svg>
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Contáctenos
-          </h2>
-          <p className="mt-4 text-lg leading-6 text-gray-500">
-            Trabajemos juntos
-          </p>
-        </div>
-        <div className="mt-12">
-          <form
-            action="#"
-            method="POST"
-            className="grid grid-cols-12 gap-y-6 sm:gap-x-12 lg:grid-cols-12"
-          >
-            <div className="col-span-11 lg:col-span-5">
-              <label
-                htmlFor="first-name"
-                className="block text-sm font-medium text-gray-700"
-              >
-                First name
-              </label>
-              <div className="mt-1">
-                <input
-                  type="text"
-                  name="first-name"
-                  id="first-name"
-                  autoComplete="given-name"
-                  className="block w-full rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                />
-              </div>
             </div>
-            <div className="col-span-11 lg:col-span-6">
-              <label
-                htmlFor="last-name"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Last name
-              </label>
-              <div className="mt-1">
-                <input
-                  type="text"
-                  name="last-name"
-                  id="last-name"
-                  autoComplete="family-name"
-                  className="block w-full rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                />
-              </div>
+            <div>
+              <label htmlFor="phone" className="sr-only"
+              >{translations.formPhone}</label>
+              <input
+                ref={phoneRef}
+                type="text"
+                name="phone"
+                id="phone"
+                className="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-dodger-blue-500 focus:ring-dodger-blue-500"
+                placeholder={translations.formPhone}
+              />
             </div>
-            <div className="col-span-11">
-              <label
-                htmlFor="company"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Company
-              </label>
-              <div className="mt-1">
-                <input
-                  type="text"
-                  name="company"
-                  id="company"
-                  autoComplete="organization"
-                  className="block w-full rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                />
-              </div>
+            <div>
+              <label htmlFor="message" className="sr-only"
+              >{translations.formMessage}</label>
+              <textarea
+                ref={messageRef}
+                id="message"
+                name="message"
+                rows={4}
+                className="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-dodger-blue-500 focus:ring-dodger-blue-500"
+                placeholder={translations.formMessage}></textarea>
             </div>
-            <div className="col-span-11">
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Email
-              </label>
-              <div className="mt-1">
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  className="block w-full rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                />
-              </div>
-            </div>
-            <div className="col-span-8 sm:col-span-6 lg:col-span-5">
-              <label
-                htmlFor="phone-number"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Phone Number
-              </label>
-              <div className="relative mt-1 rounded-md shadow-sm">
-                <div className="absolute inset-y-0 left-0 flex items-center">
-                  <label htmlFor="country" className="sr-only">
-                    Country
-                  </label>
-                  <select
-                    id="country"
-                    name="country"
-                    className="h-full rounded-md border-transparent bg-transparent py-0 pl-4 pr-8 text-gray-500 focus:border-indigo-500 focus:ring-indigo-500"
-                  >
-                    <option>DO</option>
-                    <option>US</option>
-                    <option>CA</option>
-                    <option>EU</option>
-                  </select>
-                </div>
-                <input
-                  type="text"
-                  name="phone-number"
-                  id="phone-number"
-                  autoComplete="tel"
-                  className="block w-full rounded-md border-gray-300 py-3 px-4 pl-20 focus:border-indigo-500 focus:ring-indigo-500"
-                  placeholder="+1 (555) 987-6543"
-                />
-              </div>
-            </div>
-            <div className="col-span-11">
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Message
-              </label>
-              <div className="mt-1">
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  className="block w-full rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                  defaultValue={""}
-                />
-              </div>
-            </div>
-            <div className="col-span-10 lg:col-span-12">
-              <div className="flex items-start">
-                <div className="flex-shrink-0">
-                  <Switch
-                    checked={agreed}
-                    onChange={setAgreed}
-                    className={classNames(
-                      agreed ? "bg-indigo-600" : "bg-gray-200",
-                      "relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                    )}
-                  >
-                    <span className="sr-only">Agree to policies</span>
-                    <span
-                      aria-hidden="true"
-                      className={classNames(
-                        agreed ? "translate-x-5" : "translate-x-0",
-                        "inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"
-                      )}
-                    />
-                  </Switch>
-                </div>
-                <div className="ml-3">
-                  <p className="text-base text-gray-500">
-                    By selecting this, you agree to the{" "}
-                    <a href="#" className="font-medium text-gray-700 underline">
-                      Privacy Policy
-                    </a>{" "}
-                    and{" "}
-                    <a href="#" className="font-medium text-gray-700 underline">
-                      Cookie Policy
-                    </a>
-                    .
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-10 sm:col-span-11">
+            <div className="flex justify-end -mr-10">
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center rounded-md border border-transparent bg-fulvous-300 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-dodger-blue-700 focus:outline-none focus:ring-2 focus:ring-dodger-blue-500 focus:ring-offset-2"
-              >
-                Let's talk
-              </button>
+                disabled={Boolean(formState)}
+                onClick={handleSubmit}
+                className={buttonStyle}>{
+                  formState === 'loading' ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      className="w-6 h-6 animate-spin"
+                      style={{ animationDuration: "3s", animationTimingFunction: "ease-out" }}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
+                      />
+                    </svg>
+                  ) : formState === 'done' ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="white"
+                      d="M4.5 12.75l6 6 9-13.5"
+                      strokeDasharray="45"
+                      strokeDashoffset="45"
+                      className="w-6 h-6 animate-path"
+                      style={{ animationDuration: "3s", animationTimingFunction: "ease-out" }}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 12.75l6 6 9-13.5"
+
+                      />
+                    </svg>
+                  ) : (
+                    translations.formSubmit
+                  )}</button>
             </div>
           </form>
         </div>
