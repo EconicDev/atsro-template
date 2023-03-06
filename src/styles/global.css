@@ -100,3 +100,13 @@ h1 {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+
+@keyframes path-animation {
+  to {
+      stroke-dashoffset: 0;
+  }
+}
+
+.animate-path {
+  animation: path-animation .5s linear forwards;
+}
