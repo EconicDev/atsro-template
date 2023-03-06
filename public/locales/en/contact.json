@@ -12,10 +12,10 @@
     "Correo": "Email",
     "Redes sociales": "Social Media",
     "contact": {
-        "alert": "Please fill in your name, email and a short message so we can better assist you.",
         "title:alt": "Write to us",
         "title": "Contact us",
         "form": {
+            "alert": "Please fill in your name, email and a short message so we can better assist you.",
             "name": "Full name",
             "email": "Email",
             "phone": "Phone",
