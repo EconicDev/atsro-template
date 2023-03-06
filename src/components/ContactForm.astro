@@ -3,58 +3,80 @@ import i18next, { t, changeLanguage, setDefaultNamespace } from "i18next";
 
 changeLanguage(i18next.language);
 setDefaultNamespace("common");
+
+const buttonDefault =
+    "bg-dodger-blue-600 inline-flex rounded-md border border-transparent py-3 px-6 text-base font-medium text-white shadow-sm hover:bg-dodger-blue-700 focus:outline-none focus:ring-2 focus:ring-dodger-blue-500 focus:ring-offset-2";
+const buttonSuccess =
+    "bg-green-600 inline-flex rounded-md border border-transparent py-3 px-8 text-base font-medium text-white shadow-sm hover:bg-dodger-blue-700 focus:outline-none focus:ring-2 focus:ring-dodger-blue-500 focus:ring-offset-2";
+const buttonLoading =
+    "bg-gray-600 inline-flex rounded-md border border-transparent py-3 px-8 text-base font-medium text-white shadow-sm hover:bg-dodger-blue-700 focus:outline-none focus:ring-2 focus:ring-dodger-blue-500 focus:ring-offset-2";
+const submitText = t("contact.form.submit");
 ---
 
+<style>
+    @keyframes path-animation {
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    .animate-path {
+        animation: path-animation .5s linear forwards;
+    }
+</style>
 <script is:inline>
-    document.addEventListener("DOMContentLoaded", (event) => {
+    const checkSVG = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" d="M4.5 12.75l6 6 9-13.5" stroke-dasharray="45" stroke-dashoffset="45" class="w-6 h-6 animate-path" style="animation-duration: 1s; animation-timing-function: ease-out;"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>`;
+    const loadingSVG = ` <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 animate-spin" style="animation-duration: 3s; animation-timing-function: ease-out;"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/>`;
+    document.addEventListener("DOMContentLoaded", async (event) => {
         document
             .getElementById("contact-form")
             .addEventListener("submit", sendEmail);
     });
 
-    function sendEmail(event) {
+    async function sendEmail(event) {
         event.preventDefault();
+        const btn = document.getElementById("btn-submit");
+        // btn.innerHTML = loadingSVG;
+        // btn.className = buttonLoading;
         const fullName = document.getElementById("full-name").value;
         const email = document.getElementById("email").value;
         const phone = document.getElementById("phone").value;
         const message = document.getElementById("message").value;
+        
         if (!fullName || !email || !message) {
             alert("Please fill in all required fields");
             return;
         }
-        fetch(
-            "https://3d8nf43j1j.execute-api.us-east-1.amazonaws.com/beta/contact",
+        const body = {
+            name: fullName,
+            email,
+            phone,
+            message,
+        };
+
+        // https://m14nct3tw1.execute-api.us-east-1.amazonaws.com/contact-us
+        const response = await fetch(
+            "temp",
             {
                 method: "POST",
+                mode: "no-cors",
                 headers: {
+                    Accept: "application/json",
                     "Content-Type": "application/json",
-                    charset: "UTF-8",
                 },
-                referrerPolicy: 'no-referrer',
-                body: JSON.stringify({
-                    fullName,
-                    email,
-                    phone,
-                    message,
-                }),
+                body: JSON.stringify(body),
             }
-        )
-            .then((response) => {
-                console.log({response});
-                if (response.ok) {
-                    alert("Your message has been sent");
-                    document.getElementById("full-name").value = "";
-                    document.getElementById("email").value = "";
-                    document.getElementById("phone").value = "";
-                    document.getElementById("message").value = "";
-                } else {
-                    // throw new Error("Something went wrong");
-                }
-            })
-            .catch((error) => {
-                console.error(error);
-                alert("Something went wrong");
-            });
+        );
+        // btn.innerHTML = checkSVG;
+        // btn.className = buttonSuccess;
+        setTimeout(() => {
+            document.getElementById("full-name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("message").value = "";
+            // btn.innerHTML = submitText;
+            // btn.className = buttonDefault;
+        }, 1800);
     }
 </script>
 <!-- mx-auto max-w-lg lg:max-w-none --><!-- <div class="bg-white lg:grid lg:grid-cols-5">
@@ -74,7 +96,6 @@ setDefaultNamespace("common");
                         >{t("contact.form.name")}</label
                     >
                     <input
-                    disabled
                         type="text"
                         name="full-name"
                         id="full-name"
@@ -88,7 +109,6 @@ setDefaultNamespace("common");
                         >{t("contact.form.email")}</label
                     >
                     <input
-                    disabled
                         id="email"
                         name="email"
                         type="email"
@@ -102,7 +122,6 @@ setDefaultNamespace("common");
                         >{t("contact.form.phone")}</label
                     >
                     <input
-                    disabled
                         type="text"
                         name="phone"
                         id="phone"
@@ -116,7 +135,6 @@ setDefaultNamespace("common");
                         >{t("contact.form.message")}</label
                     >
                     <textarea
-                    disabled
                         id="message"
                         name="message"
                         rows="4"
@@ -124,16 +142,11 @@ setDefaultNamespace("common");
                         placeholder={t("contact.form.message")}></textarea>
                 </div>
                 <div class="flex justify-end -mr-10">
-                    <!-- 
-                        bg-dodger-blue-600 inline-flex rounded-md border border-transparent  bg-gray-200 py-3 px-6 text-base font-medium text-white shadow-sm hover:bg-dodger-blue-700 focus:outline-none focus:ring-2 focus:ring-dodger-blue-500 focus:ring-offset-2
-                    -->
                     <button
+                        id="btn-submit"
                         type="submit"
-
-                        class="disabled inline-flex rounded-md border border-transparent  bg-gray-200 py-3 px-6 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2  focus:ring-offset-2"
-                        disabled
-                        >{t("contact.form.submit")}</button
-                    >
+                        class={buttonDefault}
+                        >{submitText}</button>
                 </div>
             </form>
         </div>
