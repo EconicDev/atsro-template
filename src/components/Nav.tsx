@@ -25,15 +25,15 @@ const Nav = ({ location, translations, language, children }: NavProps) => {
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-              <a href={"/astro-template" + languagePrefix + "/"}>
+              <a href={"/encarnacionservice" + languagePrefix + "/"}>
                 <img
                   className="block h-10 w-auto lg:hidden"
-                  src="/astro-template/logo/Encarnacion_Service_logo_svg_fc.svg"
+                  src="/encarnacionservice/logo/Encarnacion_Service_logo_svg_fc.svg"
                   alt="Encarnación Service SRL"
                 />
                 <img
                   className="hidden h-12 w-auto lg:block"
-                  src="/astro-template/logo/Encarnacion_Service_logo_svg_fc.svg"
+                  src="/encarnacionservice/logo/Encarnacion_Service_logo_svg_fc.svg"
                   alt="Encarnación Service SRL"
                 />
                 </a>
@@ -41,7 +41,7 @@ const Nav = ({ location, translations, language, children }: NavProps) => {
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   <a
-                    href={"/astro-template" + languagePrefix + "/"}
+                    href={"/encarnacionservice" + languagePrefix + "/"}
                     className={
                       location === "home"
                         ? navSelectedStyle
@@ -51,7 +51,7 @@ const Nav = ({ location, translations, language, children }: NavProps) => {
                     {translations.home}
                   </a>
                   <a
-                    href={"/astro-template" + languagePrefix + "/about/"}
+                    href={"/encarnacionservice" + languagePrefix + "/about/"}
                     className={
                       location === "about" ? navSelectedStyle : navDefaultStyle
                     }
@@ -59,7 +59,7 @@ const Nav = ({ location, translations, language, children }: NavProps) => {
                     {translations.about}
                   </a>
                   <a
-                    href={"/astro-template" + languagePrefix + "/services/"}
+                    href={"/encarnacionservice" + languagePrefix + "/services/"}
                     className={
                       location === "services"
                         ? navSelectedStyle
@@ -69,7 +69,7 @@ const Nav = ({ location, translations, language, children }: NavProps) => {
                     {translations.services}
                   </a>
                   <a
-                    href={"/astro-template" + languagePrefix + "/contact/"}
+                    href={"/encarnacionservice" + languagePrefix + "/contact/"}
                     className={
                       location === "contact"
                         ? navSelectedStyle
@@ -112,7 +112,7 @@ const Nav = ({ location, translations, language, children }: NavProps) => {
           <div className="space-y-1 px-2 pt-2 pb-3">
             <Disclosure.Button
               as="a"
-              href={"/astro-template" + languagePrefix + "/"}
+              href={"/encarnacionservice" + languagePrefix + "/"}
               className={
                 location === "home"
                   ? navMobileSelectedStyle
@@ -123,7 +123,7 @@ const Nav = ({ location, translations, language, children }: NavProps) => {
             </Disclosure.Button>
             <Disclosure.Button
               as="a"
-              href={"/astro-template" + languagePrefix + "/about/"}
+              href={"/encarnacionservice" + languagePrefix + "/about/"}
               className={
                 location === "about"
                   ? navMobileSelectedStyle
@@ -134,7 +134,7 @@ const Nav = ({ location, translations, language, children }: NavProps) => {
             </Disclosure.Button>
             <Disclosure.Button
               as="a"
-              href={"/astro-template" + languagePrefix + "/services/"}
+              href={"/encarnacionservice" + languagePrefix + "/services/"}
               className={
                 location === "services"
                   ? navMobileSelectedStyle
@@ -145,7 +145,7 @@ const Nav = ({ location, translations, language, children }: NavProps) => {
             </Disclosure.Button>
             <Disclosure.Button
               as="a"
-              href={"/astro-template" + languagePrefix + "/contact/"}
+              href={"/encarnacionservice" + languagePrefix + "/contact/"}
               className={
                 location === "contact"
                   ? navMobileSelectedStyle
