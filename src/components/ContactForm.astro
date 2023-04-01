@@ -3,8 +3,81 @@ import i18next, { t, changeLanguage, setDefaultNamespace } from "i18next";
 
 changeLanguage(i18next.language);
 setDefaultNamespace("common");
+let loading = false;
+let done = false;
+const buttonDefault =
+    "bg-dodger-blue-600 inline-flex rounded-md border border-transparent py-3 px-6 text-base font-medium text-white shadow-sm hover:bg-dodger-blue-700 focus:outline-none focus:ring-2 focus:ring-dodger-blue-500 focus:ring-offset-2";
+const buttonSuccess =
+    "bg-green-600 inline-flex rounded-md border border-transparent py-3 px-8 text-base font-medium text-white shadow-sm hover:bg-dodger-blue-700 focus:outline-none focus:ring-2 focus:ring-dodger-blue-500 focus:ring-offset-2";
+const buttonLoading =
+    "bg-gray-600 inline-flex rounded-md border border-transparent py-3 px-8 text-base font-medium text-white shadow-sm hover:bg-dodger-blue-700 focus:outline-none focus:ring-2 focus:ring-dodger-blue-500 focus:ring-offset-2";
 ---
 
+<style>
+    @keyframes path-animation {
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    .animate-path {
+        animation: path-animation .5s linear forwards;
+    }
+</style>
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", async (event) => {
+        document
+            .getElementById("contact-form")
+            .addEventListener("submit", sendEmail);
+    });
+
+    async function sendEmail(event) {
+        event.preventDefault();
+        loading = true;
+        const fullName = document.getElementById("full-name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const message = document.getElementById("message").value;
+        if (!fullName || !email || !message) {
+            alert("Please fill in all required fields");
+            return;
+        }
+        setTimeout(() => {
+            alert("Your message has been sent");
+            document.getElementById("full-name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("message").value = "";
+        }, 1800);
+        const body = {
+            name: fullName,
+            email,
+            phone,
+            message,
+        };
+        const response = await fetch(
+            "https://m14nct3tw1.execute-api.us-east-1.amazonaws.com/contact-us",
+            {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(body),
+            }
+        );
+        loading = false;
+        done = true;
+        setTimeout(() => {
+            document.getElementById("full-name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("message").value = "";
+            done = false;
+        }, 1800);
+    }
+</script>
 <!-- mx-auto max-w-lg lg:max-w-none --><!-- <div class="bg-white lg:grid lg:grid-cols-5">
     <div class="bg-white py-4 px-4 sm:px-6 lg:col-span-3 lg:px-8"> -->
 <div class="bg-white flex justify-center flex-col px-2">
@@ -16,7 +89,7 @@ setDefaultNamespace("common");
 
     <div class="h-full bg-white py-4 mr-10 lg:px-4 sm:px-6 lg:w-4/5 lg:mx-10">
         <div class="bg-white mx-auto">
-            <form action="#" method="POST" class="grid grid-cols-1 gap-y-6">
+            <form id="contact-form" class="grid grid-cols-1 gap-y-6">
                 <div>
                     <label for="full-name" class="sr-only"
                         >{t("contact.form.name")}</label
@@ -25,7 +98,6 @@ setDefaultNamespace("common");
                         type="text"
                         name="full-name"
                         id="full-name"
-                        autocomplete="name"
                         class="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-dodger-blue-500 focus:ring-dodger-blue-500"
                         placeholder={t("contact.form.name")}
                     />
@@ -38,7 +110,6 @@ setDefaultNamespace("common");
                         id="email"
                         name="email"
                         type="email"
-                        autocomplete="email"
                         class="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-dodger-blue-500 focus:ring-dodger-blue-500"
                         placeholder={t("contact.form.email")}
                     />
@@ -51,7 +122,6 @@ setDefaultNamespace("common");
                         type="text"
                         name="phone"
                         id="phone"
-                        autocomplete="tel"
                         class="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-dodger-blue-500 focus:ring-dodger-blue-500"
                         placeholder={t("contact.form.phone")}
                     />
@@ -70,8 +140,52 @@ setDefaultNamespace("common");
                 <div class="flex justify-end -mr-10">
                     <button
                         type="submit"
-                        class="inline-flex rounded-md border border-transparent bg-dodger-blue-600 py-3 px-6 text-base font-medium text-white shadow-sm hover:bg-dodger-blue-700 focus:outline-none focus:ring-2 focus:ring-dodger-blue-500 focus:ring-offset-2"
-                        >{t("contact.form.submit")}</button
+                        disabled={loading}
+                        class={loading
+                            ? buttonLoading
+                            : done
+                            ? buttonSuccess
+                            : buttonDefault}
+                        >{
+                            loading ? (
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="w-6 h-6 animate-spin"
+                                    style="animation-duration: 3s; animation-timing-function: ease-out;"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
+                                    />
+                                </svg>
+                            ) : done ? (
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    d="M4.5 12.75l6 6 9-13.5"
+                                    stroke-dasharray="45"
+                                    stroke-dashoffset="45"
+                                    class="w-6 h-6 animate-path"
+                                    style="animation-duration: 1s; animation-timing-function: ease-out;"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M4.5 12.75l6 6 9-13.5"
+                                    />
+                                </svg>
+                            ) : (
+                                t("contact.form.submit")
+                            )
+                        }</button
                     >
                 </div>
             </form>

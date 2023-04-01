@@ -4,7 +4,7 @@ import { HeadHrefLangs } from "astro-i18next/components";
 import MainHead from "../../components/MainHead.astro";
 import Nav from "../../components/Nav.jsx";
 import Footer from "../../components/Footer.astro";
-import ContactForm from "../../components/ContactForm.astro";
+import ContactForm from "../../components/ContactForm.jsx";
 import CompanyContact from "../../components/CompanyContact.astro";
 import CompanyMap from "../../components/CompanyMap.astro";
 import PageBanner from "../../components/PageBanner.astro";
@@ -15,6 +15,15 @@ changeLanguage("en");
 
 setDefaultNamespace("contact");
 const navTranslations = getNavTranslations(t);
+const contactFormTraslations = {
+    formAlert: t("contact.form.alert"),
+    formTitle: t("contact.title"),
+    formName: t("contact.form.name"),
+    formEmail: t("contact.form.email"),
+    formPhone: t("contact.form.phone"),
+    formMessage: t("contact.form.message"),
+    formSubmit: t("contact.form.submit"),
+};
 ---
 
 <html lang={i18next.language}>
@@ -24,7 +33,6 @@ const navTranslations = getNavTranslations(t);
             description="Los diferentes servicios de sistemas disponibles por Encarnación Service SRL"
         />
         <HeadHrefLangs />
-        <style></style>
     </head>
     <body>
         <Nav
@@ -53,7 +61,10 @@ const navTranslations = getNavTranslations(t);
                     </div>
 
                     <div class="lg:row-start-1 lg:col-start-4 lg:col-span-6">
-                        <ContactForm />
+                        <ContactForm
+                            translations={contactFormTraslations}
+                            client:idle
+                        />
                     </div>
                 </div>
             </section>
